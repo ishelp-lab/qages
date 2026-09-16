@@ -1,0 +1,13 @@
+{
+  "name": "qages-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page de vendas e mentoria QAGES - Gustavo Machado",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14"
+  }
+}
