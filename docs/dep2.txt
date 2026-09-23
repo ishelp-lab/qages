@@ -1,0 +1,17 @@
+Eu já trabalhava como QA, mas, em determinado momento, fui demitido. Foi então que conheci o trabalho do professor Gustavo Machado pelo LinkedIn e decidi iniciar a mentoria.
+
+Minha principal necessidade era aprender mais sobre a área de Qualidade de Software, entender melhor os diferentes tipos de testes e, principalmente, evoluir em automação de testes.
+
+Durante a mentoria, consegui clarear muito mais a minha visão sobre os processos de testes, entender melhor onde e quando aplicá-los, aprofundar meus conhecimentos em testes de API e, principalmente, dar os primeiros passos de forma mais estruturada na automação de testes.
+
+Depois da mentoria, comecei a me candidatar novamente a algumas vagas. Durante as entrevistas, percebi claramente que estava muito mais preparado para responder às perguntas e explicar meus conhecimentos, principalmente quando o assunto era automação.
+
+Foi então que consegui minha realocação e voltei a trabalhar na área de Qualidade de Software.
+
+E o mais importante: mesmo depois de finalizar a mentoria, o Gustavo continuou sempre à disposição para ajudar. Além da mentoria, ele possui diversos conteúdos no YouTube que são muito importantes para o dia a dia de um QA, além de excelentes cursos na Udemy.
+
+Deixo aqui minha gratidão ao professor Gustavo Machado por compartilhar seus conhecimentos e por contribuir para que outros profissionais de QA possam evoluir e seguir em frente com mais confiança na área.
+
+Muito obrigado, Gustavo, por todo conhecimento, orientação e apoio nessa caminhada!
+
+José Lima

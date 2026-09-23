@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QAGES :: Formação & Mentoria em QA — Gustavo Machado</title>
+  <title>QAGES® :: Capacitação em QA & Automação — Gustavo Machado</title>
   <meta name="description"
-    content="Domine automação de testes com Cypress, Robot Framework, Postman, CI/CD com GitHub Actions, certificação CTFL/ISTQB e lógica com Python com Gustavo Machado.">
+    content="A QAGES é um ecossistema que impulsiona carreiras na área de Qualidade de Software (QA), capacitando estudantes, estagiários e juniores para o mercado de tecnologia.">
 
   <!-- Favicon -->
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0f14'/><text x='50%' y='68%' font-size='60' font-weight='900' font-family='monospace' fill='%231351B4' text-anchor='middle'>::</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230E1118'/><text x='50%' y='68%' font-size='60' font-weight='900' font-family='monospace' fill='%231351B4' text-anchor='middle'>::</text></svg>">
 
-  <!-- Google Fonts: Space Grotesk & Inter -->
+  <!-- Google Fonts: Space Grotesk, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS via CDN -->
@@ -28,22 +28,30 @@
         extend: {
           colors: {
             brand: {
-              blue: '#1351B4',     // Azul Royal exato do redesign
-              red: '#C5221F',      // Vermelho exato do redesign
-              dark: '#0B0D13',     // Fundo principal carvão profundo
-              card: '#12151E',     // Superfície de card
-              border: 'rgba(255, 255, 255, 0.08)',
-              borderActive: 'rgba(19, 81, 180, 0.4)'
+              blue: '#1351B4',        // Azul Royal principal (substitui o verde da Coders)
+              blueLight: '#2563EB',   // Azul vibrante para realces
+              blueGlow: 'rgba(19, 81, 180, 0.4)',
+              red: '#C5221F',         // Vermelho do Gustavo
+              redGlow: 'rgba(197, 34, 31, 0.35)',
+              dark: '#0E1118',        // Cinza escuro grafite Coders
+              darkCard: '#151922',    // Superfície de card escuro
+              darkBorder: 'rgba(255, 255, 255, 0.08)',
+              neutralBlack: '#11141C',
+              neutralWhite: '#FFFFFF',
+              surfaceLight: '#FBFBFB',
+              borderLight: '#EDEDED'
             }
           },
           fontFamily: {
             sans: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           },
           boxShadow: {
-            'glow-blue': '0 0 50px -10px rgba(19, 81, 180, 0.45)',
-            'glow-red': '0 0 50px -10px rgba(197, 34, 31, 0.45)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+            'glow-blue': '0 0 35px -5px rgba(19, 81, 180, 0.45)',
+            'glow-blue-lg': '0 0 60px -10px rgba(37, 99, 235, 0.5)',
+            'glow-red': '0 0 35px -5px rgba(197, 34, 31, 0.4)',
+            'card-clean': '0 10px 30px -10px rgba(0, 0, 0, 0.06)'
           }
         }
       }
@@ -53,124 +61,385 @@
   <!-- AOS CSS via CDN -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- Custom CSS for glassmorphism and fine styling -->
   <style>
-    /* Glassmorphism Classes */
-    .glass-card {
-      background: rgba(18, 21, 30, 0.7);
+    /* ================= CODERS EXACT DESIGN SYSTEM REPLICATION ================= */
+    :root {
+      --color-primary: #1351B4;
+      --color-primary-light: #2563EB;
+      --color-secondary: #C5221F;
+      --color-dark: #0E1118;
+      --color-dark-card: #151922;
+      --color-border-dark: rgba(255, 255, 255, 0.08);
+      --color-border-light: #EDEDED;
+      --color-surface-light: #FBFBFB;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-dark);
+      color: #D1D5DB;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.035em;
+    }
+
+    /* 1. Coders-Style Technical Grid + :: Scope Operator Texture */
+    .bg-grid-scope {
+      background-color: #0E1118;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.16), transparent 70%),
+        radial-gradient(circle at 85% 30%, rgba(197, 34, 31, 0.10), transparent 55%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px, 24px 24px;
+    }
+
+    .bg-grid-dark {
+      background-color: #0E1118;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px, 64px 64px;
+    }
+
+    /* 2. Coders Exact Tagline Component (.tagline) */
+    .tagline-coders {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .tagline-coders.dark {
+      background-color: #1351B4;
+      color: #FFFFFF;
+    }
+
+    .tagline-coders.light {
+      background-color: #F1F5F9;
+      color: #1351B4;
+      border: 1px solid #E2E8F0;
+    }
+
+    .tagline-coders.red {
+      background-color: #C5221F;
+      color: #FFFFFF;
+    }
+
+    /* 3. Coders Exact Primary Button (.button_primary) with 45° arrow */
+    .button-primary-coders {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      height: 3.5rem;
+      padding: 0 1.75rem;
+      border-radius: 0.5rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #FFFFFF;
+      background-color: #1351B4;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 25px rgba(19, 81, 180, 0.4);
+      text-decoration: none;
+    }
+
+    .button-primary-coders:hover {
+      background-color: #2563EB;
+      box-shadow: 0 0 35px rgba(37, 99, 235, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary-coders {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 3.5rem;
+      padding: 0 1.5rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #E2E8F0;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
-    .glass-card-hover:hover {
-      border-color: rgba(19, 81, 180, 0.5);
-      box-shadow: 0 10px 30px -10px rgba(19, 81, 180, 0.25);
+    .button-secondary-coders:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      transform: translateY(-2px);
     }
 
-    .glass-nav {
-      background: rgba(11, 13, 19, 0.85);
+    /* 4. Coders Navbar Button (.menu_button) */
+    .menu-button-coders {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 18px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      color: #FFFFFF;
+      transition: all 0.3s ease;
     }
 
-    /* Ambient Glow Blobs */
-    .glow-blob-blue {
-      background: radial-gradient(circle, rgba(19, 81, 180, 0.35) 0%, rgba(19, 81, 180, 0) 70%);
+    .menu-button-coders:hover {
+      background-color: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
-    .glow-blob-red {
-      background: radial-gradient(circle, rgba(197, 34, 31, 0.28) 0%, rgba(197, 34, 31, 0) 70%);
+    /* 5. Coders Logo Divider (.logo-divider-a) & Overlays */
+    .logo-divider-a {
+      background-color: rgba(255, 255, 255, 0.12);
+      width: 1px;
+      height: 32px;
+      flex-shrink: 0;
     }
 
-    /* Scope Operator Decorative Dots Grid */
-    .dots-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-      background-size: 24px 24px;
+    .logo-overlay-l {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 140px;
+      background: linear-gradient(90deg, #0E1118 0%, rgba(14, 17, 24, 0) 100%);
+      pointer-events: none;
+      z-index: 2;
     }
 
-    /* Text Metallic Gradient */
-    .text-gradient-metallic {
-      background: linear-gradient(180deg, #FFFFFF 20%, #A0AEC0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .logo-overlay-r {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 140px;
+      background: linear-gradient(270deg, #0E1118 0%, rgba(14, 17, 24, 0) 100%);
+      pointer-events: none;
+      z-index: 2;
     }
 
-    .text-gradient-brand {
-      background: linear-gradient(135deg, #FFFFFF 30%, #93c5fd 60%, #1351B4 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* Marquee Animation */
+    @keyframes marqueeLoop {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
     }
 
-    /* Pulse animation for live badge */
-    @keyframes badge-pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.4;
-        transform: scale(0.85);
-      }
+    .animate-ticker {
+      display: flex;
+      width: 200%;
+      animation: marqueeLoop 38s linear infinite;
     }
 
-    .animate-badge-pulse {
-      animation: badge-pulse 2s infinite ease-in-out;
+    .animate-ticker:hover {
+      animation-play-state: paused;
+    }
+
+    /* 6. Clean Section Card Pill (.feature) */
+    .feature-pill-coders {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #FBFBFB;
+      border: 1px solid #EDEDED;
+      border-radius: 0.5rem;
+      padding: 0.875rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #171717;
+      transition: all 0.25s ease;
+    }
+
+    .feature-pill-coders:hover {
+      border-color: #1351B4;
+      background-color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    /* 7. Salary Card Exact Coders Style (.salary_card) */
+    .salary-card-coders {
+      background-color: #F8FAFC;
+      border: 1px solid #EDEDED;
+      border-radius: 0.75rem;
+      padding: 2.5rem;
+    }
+
+    /* 8. Benefit Item Exact Coders Style (.benefit-item) */
+    .benefit-item-coders {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    /* 9. Coders Testimonials Tab Link (.tab-link-bottom) */
+    .tab-link-coders {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: transparent;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+    }
+
+    .tab-link-coders:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .tab-link-coders.active {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: #1351B4;
+      box-shadow: 0 0 20px rgba(19, 81, 180, 0.25);
+    }
+
+    /* 10. Coders FAQ Question Bar & Rotating Circle */
+    .faq-question-coders {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 1.25rem 0;
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #11141C;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .faq-question-coders:hover {
+      color: #1351B4;
+    }
+
+    .faq-icon-circle-coders {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 9999px;
+      background-color: #F3F4F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #374151;
+      transition: all 0.3s ease;
+    }
+
+    /* 11. Coders Intermission Wrapper */
+    .intermission-wrapper-coders {
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: #141822;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 12. Coders Footer Frame */
+    .footer-frame-coders {
+      border-radius: 1rem;
+      margin: 0 1.25rem 1.25rem;
+      background-color: #0A0C11;
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
   </style>
 </head>
 
-<body
-  class="bg-[#0B0D13] text-gray-200 font-sans selection:bg-[#1351B4] selection:text-white antialiased overflow-x-hidden">
+<body class="selection:bg-[#1351B4] selection:text-white antialiased overflow-x-hidden">
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
+  <!-- ================= TOP ANNOUNCEMENT BAR (CODERS STYLE) ================= -->
+  <div class="bg-gradient-to-r from-[#1351B4] via-[#0E1118] to-[#C5221F] text-white text-xs py-2.5 px-4 border-b border-white/10 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+        <span class="font-mono font-bold tracking-wider text-[11px] uppercase">TURMA ABERTA ::</span>
+        <span class="text-gray-200 text-xs hidden sm:inline">Capacitação em QA & Automação de Software para Estudantes, Estagiários e Juniores</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono ml-auto sm:ml-0">
+        <span class="text-blue-200">De <s class="text-gray-400">R$ 997</s> por apenas <strong>R$ 297 à vista</strong></span>
+        <a href="#oferta" class="underline font-bold text-white hover:text-blue-200 transition-colors inline-flex items-center gap-1">
+          Garantir vaga com desconto
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR (CODERS FROSTED GLASS STYLE) ================= -->
+  <header class="sticky top-0 left-0 right-0 z-40 bg-[#0E1118]/85 backdrop-blur-xl border-b border-white/10 transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
       <!-- Brand Logo Wordmark -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="flex items-center font-extrabold tracking-wider text-xl sm:text-2xl text-white font-mono">
+        <div class="flex items-center font-extrabold tracking-tight text-xl sm:text-2xl text-white font-mono">
           <span>GUSTAVO</span>
-          <span
-            class="text-[#C5221F] font-black group-hover:text-[#1351B4] transition-colors duration-300 mx-0.5">::</span>
+          <span class="text-[#C5221F] font-black group-hover:text-[#2563EB] transition-colors duration-300 mx-0.5">::</span>
           <span class="text-gray-100">MACHADO</span>
         </div>
-        <span
-          class="hidden sm:inline-block px-2 py-0.5 text-xs font-mono font-bold tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/50 rounded">
-          QAGES
+        <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest text-blue-400 bg-blue-950/70 border border-blue-800/60 rounded">
+          QAGES®
         </span>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-        <a href="#para-quem" class="hover:text-white transition-colors">Para Quem É</a>
-        <a href="#filosofia" class="hover:text-white transition-colors">Filosofia :: Escopo</a>
-        <a href="#conteudo" class="hover:text-white transition-colors">Grade Curricular</a>
+      <!-- Desktop Navigation Links (Clean Coders Centered Nav) -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#ecossistema" class="hover:text-white transition-colors">Ecossistema</a>
+        <a href="#oportunidade" class="hover:text-white transition-colors">Salários & Vagas</a>
+        <a href="#rota" class="hover:text-white transition-colors">A Rota Prática</a>
         <a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a>
-        <a href="#mentor" class="hover:text-white transition-colors">O Mentor</a>
+        <a href="#mentor" class="hover:text-white transition-colors">Sobre o Mentor</a>
+        <a href="#grade" class="hover:text-white transition-colors">Grade</a>
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </nav>
 
-      <!-- CTA Button Navbar -->
-      <div class="hidden sm:flex items-center gap-4">
-        <a href="#investimento"
-          class="relative group inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 rounded-lg overflow-hidden border border-white/10 hover:border-blue-500/60 shadow-glass">
-          <span
-            class="absolute inset-0 bg-gradient-to-r from-[#1351B4] to-[#C5221F] opacity-80 group-hover:opacity-100 transition-opacity"></span>
-          <span class="relative flex items-center gap-2">
-            <span class="font-mono text-xs text-blue-200">::</span>
-            Garantir Vaga
-          </span>
+      <!-- Right Action Button Group (Exact Coders Menu Button with Arrow) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#oferta" class="menu-button-coders text-xs">
+          <span>Login Aluno</span>
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </a>
+        <a href="#oferta" class="button-primary-coders !h-11 !px-5 !text-sm">
+          <span>Garantir Vaga</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none"
-        aria-label="Abrir menu de navegação">
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -178,409 +447,623 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden glass-card border-t border-white/10 px-6 py-6 space-y-4">
-      <a href="#para-quem" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Para Quem É</a>
-      <a href="#filosofia" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Filosofia ::
-        Escopo</a>
-      <a href="#conteudo" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Grade Curricular</a>
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#151922] border-t border-white/10 px-6 py-6 space-y-4">
+      <a href="#ecossistema" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Ecossistema</a>
+      <a href="#oportunidade" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Salários & Vagas</a>
+      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">A Rota Prática</a>
       <a href="#depoimentos" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Depoimentos</a>
-      <a href="#mentor" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">O Mentor</a>
+      <a href="#mentor" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Sobre o Mentor</a>
+      <a href="#grade" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">Grade Curricular</a>
       <a href="#faq" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link">FAQ</a>
-      <a href="#investimento"
-        class="block text-center w-full py-3 text-sm font-bold text-white bg-gradient-to-r from-[#1351B4] to-[#C5221F] rounded-lg mobile-link">
-        Garantir Vaga com Bônus
+      <a href="#oferta"
+        class="block text-center w-full py-3.5 text-sm font-bold text-white bg-gradient-to-r from-[#1351B4] to-[#C5221F] rounded-lg mobile-link">
+        Garantir Vaga por R$ 297,00 ↗
       </a>
     </div>
   </header>
 
 
-  <!-- ================= HERO SECTION (EXTENT AI INSPIRATION) ================= -->
-  <section
-    class="relative min-h-screen pt-32 pb-20 flex flex-col justify-center items-center overflow-hidden dots-pattern">
+  <!-- ================= 1. HERO SECTION (DARK GRAPHITE + TECHNICAL GRID + :: SCOPE TEXTURE) ================= -->
+  <section class="relative pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden bg-grid-scope">
 
-    <!-- Organic Ambient Glow Blobs (Controlled by GSAP parallax) -->
-    <div id="heroBlobBlue"
-      class="absolute -top-24 left-1/2 -translate-x-3/4 w-[600px] h-[600px] glow-blob-blue rounded-full pointer-events-none blur-3xl opacity-70">
-    </div>
-    <div id="heroBlobRed"
-      class="absolute top-48 left-1/2 -translate-x-1/4 w-[500px] h-[500px] glow-blob-red rounded-full pointer-events-none blur-3xl opacity-50">
-    </div>
-
-    <!-- Hero Main Container -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-
-      <!-- Scope Pill Badge -->
-      <div data-aos="fade-down" data-aos-duration="800"
-        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card border border-white/10 mb-8">
-        <span class="w-2 h-2 rounded-full bg-[#C5221F] animate-badge-pulse"></span>
-        <span class="text-xs font-mono font-bold tracking-wider text-gray-300 uppercase">
-          ESCOPO::DEFINIDO &bull; FORMAÇÃO QA + MENTORIA EXCLUSIVA
-        </span>
-      </div>
-
-      <!-- Main Headline with Metallic White-to-Grey Gradient -->
-      <h1 data-aos="fade-up" data-aos-duration="900"
-        class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-        <span class="text-gradient-metallic block">Não é qualquer QA.</span>
-        <span class="text-white block mt-2">
-          É o QA que sabe delimitar o
-          <span
-            class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-red-400">
-            escopo do problema.
-          </span>
-        </span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p data-aos="fade-up" data-aos-delay="150" data-aos-duration="900"
-        class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 font-normal leading-relaxed mb-10">
-        Da fundamentação teórica aos pipelines de CI/CD em produção. Domine testes modernos com
-        <strong class="text-white font-semibold">Cypress</strong>,
-        <strong class="text-white font-semibold">Robot Framework</strong>,
-        <strong class="text-white font-semibold">Postman</strong>,
-        <strong class="text-white font-semibold">Python</strong> e
-        <strong class="text-white font-semibold">Certificação CTFL/ISTQB</strong>
-        com quem vive a qualidade de software na trincheira real há mais de 5 anos.
-      </p>
-
-      <!-- Action Buttons -->
-      <div data-aos="fade-up" data-aos-delay="300"
-        class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-        <a href="#investimento"
-          class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-[#1351B4] via-[#1a5fd0] to-[#C5221F] hover:brightness-110 transition-all duration-300 shadow-glow-blue flex items-center justify-center gap-3 group">
-          <span>Quero Dominar QA Agora</span>
-          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-
-        <a href="#conteudo"
-          class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-gray-300 glass-card hover:text-white hover:border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
-          <span class="text-[#1351B4] font-mono font-bold">::</span>
-          <span>Ver Grade Curricular</span>
-        </a>
-      </div>
-
-      <!-- Hero Visual Centerpiece (Torus Graphic & Floating Glass Cards) -->
-      <div class="relative max-w-4xl mx-auto mt-4" data-aos="zoom-in" data-aos-duration="1100">
-
-        <!-- Background 3D Torus Sculpture Image -->
-        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
-          <img src="assets/hero_glow.jpg" alt="Estrutura de Testes e Qualidade de Software QAGES"
-            class="w-full h-auto object-cover max-h-[440px] opacity-90 mix-blend-lighten" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D13] via-transparent to-transparent"></div>
-        </div>
-
-        <!-- Floating Glass Card 1 (Left): Pipeline CI/CD Status -->
-        <div
-          class="absolute -top-6 -left-4 sm:-left-8 glass-card rounded-xl p-4 sm:p-5 max-w-[280px] text-left border border-white/10 shadow-glass hidden sm:block animate-float">
-          <div class="flex items-center gap-3 mb-2">
-            <div
-              class="w-9 h-9 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <div>
-              <p class="text-xs font-mono font-bold text-blue-400 tracking-wider">PIPELINE::CI/CD</p>
-              <h4 class="text-sm font-bold text-white">GitHub Actions</h4>
-            </div>
-          </div>
-          <p class="text-xs text-gray-400 leading-snug">
-            100% dos testes e2e e de contrato rodando automaticamente sem falsos positivos.
-          </p>
-        </div>
-
-        <!-- Floating Glass Card 2 (Right): Metodologia & Certificação -->
-        <div
-          class="absolute -bottom-6 -right-4 sm:-right-8 glass-card rounded-xl p-4 sm:p-5 max-w-[280px] text-left border border-white/10 shadow-glass hidden sm:block animate-float-delayed">
-          <div class="flex items-center gap-3 mb-2">
-            <div
-              class="w-9 h-9 rounded-lg bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <div>
-              <p class="text-xs font-mono font-bold text-red-400 tracking-wider">PADRÃO::ISTQB</p>
-              <h4 class="text-sm font-bold text-white">Preparatório CTFL</h4>
-            </div>
-          </div>
-          <p class="text-xs text-gray-400 leading-snug">
-            Alinhado ao padrão internacional BSTQB para validação de competência técnica global.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Tech Stack Logos / Ticker Strip -->
-    <div class="w-full max-w-7xl mx-auto px-4 mt-20" data-aos="fade-up">
-      <p class="text-center text-xs font-mono uppercase tracking-widest text-gray-500 mb-8">
-        Tecnologias, Padrões e Ferramentas Abordadas na Prática
-      </p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 items-center justify-items-center opacity-70">
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#1351B4] font-black">::</span>CYPRESS
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#C5221F] font-black">::</span>ROBOT FW
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#1351B4] font-black">::</span>POSTMAN
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#C5221F] font-black">::</span>PYTHON
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#1351B4] font-black">::</span>ACTIONS
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#C5221F] font-black">::</span>GIT/GITHUB
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#1351B4] font-black">::</span>CTFL/ISTQB
-        </div>
-        <div class="flex items-center gap-2 font-mono font-bold text-gray-400 hover:text-white transition-colors">
-          <span class="text-[#C5221F] font-black">::</span>DOCKER
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- ================= SECTION: PARA QUEM É (3 COLUMNS) ================= -->
-  <section id="para-quem" class="py-24 relative border-t border-white/5 bg-[#0B0D13]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-blue-400 bg-blue-950/40 border border-blue-900/40 mb-4">
-          <span>[ ESCOPO::PÚBLICO-ALVO ]</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-          Para quem foi desenhada esta formação?
-        </h2>
-        <p class="mt-4 text-gray-400 text-base sm:text-lg">
-          Não é um curso genérico de "apertar botões". É uma imersão técnica para quem quer dominar engenharia de
-          qualidade com profundidade e rigor.
-        </p>
-      </div>
-
-      <!-- 3 Columns Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Card 1: QA Júnior & Pleno -->
-        <div data-aos="fade-up" data-aos-delay="100"
-          class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden">
-          <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-blue-600 to-blue-400"></div>
-          <div>
-            <div
-              class="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6 font-mono font-black text-xl">
-              01
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">QA Júnior & Pleno</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-              Você já conhece os conceitos básicos ou executa testes manuais repetitivos, mas se sente travado na hora
-              de automatizar frameworks do zero, criar pipelines em CI/CD e justificar seu valor para avançar para
-              níveis sênior.
-            </p>
-          </div>
-          <div class="pt-6 border-t border-white/5 space-y-2.5 font-mono text-xs text-gray-300">
-            <div class="flex items-center gap-2">
-              <span class="text-[#1351B4] font-bold">::</span>
-              <span>Sair do teste manual repetitivo</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#1351B4] font-bold">::</span>
-              <span>Dominar Cypress e Robot na prática</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#1351B4] font-bold">::</span>
-              <span>Estar pronto para a certificação CTFL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Devs migrando para QA / SDET -->
-        <div data-aos="fade-up" data-aos-delay="200"
-          class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden border-blue-500/30">
-          <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#1351B4] via-purple-500 to-[#C5221F]">
-          </div>
-          <div>
-            <div
-              class="w-12 h-12 rounded-xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6 font-mono font-black text-xl">
-              02
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">Devs & Transição de Carreira</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-              Desenvolvedores ou profissionais de tecnologia que enxergaram a alta demanda e os salários atrativos de
-              <span class="text-white font-medium">Software Development Engineer in Test (SDET)</span> e querem dominar
-              a mentalidade analítica de QA além do código.
-            </p>
-          </div>
-          <div class="pt-6 border-t border-white/5 space-y-2.5 font-mono text-xs text-gray-300">
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Mentalidade de Error Guessing & Riscos</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Testes de API avançados com Postman & Python</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Arquitetura de suítes sem flaky tests</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Empresas & Líderes de Engenharia -->
-        <div data-aos="fade-up" data-aos-delay="300"
-          class="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 relative group overflow-hidden">
-          <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-red-600 to-red-400"></div>
-          <div>
-            <div
-              class="w-12 h-12 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-red-400 mb-6 font-mono font-black text-xl">
-              03
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">Empresas & Consultoria</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-              CTOs, Tech Leads e gestores que precisam auditar seus fluxos de entrega contínua, reduzir bugs críticos
-              vazando para produção e treinar sua equipe com uma metodologia de QA sólida, padronizada e mensurável.
-            </p>
-          </div>
-          <div class="pt-6 border-t border-white/5 space-y-2.5 font-mono text-xs text-gray-300">
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Consultoria e auditoria de cobertura</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Pipelines integrados ao GitHub Actions</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[#C5221F] font-bold">::</span>
-              <span>Mentoria individualizada para lideranças</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= SECTION: FILOSOFIA "::" & "QA NÃO É MIOJO" ================= -->
-  <section id="filosofia" class="py-24 relative overflow-hidden bg-[#0e1118]">
-
-    <!-- Background subtle brand watermark -->
-    <div
-      class="absolute right-0 top-1/2 -translate-y-1/2 select-none pointer-events-none opacity-[0.03] text-[360px] font-mono font-black text-white leading-none">
-      ::
-    </div>
+    <!-- Ambient Glow Auras (Coders hero_glow translated to Blue & Red) -->
+    <div class="absolute -top-32 left-1/4 -translate-x-1/2 w-[700px] h-[700px] bg-blue-600/20 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute top-48 right-10 w-[500px] h-[500px] bg-red-600/15 rounded-full blur-[160px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
 
-        <!-- Left: Editorial Content -->
-        <div class="lg:col-span-7" data-aos="fade-right">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-red-400 bg-red-950/40 border border-red-900/40 mb-6">
-            <span>[ CONCEITO::RESOLUÇÃO_DE_ESCOPO ]</span>
+        <!-- Left Column: Content -->
+        <div class="lg:col-span-7 text-left" data-aos="fade-right" data-aos-duration="800">
+
+          <!-- Exact Coders Tagline Component -->
+          <div class="tagline-coders dark mb-6">
+            <span>gustavo machado :: qages ecosystem</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
-            O que significa o operador <span class="text-[#C5221F] font-mono">::</span> na sua carreira de QA?
-          </h2>
+          <!-- Main Huge Heading (Space Grotesk + Coders strong colored span) -->
+          <h1 class="text-4xl sm:text-6xl lg:text-[4.25rem] font-bold text-white tracking-tight leading-[1.08] mb-6">
+            Impulsione sua carreira através de 
+            <span class="text-[#2563EB] inline-block font-extrabold">Qualidade de Software</span>
+          </h1>
 
-          <div class="space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed">
-            <p>
-              Na programação, o operador de duplo dois pontos (<code
-                class="text-blue-400 font-mono font-bold">::</code>) é o operador de <strong
-                class="text-white">resolução de escopo</strong>. Ele serve para acessar exatamente aquilo que está
-              dentro de um escopo específico.
-            </p>
-            <p class="p-4 rounded-xl bg-black/40 border border-white/10 font-mono text-sm text-gray-300">
-              <span class="text-gray-500">// O verdadeiro QA não atira no escuro</span><br>
-              <span class="text-purple-400">namespace</span> SistemaCritico {<br>
-              &nbsp;&nbsp;<span class="text-blue-400">const</span> BugDefeito = <span class="text-green-300">"Falha
-                Oculta em Produção"</span>;<br>
-              }<br>
-              <span class="text-yellow-400">QA_Especialista</span>::Encontrar(SistemaCritico::<span
-                class="text-red-400 font-bold">BugDefeito</span>);
-            </p>
-            <p>
-              Existem milhares de pessoas que dizem "testar software" por aí. Mas quando escrevemos <strong
-                class="text-white font-mono">Gustavo::Machado</strong> ou formamos um aluno no <strong
-                class="text-white font-mono">QAGES</strong>, estamos falando do profissional que sabe observar
-              minuciosamente, prever comportamentos inesperados e delimitar a causa-raiz do problema.
-            </p>
-            <div class="p-5 rounded-2xl bg-gradient-to-r from-red-950/40 to-blue-950/40 border border-red-900/30">
-              <h4 class="text-white font-bold text-lg mb-1 flex items-center gap-2">
-                <span class="text-[#C5221F] font-mono font-black">::</span> "QA não é miojo."
-              </h4>
-              <p class="text-sm text-gray-400">
-                Qualidade de software rápida, rasa e sem técnica parece resolver na hora, mas só traz indigestão e bugs
-                na entrega. Aqui você aprende arquitetura, boas práticas e fundamentação sólida para criar testes
-                sustentáveis por anos.
-              </p>
+          <!-- Subhead Hero -->
+          <p class="text-base sm:text-lg text-gray-300 font-normal leading-relaxed mb-8 max-w-2xl font-body">
+            A <strong>QAGES</strong> é um ecossistema prático que capacita <strong class="text-white">estudantes, estagiários e profissionais juniores</strong> para ingressar na área de TI e conquistar efetivação e salários atrativos através de testes modernos e automação com <strong class="text-white">Cypress, Robot Framework, Postman e Python</strong>.
+          </p>
+
+          <!-- Social Proof Avatars & Rating Row (1:1 Coders Exact Pattern) -->
+          <div class="flex flex-wrap items-center gap-6 mb-10 pb-8 border-b border-white/10">
+            <!-- Stacked Avatars -->
+            <div class="flex items-center -space-x-3.5">
+              <img src="assets/foto-dep1.jpg" alt="Pedro Henrique - Aluno CC" class="w-12 h-12 rounded-full object-cover border-2 border-[#0E1118]" />
+              <img src="assets/foto-dep2.png" alt="José Lima - QA Recolocado" class="w-12 h-12 rounded-full object-cover border-2 border-[#0E1118]" />
+              <img src="assets/foto-dep3.jpg" alt="Larissa Miranda - Analista QA" class="w-12 h-12 rounded-full object-cover border-2 border-[#0E1118]" />
+              <div class="w-12 h-12 rounded-full bg-[#1351B4] border-2 border-[#0E1118] flex items-center justify-center text-xs font-bold text-white font-mono shadow-md">
+                +2k
+              </div>
             </div>
+
+            <!-- Stars & Score Text -->
+            <div>
+              <div class="flex items-center gap-2">
+                <div class="flex text-yellow-400 text-sm tracking-wide">★★★★★</div>
+                <span class="font-mono text-sm font-bold text-white">4.9/5</span>
+              </div>
+              <p class="text-xs text-gray-400 font-mono mt-0.5">Baseado em +2.000 avaliações de alunos na Udemy</p>
+            </div>
+          </div>
+
+          <!-- Action Buttons Group (Exact Coders Button Pair) -->
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a href="#oferta" class="button-primary-coders w-full sm:w-auto">
+              <span>Quero Minha Vaga por R$ 297</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+
+            <a href="#rota" class="button-secondary-coders w-full sm:w-auto">
+              <span class="text-[#2563EB] font-mono font-bold">::</span>
+              <span>Conhecer a Rota Prática</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Dashboard Mockup & Floating Badges (Coders Style) -->
+        <div class="lg:col-span-5 relative" data-aos="zoom-in" data-aos-duration="900">
+
+          <!-- Main Technical Graphic Frame -->
+          <div class="relative rounded-2xl overflow-hidden border border-white/15 bg-[#151922] shadow-2xl">
+            <!-- Window Titlebar -->
+            <div class="h-9 bg-[#11141C] border-b border-white/10 px-4 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+              </div>
+              <span class="text-[11px] font-mono text-gray-400 tracking-wider">qages-pipeline.spec.cy.js</span>
+              <span class="text-[10px] font-mono text-blue-400 uppercase font-bold">CYPRESS E2E</span>
+            </div>
+
+            <!-- Terminal Image / Graphic -->
+            <div class="relative">
+              <img src="assets/hero_glow.jpg" alt="QAGES Automated Dashboard"
+                class="w-full h-auto object-cover max-h-[440px] opacity-90 mix-blend-lighten" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#151922] via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Overlay Badge Inside Card -->
+            <div class="p-4 bg-[#11141C]/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] font-mono text-blue-400 uppercase font-bold tracking-wider">STATUS DO PIPELINE :: GITHUB ACTIONS</span>
+                <h4 class="text-sm font-bold text-white mt-0.5">Testes Automatizados de Regressão</h4>
+              </div>
+              <span class="px-2.5 py-1 text-xs font-mono font-bold text-green-400 bg-green-950/80 border border-green-800/60 rounded">
+                100% PASS
+              </span>
+            </div>
+          </div>
+
+          <!-- Floating Pill 1 (Top Left) -->
+          <div class="absolute -top-4 -left-4 bg-[#151922]/90 backdrop-blur-md px-4 py-2.5 rounded-lg border border-white/15 shadow-xl hidden sm:flex items-center gap-2.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping"></span>
+            <span class="text-xs font-mono text-gray-200 font-semibold">Salários de Júnior: R$ 3.5k a 6k</span>
+          </div>
+
+          <!-- Floating Pill 2 (Bottom Right) -->
+          <div class="absolute -bottom-5 -right-4 bg-[#151922]/90 backdrop-blur-md px-4 py-2.5 rounded-lg border border-white/15 shadow-xl hidden sm:flex items-center gap-2.5">
+            <span class="text-red-400 font-bold font-mono">::</span>
+            <span class="text-xs font-mono text-gray-200 font-semibold">9 Anos de Experiência</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= 2. LOGO TICKER STRIP (1:1 CODERS REPLICATION WITH DIVIDERS & OVERLAYS) ================= -->
+    <div class="w-full mt-24 pt-10 border-t border-white/10 relative">
+      <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
+        <div class="caption uppercase font-mono text-xs tracking-widest text-gray-400 font-semibold">
+          Ferramentas & Tecnologias que Você Domina na Prática
+        </div>
+      </div>
+
+      <!-- Marquee Container with Left & Right Gradient Overlays -->
+      <div class="relative w-full overflow-hidden py-4">
+        <div class="logo-overlay-l"></div>
+        <div class="logo-overlay-r"></div>
+
+        <div class="animate-ticker flex items-center font-mono text-sm font-bold text-gray-300">
+          
+          <!-- Repeat Group 1 -->
+          <div class="flex items-center gap-8 px-6">
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>CYPRESS E2E</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>ROBOT FRAMEWORK</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>POSTMAN API ADVANCED</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>PYTHON PARA QA</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>GITHUB ACTIONS CI/CD</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>CTFL / BSTQB-ISTQB</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>CONTRATOS REST JSON</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>GIT FLOW PROFISSIONAL</div>
+            <div class="logo-divider-a"></div>
+          </div>
+
+          <!-- Repeat Group 2 (Seamless Infinite Marquee) -->
+          <div class="flex items-center gap-8 px-6">
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>CYPRESS E2E</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>ROBOT FRAMEWORK</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>POSTMAN API ADVANCED</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>PYTHON PARA QA</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>GITHUB ACTIONS CI/CD</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>CTFL / BSTQB-ISTQB</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"><span class="text-[#2563EB]">::</span>CONTRATOS REST JSON</div>
+            <div class="logo-divider-a"></div>
+            <div class="flex items-center gap-2 text-white hover:text-red-400 transition-colors"><span class="text-[#C5221F]">::</span>GIT FLOW PROFISSIONAL</div>
+            <div class="logo-divider-a"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= 3. WHITE CLEAN SECTION: ECOSSISTEMA & BENEFÍCIOS (EXACT CODERS CLEAN STYLE) ================= -->
+  <section id="ecossistema" class="py-28 bg-[#FFFFFF] text-[#11141C]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title Wrapper (Centered max-w-3xl like Coders) -->
+      <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+        <div class="tagline-coders light mb-4">
+          <span>ecossistema qages</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#0F1219] leading-[1.15]">
+          Um <span class="text-[#1351B4] font-extrabold">ecossistema completo</span> para potencializar sua jornada até o mercado de tecnologia
+        </h2>
+      </div>
+
+      <!-- Feature Badges Horizontal Strip (Exact Coders Style) -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 mb-20 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> Comunidade de Alunos
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> 8 Módulos de Capacitação
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> Suporte com Gustavo Machado
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> Repositórios no GitHub
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> 200+ Simulados CTFL
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> Guia de Entrevistas Técnicas
+        </div>
+        <div class="feature-pill-coders">
+          <span class="text-[#1351B4] font-bold font-mono">::</span> Networking & Indicações
+        </div>
+        <div class="feature-pill-coders bg-blue-50 border-blue-200 text-[#1351B4] font-bold">
+          <span>+ Muito mais!</span>
+        </div>
+      </div>
+
+      <!-- Large Salary & Opportunity Showcase Card (Exact Coders Salary Card) -->
+      <div id="oportunidade" class="salary-card-coders mb-20" data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Text -->
+          <div class="lg:col-span-8">
+            <div class="tagline-coders light mb-3">
+              <span>salários & oportunidade</span>
+            </div>
+            <h3 class="text-2xl sm:text-4xl font-bold text-[#0F1219] tracking-tight leading-tight mb-4">
+              Ingresse na área de TI através de QA e conquiste estabilidade financeira
+            </h3>
+            <p class="text-sm sm:text-base text-gray-600 font-body leading-relaxed max-w-2xl">
+              Enquanto centenas de pessoas disputam vagas saturadas de Desenvolvedor Frontend júnior, as empresas sofrem com falta de profissionais que realmente sabem testar e automatizar. No mercado de QA, a porta de entrada é mais rápida, sólida e com remuneração inicial altamente atrativa.
+            </p>
+          </div>
+
+          <!-- Right Highlight Box -->
+          <div class="lg:col-span-4 bg-white rounded-xl p-7 border border-[#EDEDED] shadow-sm text-center">
+            <span class="text-xs font-mono text-blue-600 uppercase tracking-wider font-bold">Média Salarial Inicial de QA</span>
+            <div class="text-3xl sm:text-4xl font-extrabold text-[#0F1219] font-mono mt-2 mb-1">R$ 3.500 - 6.000</div>
+            <p class="text-xs text-gray-500 font-mono">Estágios a partir de R$ 1.500 a R$ 2.500</p>
+            <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-center gap-2 text-xs font-mono text-green-600 font-bold">
+              <span>✔</span> Vagas com possibilidade de 100% Home Office
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4 Benefits Cards (Exact Coders 4-Item Grid with Clean Icons) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
+
+        <!-- Benefit 1 -->
+        <div class="benefit-item-coders">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1351B4] text-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-[#0F1219] mb-1">Mais Segurança</h4>
+            <p class="text-sm text-gray-600 font-body leading-relaxed">
+              Aprenda uma profissão indispensável. Um bug crítico em produção custa fortunas às empresas, tornando o QA peça-chave do time.
+            </p>
           </div>
         </div>
 
-        <!-- Right: Visual Identity Concept Box -->
-        <div class="lg:col-span-5" data-aos="fade-left">
-          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden shadow-2xl">
-            <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-[#1351B4]/20 rounded-full blur-2xl"></div>
+        <!-- Benefit 2 -->
+        <div class="benefit-item-coders">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1351B4] text-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-[#0F1219] mb-1">Mais Tempo Livre</h4>
+            <p class="text-sm text-gray-600 font-body leading-relaxed">
+              Rotina organizada dentro de sprints ágeis, sem necessidade de varar noites ou fazer freelas exaustivos para complementar renda.
+            </p>
+          </div>
+        </div>
 
-            <div class="flex justify-between items-center pb-6 border-b border-white/10 mb-6">
-              <span class="font-mono text-xs text-gray-400">IDENTIDADE::QAGES</span>
-              <div class="flex gap-2">
-                <span class="w-3 h-3 rounded-full bg-[#1351B4]"></span>
-                <span class="w-3 h-3 rounded-full bg-[#C5221F]"></span>
-                <span class="w-3 h-3 rounded-full bg-white"></span>
-              </div>
+        <!-- Benefit 3 -->
+        <div class="benefit-item-coders">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1351B4] text-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-[#0F1219] mb-1">Liberdade Geográfica</h4>
+            <p class="text-sm text-gray-600 font-body leading-relaxed">
+              QA é uma das áreas mais abertas ao regime 100% home office. Trabalhe para grandes empresas de São Paulo ou do mundo sem sair de casa.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-item-coders">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1351B4] text-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-[#0F1219] mb-1">Evolução Rápida</h4>
+            <p class="text-sm text-gray-600 font-body leading-relaxed">
+              De estagiário a júnior e pleno em tempo recorde. Quem domina automação com Cypress e Robot sobe de nível muito mais rápido.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 4. DARK SECTION: A ROTA PRÁTICA (EXACT CODERS CONSULTORIA STYLE) ================= -->
+  <section id="rota" class="py-28 bg-[#0E1118] bg-grid-dark relative border-t border-white/10">
+
+    <!-- Ambient Blue Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[180px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+      <!-- Header -->
+      <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <div class="tagline-coders red mb-4">
+          <span>a rota prática :: do zero à contratação</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight mb-6">
+          O Passo a Passo Exato para Entrar na Área de Tecnologia Através de QA
+        </h2>
+        <p class="text-base sm:text-lg text-gray-300 font-body max-w-2xl mx-auto">
+          Esqueça a teoria maçante da faculdade. Em poucas semanas, você constrói um portfólio prático com as ferramentas que os recrutadores realmente exigem.
+        </p>
+
+        <!-- CTA in section -->
+        <div class="mt-8">
+          <a href="#oferta" class="button-primary-coders">
+            <span>Quero Entrar na Área por R$ 297</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 Steps Flow Grid (Clean Technical Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-5 text-left" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Step 1 -->
+        <div class="bg-[#151922] p-6 rounded-xl border border-white/10 hover:border-blue-500/50 transition-all">
+          <div class="font-mono text-3xl font-extrabold text-blue-400 mb-2">01</div>
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">FUNDAMENTOS</span>
+          <h4 class="text-base font-bold text-white mb-2">Mentalidade Analítica</h4>
+          <p class="text-xs text-gray-300 font-body leading-relaxed">
+            Entenda o ciclo de vida do bug, técnicas de caixa-preta e como redigir relatórios técnicos que desenvolvedores respeitam.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-[#151922] p-6 rounded-xl border border-white/10 hover:border-red-500/50 transition-all">
+          <div class="font-mono text-3xl font-extrabold text-red-400 mb-2">02</div>
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">FERRAMENTAS</span>
+          <h4 class="text-base font-bold text-white mb-2">Git, GitHub & APIs</h4>
+          <p class="text-xs text-gray-300 font-body leading-relaxed">
+            Aprenda a testar contratos e autenticação JWT no Postman e versionar seus repositórios como em times ágeis.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-[#151922] p-6 rounded-xl border border-white/10 hover:border-blue-500/50 transition-all">
+          <div class="font-mono text-3xl font-extrabold text-blue-400 mb-2">03</div>
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">AUTOMAÇÃO</span>
+          <h4 class="text-base font-bold text-white mb-2">Cypress & Robot FW</h4>
+          <p class="text-xs text-gray-300 font-body leading-relaxed">
+            Crie robôs que executam testes sozinhos, preenchem formulários e validam telas completas sem complicação de código.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-[#151922] p-6 rounded-xl border border-white/10 hover:border-blue-500/50 transition-all">
+          <div class="font-mono text-3xl font-extrabold text-blue-400 mb-2">04</div>
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">PIPELINES</span>
+          <h4 class="text-base font-bold text-white mb-2">CI/CD no GitHub Actions</h4>
+          <p class="text-xs text-gray-300 font-body leading-relaxed">
+            Coloque seus testes para rodar automaticamente na nuvem a cada Pull Request e impressione os recrutadores no processo seletivo.
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="bg-[#151922] p-6 rounded-xl border border-white/10 hover:border-green-500/50 transition-all">
+          <div class="font-mono text-3xl font-extrabold text-green-400 mb-2">05</div>
+          <span class="text-[10px] font-mono text-gray-400 uppercase tracking-widest block mb-1">MERCADO</span>
+          <h4 class="text-base font-bold text-white mb-2">Vaga ou Efetivação</h4>
+          <p class="text-xs text-gray-300 font-body leading-relaxed">
+            Otimize seu LinkedIn com palavras-chave de QA, faça simulação de entrevistas técnicas e negocie sua contratação.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 5. DARK SECTION: DEPOIMENTOS COM ABAS (EXACT CODERS TESTIMONIAL TABS) ================= -->
+  <section id="depoimentos" class="py-28 bg-[#0A0C11] relative border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title Wrapper -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <div class="tagline-coders dark mb-4">
+          <span>depoimentos reais</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+          Casos reais de alunos que <span class="text-[#2563EB] font-extrabold">transformaram</span> suas histórias
+        </h2>
+      </div>
+
+      <!-- Main Testimonial Card Display Area (Coders Structure: Quote first, tabs menu below) -->
+      <div class="max-w-4xl mx-auto mb-10">
+
+        <!-- Pane 0: Pedro Henrique -->
+        <div id="testPane0" class="test-pane bg-[#151922] rounded-2xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl">
+          <div class="flex justify-center text-yellow-400 text-lg mb-6 tracking-wide">★★★★★</div>
+          <blockquote class="text-lg sm:text-2xl text-gray-100 font-body italic leading-relaxed mb-8 max-w-3xl mx-auto font-normal">
+            "O curso é incrível e proporciona uma experiência muito próxima da realidade do trabalho de um profissional de QA. Durante as aulas, consegui compreender de forma detalhada o que é teste de software, os diferentes tipos e, principalmente, como são aplicados na prática. O grande diferencial é a didática do professor Gustavo: ele explica cada assunto de forma clara e objetiva, tornando até os conteúdos mais complexos fáceis de compreender — sem precisar sofrer muito kkkkk. Sou formado em Ciência da Computação e pude aprender práticas que vão muito além da teoria acadêmica da faculdade!"
+          </blockquote>
+          <div class="text-xl font-bold text-white">Pedro Henrique</div>
+          <div class="text-xs font-mono text-blue-400 mt-1 uppercase tracking-wider">Formado em Ciência da Computação &bull; Aluno de Capacitação QA</div>
+        </div>
+
+        <!-- Pane 1: José Lima -->
+        <div id="testPane1" class="test-pane hidden bg-[#151922] rounded-2xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl">
+          <div class="flex justify-center text-yellow-400 text-lg mb-6 tracking-wide">★★★★★</div>
+          <blockquote class="text-lg sm:text-2xl text-gray-100 font-body italic leading-relaxed mb-8 max-w-3xl mx-auto font-normal">
+            "Eu já trabalhava como QA, mas, em determinado momento, fui demitido. Foi então que conheci o trabalho do professor Gustavo Machado pelo LinkedIn e decidi iniciar a mentoria. Minha principal necessidade era evoluir em automação de testes e testes de API. Na mentoria, consegui clarear muito mais minha visão, entender melhor onde e quando aplicá-los e dar os primeiros passos estruturados na automação. Durante as entrevistas, percebi claramente que estava muito mais preparado. Foi então que consegui minha realocação e voltei a trabalhar na área de Qualidade! O Gustavo continuou sempre à disposição para ajudar."
+          </blockquote>
+          <div class="text-xl font-bold text-white">José Lima</div>
+          <div class="text-xs font-mono text-green-400 mt-1 uppercase tracking-wider">Profissional Recolocado no Mercado &bull; QA Engineer</div>
+        </div>
+
+        <!-- Pane 2: Larissa Miranda -->
+        <div id="testPane2" class="test-pane hidden bg-[#151922] rounded-2xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl">
+          <div class="flex justify-center text-yellow-400 text-lg mb-6 tracking-wide">★★★★★</div>
+          <blockquote class="text-lg sm:text-2xl text-gray-100 font-body italic leading-relaxed mb-8 max-w-3xl mx-auto font-normal">
+            "Queria agradecer pelas aulas! Hoje sinto que tenho um conhecimento muito maior graças a tudo que aprendi com você. As aulas de testes, princípios de teste, automação e técnicas de QA abriram muito a minha mente. Também aprendi bastante sobre entrevistas e sobre o mercado de trabalho, o que me deixou muito mais preparada para buscar novas oportunidades. Obrigada por compartilhar tanto conhecimento de uma forma tão clara e prática! ❤️ sou fã."
+          </blockquote>
+          <div class="text-xl font-bold text-white">Larissa Miranda</div>
+          <div class="text-xs font-mono text-pink-400 mt-1 uppercase tracking-wider">Aluna QAGES &bull; Analista em Qualidade de Software</div>
+        </div>
+
+        <!-- Pane 3: Métricas & Resultados Globais -->
+        <div id="testPane3" class="test-pane hidden bg-[#151922] rounded-2xl p-8 sm:p-14 border border-white/10 text-center relative overflow-hidden shadow-2xl">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center my-6">
+            <div>
+              <div class="text-4xl sm:text-5xl font-black text-white font-mono">+9</div>
+              <p class="text-xs font-mono text-gray-400 uppercase mt-2">Anos na Trincheira</p>
             </div>
+            <div>
+              <div class="text-4xl sm:text-5xl font-black text-blue-400 font-mono">+2.000</div>
+              <p class="text-xs font-mono text-gray-400 uppercase mt-2">Alunos na Udemy</p>
+            </div>
+            <div>
+              <div class="text-4xl sm:text-5xl font-black text-red-400 font-mono">98%</div>
+              <p class="text-xs font-mono text-gray-400 uppercase mt-2">Satisfação</p>
+            </div>
+            <div>
+              <div class="text-4xl sm:text-5xl font-black text-green-400 font-mono">R$ 297</div>
+              <p class="text-xs font-mono text-gray-400 uppercase mt-2">Acesso Completo</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300 font-body mt-4 max-w-xl mx-auto">
+            Metodologia validada com estudantes universitários, estagiários que foram efetivados e profissionais que aceleraram sua carreira técnica.
+          </p>
+        </div>
 
-            <!-- Braille 4 dots reference (Redesign page 4-5) -->
-            <div class="text-center py-6">
-              <div class="inline-grid grid-cols-2 gap-3 p-4 rounded-2xl bg-black/50 border border-white/10 mb-4">
-                <div class="w-5 h-5 rounded-full bg-white"></div>
-                <div class="w-5 h-5 rounded-full bg-white"></div>
-                <div class="w-5 h-5 rounded-full bg-[#1351B4]"></div>
-                <div class="w-5 h-5 rounded-full bg-[#C5221F]"></div>
+      </div>
+
+      <!-- Tab Buttons Row Below (Exact Coders tabs-menu Component) -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto" id="testimonialTabsMenu">
+
+        <!-- Tab 0: Pedro Henrique -->
+        <button onclick="switchTestimonial(0)"
+          class="tab-link-coders active" id="tabBtn0">
+          <img src="assets/foto-dep1.jpg" alt="Pedro Henrique" class="w-12 h-12 rounded-full object-cover shrink-0 border border-blue-400" />
+          <div class="overflow-hidden">
+            <h5 class="text-sm font-bold text-white truncate">Pedro Henrique</h5>
+            <p class="text-xs text-blue-400 font-mono truncate">C. Computação</p>
+          </div>
+        </button>
+
+        <!-- Tab 1: José Lima -->
+        <button onclick="switchTestimonial(1)"
+          class="tab-link-coders opacity-60" id="tabBtn1">
+          <img src="assets/foto-dep2.png" alt="José Lima" class="w-12 h-12 rounded-full object-cover shrink-0 border border-slate-600" />
+          <div class="overflow-hidden">
+            <h5 class="text-sm font-bold text-white truncate">José Lima</h5>
+            <p class="text-xs text-gray-400 font-mono truncate">QA Recolocado</p>
+          </div>
+        </button>
+
+        <!-- Tab 2: Larissa Miranda -->
+        <button onclick="switchTestimonial(2)"
+          class="tab-link-coders opacity-60" id="tabBtn2">
+          <img src="assets/foto-dep3.jpg" alt="Larissa Miranda" class="w-12 h-12 rounded-full object-cover shrink-0 border border-slate-600" />
+          <div class="overflow-hidden">
+            <h5 class="text-sm font-bold text-white truncate">Larissa Miranda</h5>
+            <p class="text-xs text-gray-400 font-mono truncate">Analista QA</p>
+          </div>
+        </button>
+
+        <!-- Tab 3: Estatísticas -->
+        <button onclick="switchTestimonial(3)"
+          class="tab-link-coders opacity-60" id="tabBtn3">
+          <div class="w-12 h-12 rounded-full bg-red-950 border border-red-800 flex items-center justify-center font-mono font-bold text-red-400 shrink-0 text-xs">
+            +2k
+          </div>
+          <div class="overflow-hidden">
+            <h5 class="text-sm font-bold text-white truncate">Resultados</h5>
+            <p class="text-xs text-red-400 font-mono truncate">9 Anos & Alunos</p>
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 6. WHITE CLEAN SECTION: SOBRE O MENTOR (EXACT CODERS SOBRE NÓS STYLE) ================= -->
+  <section id="mentor" class="py-28 bg-[#FFFFFF] text-[#11141C] border-t border-[#EDEDED]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Text and 2 Feature Boxes (Exact Coders Pattern) -->
+        <div class="lg:col-span-7" data-aos="fade-right">
+          <div class="tagline-coders light mb-4">
+            <span>sobre o mentor</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#0F1219] leading-tight mb-6">
+            Nós transformamos jornadas de iniciantes em <span class="text-[#1351B4] font-extrabold">histórias de sucesso</span>
+          </h2>
+
+          <p class="text-base text-gray-600 font-body leading-relaxed mb-8">
+            Sou <strong>Gustavo Machado</strong>, profissional com mais de <strong>9 anos de experiência</strong> na linha de frente da tecnologia e Qualidade de Software. Criei esta capacitação para que estudantes e quem está estagiando não precisem passar anos perdidos com conteúdos genéricos da internet.
+          </p>
+
+          <!-- 2 Feature Blocks Side-by-Side (Coders about_features) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div class="p-6 rounded-xl bg-[#FBFBFB] border border-[#EDEDED]">
+              <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-[#1351B4] font-bold text-lg mb-3">
+                🎓
               </div>
-              <p class="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                Os 4 pontos braille da letra 'G' & o operador de escopo '::'
+              <h3 class="text-base font-bold text-[#0F1219] mb-1">+2.000 Alunos na Udemy</h3>
+              <p class="text-xs text-gray-600 font-body leading-relaxed">
+                Cursos consagrados de Robot Framework, Cypress, Postman e CI/CD com didática elogiada por clareza e zero enrolação.
               </p>
             </div>
 
-            <div class="space-y-4 pt-4 border-t border-white/10 text-sm">
-              <div class="flex items-start gap-3">
-                <span class="text-[#1351B4] font-mono font-bold text-base mt-0.5">::</span>
-                <p class="text-gray-300"><strong class="text-white">Escopo Preciso:</strong> Aprenda a mapear riscos
-                  reais antes de escrever uma única linha de teste.</p>
+            <div class="p-6 rounded-xl bg-[#FBFBFB] border border-[#EDEDED]">
+              <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center text-[#C5221F] font-bold text-lg mb-3">
+                🎯
               </div>
-              <div class="flex items-start gap-3">
-                <span class="text-[#C5221F] font-mono font-bold text-base mt-0.5">::</span>
-                <p class="text-gray-300"><strong class="text-white">Error Guessing:</strong> Suposição intencional de
-                  falhas baseada em técnica, não em achismo.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="text-white font-mono font-bold text-base mt-0.5">::</span>
-                <p class="text-gray-300"><strong class="text-white">Automação de Ponta a Ponta:</strong> Web, API e
-                  integração contínua sem depender de ferramentas frágeis.</p>
-              </div>
+              <h3 class="text-base font-bold text-[#0F1219] mb-1">"QA Não É Miojo"</h3>
+              <p class="text-xs text-gray-600 font-body leading-relaxed">
+                Qualidade de software exige rigor analítico, suposição intencional de falhas (error guessing) e precisão de escopo.
+              </p>
             </div>
+          </div>
 
+          <a href="#oferta" class="button-primary-coders !bg-[#0F1219] hover:!bg-black">
+            <span>Quero Fazer Parte da Turma</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: Gustavo's Portrait Photo with Clean Frame -->
+        <div class="lg:col-span-5" data-aos="fade-left">
+          <div class="relative mx-auto max-w-md rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F1F5F9] bg-[#0E1118]">
+            <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" class="w-full h-auto object-cover" />
+            <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white">
+              <div class="font-mono text-base font-bold flex items-center gap-1">
+                GUSTAVO<span class="text-[#C5221F]">::</span>MACHADO
+              </div>
+              <p class="text-xs text-gray-300 font-body mt-0.5">9 anos de experiência em QA &bull; @qagesmachado</p>
+            </div>
           </div>
         </div>
 
@@ -589,737 +1072,326 @@
   </section>
 
 
-  <!-- ================= SECTION: CONTEÚDO PROGRAMÁTICO (NUMBERED GRID) ================= -->
-  <section id="conteudo" class="py-24 relative bg-[#0B0D13] dots-pattern">
+  <!-- ================= 7. WHITE / OFF-WHITE CLEAN SECTION: GRADE CURRICULAR ================= -->
+  <section id="grade" class="py-28 bg-[#FBFBFB] text-[#11141C] border-t border-[#EDEDED]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Section Header -->
+      <!-- Header -->
       <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-blue-400 bg-blue-950/40 border border-blue-900/40 mb-4">
-          <span>[ CURRÍCULO::COMPLETO ]</span>
+        <div class="tagline-coders light mb-4">
+          <span>currículo completo</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-          Grade Programática Completa
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#0F1219] leading-tight">
+          Grade Programática da Capacitação
         </h2>
-        <p class="mt-4 text-gray-400 text-base sm:text-lg">
-          Do básico ao mais avançado: todo o ecossistema que Gustavo Machado ensina em seus cursos consagrados,
-          organizado em uma trilha de alto impacto.
+        <p class="mt-4 text-gray-600 font-body text-base sm:text-lg">
+          Do zero ao avançado: aprenda o ecossistema prático exigido em processos seletivos de empresas de tecnologia.
         </p>
       </div>
 
-      <!-- Modules Grid (8 Modules) -->
+      <!-- 8 Modules Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <!-- Module 01 -->
-        <div data-aos="fade-up" data-aos-delay="50"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-blue-400 tracking-wider">MÓDULO::01</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#1351B4] group-hover:text-white transition-colors">
-                01
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Fundamentos & Git/GitHub</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Versionamento profissional, branches, pull requests, conventional commits e estruturação de repositórios
-              para projetos de QA.
-            </p>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#1351B4]">MÓDULO 01</span>
+            <span class="w-7 h-7 rounded bg-blue-50 text-[#1351B4] flex items-center justify-center font-mono font-bold text-xs">01</span>
           </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Git do Zero ao Avançado</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Resolução de Conflitos</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Git Flow em Times Ágeis</li>
-          </ul>
-        </div>
-
-        <!-- Module 02 -->
-        <div data-aos="fade-up" data-aos-delay="100"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-red-400 tracking-wider">MÓDULO::02</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#C5221F] group-hover:text-white transition-colors">
-                02
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Lógica com Python</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Aprenda a programar scripts de teste sem enrolação: tipos de dados, condicionais, loops, funções,
-              manipulação de arquivos e bibliotecas úteis para QA.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Sintaxe Python para Automação
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Automação de Tarefas Repetitivas
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Tratamento de Exceções & Logs
-            </li>
-          </ul>
-        </div>
-
-        <!-- Module 03 -->
-        <div data-aos="fade-up" data-aos-delay="150"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-blue-400 tracking-wider">MÓDULO::03</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#1351B4] group-hover:text-white transition-colors">
-                03
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Robot Framework</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Domine automação orientada a palavras-chave (Keyword-Driven) para testes Web (Selenium Library) e testes
-              de API com Requests.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Estrutura de Suíte & Keywords
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Automação Web Completa</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Validação de APIs com Robot</li>
-          </ul>
-        </div>
-
-        <!-- Module 04 -->
-        <div data-aos="fade-up" data-aos-delay="200"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-red-400 tracking-wider">MÓDULO::04</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#C5221F] group-hover:text-white transition-colors">
-                04
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Cypress Moderno</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              A ferramenta padrão do mercado frontend. Custom commands, intercepts de requisições, testes E2E, mock de
-              respostas e testes de componentes.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Intercepts & Spies de Rede</li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Page Objects vs App Actions</li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Testes de API Nativos no Cypress
-            </li>
-          </ul>
-        </div>
-
-        <!-- Module 05 -->
-        <div data-aos="fade-up" data-aos-delay="250"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-blue-400 tracking-wider">MÓDULO::05</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#1351B4] group-hover:text-white transition-colors">
-                05
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Testes de API com Postman</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Vá muito além do simples GET e POST. Crie coleções automatizadas com variáveis dinâmicas, pré-request
-              scripts, testes de contrato JSON Schema e Newman.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Scripts de Autenticação JWT</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Validação de Contrato (JSON
-              Schema)</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Execução Headless via Newman CLI
-            </li>
-          </ul>
-        </div>
-
-        <!-- Module 06 -->
-        <div data-aos="fade-up" data-aos-delay="300"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-red-400 tracking-wider">MÓDULO::06</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#C5221F] group-hover:text-white transition-colors">
-                06
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">CI/CD com GitHub Actions</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Como colocar os testes para rodar automaticamente a cada Pull Request. Criação de workflows YAML, execução
-              paralela, relatórios Allure e alertas no Slack.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Workflows YAML para Testes</li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Gerenciamento de Secrets &
-              Ambientes</li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Relatórios Automáticos de
-              Execução</li>
-          </ul>
-        </div>
-
-        <!-- Module 07 -->
-        <div data-aos="fade-up" data-aos-delay="350"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-blue-400 tracking-wider">MÓDULO::07</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#1351B4] group-hover:text-white transition-colors">
-                07
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Preparatório CTFL / ISTQB</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              O preparatório definitivo para conquistar a certificação internacional do BSTQB/ISTQB. Glossário padrão,
-              técnicas de caixa-preta/branca e simulados reais comentados.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Mapeamento Completo do Syllabus
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Análise de Valor Limite &
-              Partição</li>
-            <li class="flex items-center gap-1.5"><span class="text-blue-400">::</span> Banco com +200 Questões de Exame
-            </li>
-          </ul>
-        </div>
-
-        <!-- Module 08 -->
-        <div data-aos="fade-up" data-aos-delay="400"
-          class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs font-bold text-red-400 tracking-wider">MÓDULO::08</span>
-              <span
-                class="w-8 h-8 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-300 flex items-center justify-center group-hover:bg-[#C5221F] group-hover:text-white transition-colors">
-                08
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">Mentoria & Carreira QA</h3>
-            <p class="text-gray-400 text-xs leading-relaxed mb-4">
-              Como se posicionar no LinkedIn, construir um portfólio no GitHub que chama atenção de recrutadores
-              internacionais e conduzir entrevistas técnicas com segurança.
-            </p>
-          </div>
-          <ul class="text-xs text-gray-300 space-y-1.5 font-mono border-t border-white/5 pt-4">
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Revisão de Perfil LinkedIn & CV
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Simulação de Live Coding de QA
-            </li>
-            <li class="flex items-center gap-1.5"><span class="text-red-400">::</span> Negociação Salarial & Vagas
-              Remotas</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= SECTION: PROVA SOCIAL / DEPOIMENTOS ================= -->
-  <section id="depoimentos" class="py-24 relative bg-[#0e1118] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-green-400 bg-green-950/40 border border-green-900/40 mb-4">
-          <span>[ PROVA_SOCIAL::RESULTADOS ]</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-          O Que Nossos Alunos e Mentorados Dizem
-        </h2>
-        <p class="mt-4 text-gray-400 text-base sm:text-lg">
-          Profissionais que saíram do teste manual básico e hoje lideram estratégias de automação nas melhores empresas
-          do Brasil e do exterior.
-        </p>
-      </div>
-
-      <!-- Testimonials Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Depoimento 1 -->
-        <div data-aos="fade-up" data-aos-delay="100"
-          class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <p class="text-sm text-gray-300 leading-relaxed italic mb-6">
-              "Eu estava preso fazendo testes manuais há quase 2 anos e tinha pavor de código. A didática do Gustavo é
-              surreal de direta: sem termos mirabolantes desnecessários. Em 3 semanas eu já tinha minha primeira
-              pipeline de Cypress rodando no GitHub Actions da empresa. Fui promovido a Pleno mês passado!"
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
-            <div
-              class="w-10 h-10 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center font-bold text-sm text-blue-300">
-              RF
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-white">Rodrigo Ferreira</h4>
-              <p class="text-xs text-gray-400">QA Engineer &bull; Fintech SP</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depoimento 2 -->
-        <div data-aos="fade-up" data-aos-delay="200"
-          class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <p class="text-sm text-gray-300 leading-relaxed italic mb-6">
-              "Passei no exame do CTFL de primeira! O módulo preparatório e as explicações do Gustavo sobre técnicas de
-              caixa-preta e equivalência de partição foram cirúrgicas. O suporte dele na mentoria individual fez toda a
-              diferença na minha confiança para o teste."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
-            <div
-              class="w-10 h-10 rounded-full bg-red-600/30 border border-red-500/40 flex items-center justify-center font-bold text-sm text-red-300">
-              MS
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-white">Mariana Silveira</h4>
-              <p class="text-xs text-gray-400">Certificada CTFL / ISTQB &bull; Consultora QA</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depoimento 3 -->
-        <div data-aos="fade-up" data-aos-delay="300"
-          class="glass-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <p class="text-sm text-gray-300 leading-relaxed italic mb-6">
-              "Eu era desenvolvedor backend e precisava assumir a qualidade das APIs do time. O curso de Postman
-              Avançado com validação de JSON Schema e Newman me poupou meses de cabeçada. A frase dele 'QA não é miojo'
-              é a mais pura verdade no mundo real de software."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
-            <div
-              class="w-10 h-10 rounded-full bg-purple-600/30 border border-purple-500/40 flex items-center justify-center font-bold text-sm text-purple-300">
-              LC
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-white">Lucas Castilho</h4>
-              <p class="text-xs text-gray-400">Software Engineer / SDET &bull; E-commerce</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quick Metrics Bar -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center" data-aos="fade-up">
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono counter" data-target="5">+5</div>
-          <p class="text-xs text-gray-400 uppercase tracking-wider font-mono mt-1">Anos de Experiência</p>
-        </div>
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-[#1351B4] font-mono counter" data-target="1800">+1.800
-          </div>
-          <p class="text-xs text-gray-400 uppercase tracking-wider font-mono mt-1">Alunos Formados</p>
-        </div>
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-[#C5221F] font-mono counter" data-target="98">98%</div>
-          <p class="text-xs text-gray-400 uppercase tracking-wider font-mono mt-1">Aprovação no CTFL</p>
-        </div>
-        <div class="glass-card p-6 rounded-2xl">
-          <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono">100%</div>
-          <p class="text-xs text-gray-400 uppercase tracking-wider font-mono mt-1">Projetos Práticos</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= SECTION: BÔNUS EXCLUSIVOS ================= -->
-  <section class="py-24 relative bg-[#0B0D13] dots-pattern border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-red-400 bg-red-950/40 border border-red-900/40 mb-4">
-          <span>[ PACOTE::ACELERADOR ]</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-          Bônus Exclusivos Para Esta Turma
-        </h2>
-        <p class="mt-4 text-gray-400 text-base sm:text-lg">
-          Materiais de apoio e consultorias pensadas para reduzir pela metade o seu tempo de implementação de testes.
-        </p>
-      </div>
-
-      <!-- Bonus Cards Dual Column -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
-        <!-- Bonus Highlight 1 (50 primeiros) -->
-        <div data-aos="fade-right"
-          class="glass-card rounded-3xl p-8 border border-red-500/30 relative overflow-hidden bg-gradient-to-br from-[#12151E] to-[#1a0e10]">
-          <div
-            class="inline-block px-3 py-1 rounded font-mono text-xs font-bold text-red-400 bg-red-950/60 border border-red-800/40 mb-4">
-            BÔNUS #1 &bull; 50 PRIMEIROS INSCRITOS
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">
-            Sessão Individual 1-on-1 com Gustavo Machado
-          </h3>
-          <p class="text-sm text-gray-300 leading-relaxed mb-6">
-            Uma hora de mentoria privada direto com o Gustavo para diagnosticar o momento da sua carreira, revisar seu
-            currículo, ajustar seu perfil do LinkedIn para vagas remotas e tirar dúvidas técnicas do seu projeto atual.
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Fundamentos & Git/GitHub</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Princípios de testes, ciclo de vida do bug, branches, pull requests e repositórios organizados para o mercado.
           </p>
-          <div class="flex items-center gap-2 text-xs font-mono text-gray-400">
-            <span class="text-red-400 font-bold">::</span>
-            <span>Valor se vendido separadamente: <s class="text-gray-500">R$ 600,00</s> &bull; <strong
-                class="text-white">GRATUITO hoje</strong></span>
-          </div>
         </div>
 
-        <!-- Bonus Highlight 2 (Templates & Repositórios) -->
-        <div data-aos="fade-left"
-          class="glass-card rounded-3xl p-8 border border-blue-500/30 relative overflow-hidden bg-gradient-to-br from-[#12151E] to-[#0c1424]">
-          <div
-            class="inline-block px-3 py-1 rounded font-mono text-xs font-bold text-blue-400 bg-blue-950/60 border border-blue-800/40 mb-4">
-            BÔNUS #2 &bull; TEMPLATES & BLUEPRINTS
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#C5221F]">MÓDULO 02</span>
+            <span class="w-7 h-7 rounded bg-red-50 text-[#C5221F] flex items-center justify-center font-mono font-bold text-xs">02</span>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">
-            Pack de Pipelines & Suítes Prontas para Produção
-          </h3>
-          <p class="text-sm text-gray-300 leading-relaxed mb-6">
-            Acesso a repositórios privados com workflows do GitHub Actions prontos para rodar Cypress, Robot Framework e
-            Newman, além de boilerplate de projetos com arquitetura limpa e relatórios pré-configurados.
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Lógica com Python para QA</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Programação simples e direta: variáveis, loops, funções e scripts úteis de automação de testes sem enrolação.
           </p>
-          <div class="flex items-center gap-2 text-xs font-mono text-gray-400">
-            <span class="text-blue-400 font-bold">::</span>
-            <span>Valor se vendido separadamente: <s class="text-gray-500">R$ 450,00</s> &bull; <strong
-                class="text-white">GRATUITO hoje</strong></span>
-          </div>
         </div>
 
-      </div>
-
-      <!-- Checklist of Additional Bonuses -->
-      <div class="glass-card rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto border border-white/10" data-aos="fade-up">
-        <h4 class="text-lg font-bold text-white mb-6 text-center font-mono">
-          E você também recebe acesso imediato a:
-        </h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300">
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span><strong>Simulado Comentado CTFL:</strong> Mais de 200 questões de prova resolvidas e explicadas em
-              vídeo.</span>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#1351B4]">MÓDULO 03</span>
+            <span class="w-7 h-7 rounded bg-blue-50 text-[#1351B4] flex items-center justify-center font-mono font-bold text-xs">03</span>
           </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span><strong>Comunidade Fechada QAGES:</strong> Canal no Discord para networking e suporte diário de
-              dúvidas.</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span><strong>Guia de Entrevistas Técnicas:</strong> As perguntas mais difíceis de QA e como responder como
-              sênior.</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-            </svg>
-            <span><strong>Certificado de Conclusão QAGES:</strong> Reconhecimento de 60 horas de conteúdo prático e
-              aplicável.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= SECTION: INVESTIMENTO COM TIMER DE URGÊNCIA ================= -->
-  <section id="investimento" class="py-24 relative overflow-hidden bg-[#0A0C11]">
-
-    <!-- Background Glow -->
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] glow-blob-blue rounded-full pointer-events-none blur-3xl opacity-40">
-    </div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] glow-blob-red rounded-full pointer-events-none blur-3xl opacity-30">
-    </div>
-
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-
-      <!-- Section Title -->
-      <div data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-yellow-400 bg-yellow-950/40 border border-yellow-900/40 mb-4">
-          <span>[ OFERTA_ESPECIAL::CONDIÇÃO_ÚNICA ]</span>
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-          Quanto você precisará investir?
-        </h2>
-        <p class="text-gray-400 text-base sm:text-lg mb-10 max-w-xl mx-auto">
-          Tenha acesso ao método completo, todos os cursos integrados, templates de CI/CD e suporte exclusivo por um
-          valor acessível.
-        </p>
-      </div>
-
-      <!-- Urgency Countdown Timer (JS + GSAP) -->
-      <div data-aos="fade-up" data-aos-delay="100"
-        class="glass-card rounded-2xl p-6 mb-10 inline-block border border-red-500/30 shadow-glass">
-        <p class="text-xs font-mono font-bold text-red-400 uppercase tracking-widest mb-3">
-          As inscrições com bônus de mentoria encerram em:
-        </p>
-        <div class="flex items-center justify-center gap-3 sm:gap-6 font-mono">
-          <div class="flex flex-col items-center">
-            <span id="timerDays"
-              class="text-3xl sm:text-5xl font-black text-white bg-black/60 px-3 sm:px-4 py-2 rounded-xl border border-white/10 min-w-[60px] sm:min-w-[80px]">02</span>
-            <span class="text-[10px] sm:text-xs text-gray-400 uppercase mt-1">Dias</span>
-          </div>
-          <span class="text-2xl sm:text-4xl text-[#C5221F] font-bold -mt-4">:</span>
-          <div class="flex flex-col items-center">
-            <span id="timerHours"
-              class="text-3xl sm:text-5xl font-black text-white bg-black/60 px-3 sm:px-4 py-2 rounded-xl border border-white/10 min-w-[60px] sm:min-w-[80px]">14</span>
-            <span class="text-[10px] sm:text-xs text-gray-400 uppercase mt-1">Horas</span>
-          </div>
-          <span class="text-2xl sm:text-4xl text-[#1351B4] font-bold -mt-4">:</span>
-          <div class="flex flex-col items-center">
-            <span id="timerMinutes"
-              class="text-3xl sm:text-5xl font-black text-white bg-black/60 px-3 sm:px-4 py-2 rounded-xl border border-white/10 min-w-[60px] sm:min-w-[80px]">28</span>
-            <span class="text-[10px] sm:text-xs text-gray-400 uppercase mt-1">Minutos</span>
-          </div>
-          <span class="text-2xl sm:text-4xl text-[#C5221F] font-bold -mt-4">:</span>
-          <div class="flex flex-col items-center">
-            <span id="timerSeconds"
-              class="text-3xl sm:text-5xl font-black text-red-400 bg-black/60 px-3 sm:px-4 py-2 rounded-xl border border-white/10 min-w-[60px] sm:min-w-[80px]">45</span>
-            <span class="text-[10px] sm:text-xs text-gray-400 uppercase mt-1">Segundos</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pricing Card Box -->
-      <div data-aos="zoom-in" data-aos-delay="200"
-        class="glass-card rounded-3xl p-8 sm:p-12 border border-white/15 relative overflow-hidden shadow-2xl">
-        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#1351B4] via-purple-500 to-[#C5221F]">
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Robot Framework</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Automação baseada em palavras-chave para testes Web (Selenium) e testes de API com a biblioteca Requests.
+          </p>
         </div>
 
-        <p class="text-sm font-mono text-gray-400 uppercase tracking-widest mb-2">
-          PLANO COMPLETO ANUAL &bull; FORMAÇÃO QAGES
-        </p>
-
-        <!-- Old vs New Price -->
-        <div class="mb-6">
-          <p class="text-sm text-gray-400">De <span class="line-through text-gray-500 font-mono">R$ 1.497,00</span> por
-            apenas:</p>
-          <div class="flex items-baseline justify-center gap-2 mt-2">
-            <span class="text-2xl text-gray-300 font-bold">12x de</span>
-            <span class="text-5xl sm:text-6xl font-black text-white font-mono tracking-tight">R$ 49,60</span>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#C5221F]">MÓDULO 04</span>
+            <span class="w-7 h-7 rounded bg-red-50 text-[#C5221F] flex items-center justify-center font-mono font-bold text-xs">04</span>
           </div>
-          <p class="text-sm text-gray-400 font-mono mt-2">ou <strong class="text-white">R$ 497,00</strong> à vista no
-            Pix / Boleto / Cartão</p>
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Cypress Moderno E2E</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Custom commands, spies e intercepts de requisições de rede, testes de interface completos sem testes instáveis.
+          </p>
         </div>
 
-        <!-- Benefits inside card -->
-        <div
-          class="max-w-md mx-auto my-8 space-y-3 text-left text-sm text-gray-300 border-t border-b border-white/10 py-6">
-          <div class="flex items-center gap-3">
-            <span class="text-[#1351B4] font-mono font-black text-base">::</span>
-            <span>Acesso completo aos 8 módulos de cursos</span>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#1351B4]">MÓDULO 05</span>
+            <span class="w-7 h-7 rounded bg-blue-50 text-[#1351B4] flex items-center justify-center font-mono font-bold text-xs">05</span>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="text-[#1351B4] font-mono font-black text-base">::</span>
-            <span>Cypress, Robot Framework, Postman e GitHub Actions</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-[#1351B4] font-mono font-black text-base">::</span>
-            <span>Preparatório Oficial CTFL / ISTQB com simulados</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-[#C5221F] font-mono font-black text-base">::</span>
-            <span>Bônus: 1 hora de mentoria individual (primeiros 50)</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-[#C5221F] font-mono font-black text-base">::</span>
-            <span>Pack de Blueprints & Workflows prontos para usar</span>
-          </div>
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Testes de API com Postman</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Validação de contratos JSON Schema, scripts de autenticação JWT, variáveis de ambiente e execução via Newman CLI.
+          </p>
         </div>
 
-        <!-- Big CTA Button -->
-        <a href="#investimento"
-          class="block w-full max-w-md mx-auto py-5 px-8 rounded-xl font-extrabold text-lg text-white bg-gradient-to-r from-[#1351B4] via-[#205ece] to-[#C5221F] hover:brightness-110 shadow-glow-blue transition-all duration-300 transform hover:-translate-y-0.5">
-          SIM, QUERO MINHA VAGA COM DESCONTO
-        </a>
-
-        <!-- Security and Seals -->
-        <div class="flex flex-wrap items-center justify-center gap-6 mt-6 text-xs text-gray-400 font-mono">
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            Pagamento 100% Seguro
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            Acesso Imediato
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            7 Dias de Garantia Incondicional
-          </span>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#C5221F]">MÓDULO 06</span>
+            <span class="w-7 h-7 rounded bg-red-50 text-[#C5221F] flex items-center justify-center font-mono font-bold text-xs">06</span>
+          </div>
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">CI/CD no GitHub Actions</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Workflows YAML para rodar seus testes a cada Pull Request na nuvem com relatórios automáticos e alertas.
+          </p>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= SECTION: GARANTIA (7 DIAS) ================= -->
-  <section class="py-16 bg-[#0E1118] border-t border-b border-white/5">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-card rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 border border-white/10"
-        data-aos="fade-up">
-
-        <!-- Guarantee Badge Icon -->
-        <div
-          class="w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-2xl bg-gradient-to-br from-[#1351B4]/20 to-[#C5221F]/20 border border-white/20 flex flex-col items-center justify-center text-center p-2">
-          <span class="text-3xl sm:text-4xl font-black text-white font-mono leading-none">7</span>
-          <span class="text-[11px] font-mono font-bold text-gray-300 uppercase tracking-widest mt-1">DIAS</span>
-          <span class="text-[9px] text-blue-400 font-mono">RISCO ZERO</span>
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#1351B4]">MÓDULO 07</span>
+            <span class="w-7 h-7 rounded bg-blue-50 text-[#1351B4] flex items-center justify-center font-mono font-bold text-xs">07</span>
+          </div>
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Preparatório CTFL / ISTQB</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Preparatório completo alinhado ao Syllabus oficial BSTQB com banco de 200+ simulados reais comentados.
+          </p>
         </div>
 
-        <!-- Guarantee Text -->
-        <div>
-          <h3 class="text-2xl font-bold text-white mb-2">
-            Experimente por 7 dias com risco zero
-          </h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Entre na plataforma, assista às aulas de Cypress, Robot Framework, Postman e CI/CD, acesse os templates e
-            participe da comunidade. Se por qualquer motivo você achar que a formação não é para você, basta um único
-            e-mail para receber <strong class="text-white">100% do seu dinheiro de volta</strong>. Sem letras miúdas e
-            sem perguntas.
+        <div class="bg-white p-7 rounded-xl border border-[#EDEDED] shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs font-bold text-[#C5221F]">MÓDULO 08</span>
+            <span class="w-7 h-7 rounded bg-red-50 text-[#C5221F] flex items-center justify-center font-mono font-bold text-xs">08</span>
+          </div>
+          <h4 class="text-lg font-bold text-[#0F1219] mb-2">Entrevistas & Conquista da Vaga</h4>
+          <p class="text-xs text-gray-600 font-body leading-relaxed">
+            Formatação de perfil do LinkedIn, portfólio no GitHub que chama atenção e como negociar sua contratação ou efetivação.
           </p>
         </div>
 
       </div>
+
     </div>
   </section>
 
 
-  <!-- ================= SECTION: QUEM É O PROFESSOR? (GUSTAVO MACHADO) ================= -->
-  <section id="mentor" class="py-24 relative bg-[#0B0D13] dots-pattern">
+  <!-- ================= 8. WHITE CLEAN SECTION: FAQ (1:1 CODERS FAQ LAYOUT WITH MAIL BOX) ================= -->
+  <section id="faq" class="py-28 bg-[#FFFFFF] text-[#11141C] border-t border-[#EDEDED]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Title & Coders Email Box -->
+        <div class="lg:col-span-5" data-aos="fade-right">
+          <div class="tagline-coders light mb-4">
+            <span>faq</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#0F1219] leading-tight mb-4">
+            Perguntas Frequentes
+          </h2>
+          <p class="text-base text-gray-600 font-body leading-relaxed mb-8">
+            Explore as respostas para as dúvidas mais comuns e entenda por que o QAGES é a escolha certa para alavancar sua carreira em tecnologia.
+          </p>
 
-        <!-- Left: Real Photo Representation of Gustavo Machado -->
-        <div class="lg:col-span-5 relative" data-aos="fade-right">
-
-          <!-- Outer glowing frame -->
-          <div
-            class="relative mx-auto max-w-sm rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-[#12151E] group">
-            <img src="assets/gustavo.jpg" alt="Gustavo Machado - Especialista e Mentor em Qualidade de Software"
-              class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
-
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D13] via-transparent to-transparent opacity-80">
+          <!-- Coders Exact Email Box Component (.email-box) -->
+          <div class="p-6 rounded-xl bg-[#FBFBFB] border border-[#EDEDED] flex items-center gap-4 max-w-sm">
+            <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-[#1351B4] text-xl shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
+            <div>
+              <div class="text-xs font-mono text-gray-500 uppercase tracking-wider font-semibold">Ficou alguma dúvida?</div>
+              <div class="text-base font-bold text-[#0F1219]">suporte@qages.com.br</div>
+            </div>
+          </div>
+        </div>
 
-            <!-- Bottom floating tag -->
-            <div class="absolute bottom-4 left-4 right-4 glass-card rounded-xl p-4 border border-white/15">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h4 class="text-white font-bold text-base font-mono flex items-center gap-1">
-                    GUSTAVO<span class="text-[#C5221F]">::</span>MACHADO
-                  </h4>
-                  <p class="text-xs text-gray-400">QA Engineer & Educador</p>
-                </div>
-                <span
-                  class="px-2.5 py-1 text-[11px] font-mono font-bold text-green-400 bg-green-950/60 border border-green-800/50 rounded">
-                  @qagesmachado
-                </span>
+        <!-- Right Column: Accordion with Coders '+' Circle Icons -->
+        <div class="lg:col-span-7 divide-y divide-gray-200" data-aos="fade-left" id="faqAccordion">
+
+          <!-- FAQ Item 1 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>Ainda estou na faculdade ou estudando sozinho. Consigo acompanhar o curso?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                Com certeza! A capacitação foi planejada exatamente para suprir a falta de prática das faculdades e cursos puramente teóricos. Você aprenderá desde os fundamentos de testes e Git até automação com Cypress e Robot Framework passo a passo.
               </div>
             </div>
-
           </div>
 
-          <!-- Decorative scope symbol watermark behind photo -->
-          <div
-            class="absolute -bottom-8 -left-8 text-8xl font-mono font-black text-[#1351B4]/10 select-none pointer-events-none">
-            G::M
+          <!-- FAQ Item 2 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>Já estou estagiando. Como essa formação me ajuda a ser efetivado?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                A maioria dos estagiários fica presa fazendo testes manuais repetitivos. Quando você aprende a automatizar esses fluxos e cria pipelines no GitHub Actions do time, seus líderes percebem na hora que você já entrega valor de nível Júnior/Pleno, acelerando sua efetivação.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>Preciso já saber programar para começar?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                Não! O curso inclui um módulo completo de lógica de programação com Python descomplicada, focado exclusivamente no que você usará para criar scripts e automações em QA. A didática é direta e sem sofrimento desnecessário.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>Por que QA tem menos concorrência que desenvolvimento frontend/backend?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                O mercado de desenvolvimento web inicial está inflacionado com milhares de pessoas disputando vagas que pedem 10 frameworks. Já em QA, toda empresa precisa de testes antes de subir código para produção, mas faltam candidatos qualificados que entendam automação e APIs.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>O curso prepara para a certificação CTFL/ISTQB?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                Sim! Há um módulo preparatório completo alinhado ao Syllabus oficial da certificação internacional CTFL (Certified Tester Foundation Level) do BSTQB/ISTQB, com mais de 200 questões de simulados comentadas.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="py-4">
+            <button class="faq-btn faq-question-coders" aria-expanded="false">
+              <span>Por quanto tempo terei acesso às aulas e como funciona a garantia?</span>
+              <div class="faq-icon-circle-coders">+</div>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-600 font-body leading-relaxed">
+              <div class="pt-2 pb-4">
+                Você tem acesso por 1 ano completo a todas as aulas gravadas, repositórios de código no GitHub e comunidade de suporte. Além disso, conta com 7 dias de garantia incondicional: se não gostar, 100% do seu dinheiro é devolvido.
+              </div>
+            </div>
           </div>
 
         </div>
 
-        <!-- Right: Bio and Real Background -->
-        <div class="lg:col-span-7" data-aos="fade-left">
+      </div>
+    </div>
+  </section>
 
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-blue-400 bg-blue-950/40 border border-blue-900/40 mb-4">
-            <span>[ O_INSTRUTOR::GUSTAVO_MACHADO ]</span>
+
+  <!-- ================= 9. DARK SECTION: OFERTA ESPECIAL / INTERMISSION (CODERS INTERMISSION STYLE) ================= -->
+  <section id="oferta" class="py-24 bg-[#0E1118] bg-grid-dark relative border-t border-white/10">
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+      <!-- Intermission Floating Card -->
+      <div class="intermission-wrapper-coders p-8 sm:p-16 text-center shadow-2xl" data-aos="zoom-in">
+
+        <!-- Ambient Blue Orb Inside Card -->
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/25 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="relative z-10">
+
+          <!-- Tagline -->
+          <div class="tagline-coders dark mb-6">
+            <span>condição especial :: vagas limitadas</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Quem será o seu professor e mentor?
+          <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
+            Leve sua carreira para a tecnologia com quem vive a área há 9 anos por apenas R$ 297!
           </h2>
 
-          <div class="space-y-4 text-gray-300 text-base leading-relaxed">
-            <p>
-              Olá, sou <strong class="text-white">Gustavo Machado</strong>. Tenho mais de <strong class="text-white">5
-                anos de experiência atuando na linha de frente da qualidade de software</strong>, projetando
-              arquiteturas de testes e esteiras de automação para sistemas que não podem falhar.
-            </p>
-            <p>
-              Sou criador de cursos consagrados na Udemy e em plataforma própria sobre <strong class="text-white">Robot
-                Framework (Web e API)</strong>, <strong class="text-white">Cypress</strong>, <strong
-                class="text-white">Postman do básico ao avançado</strong>, <strong class="text-white">Integração
-                Contínua com GitHub Actions</strong>, <strong class="text-white">Git e GitHub</strong> e <strong
-                class="text-white">Preparatório para Certificação CTFL/ISTQB-BSTQB</strong>.
-            </p>
-            <p>
-              Produzo conteúdo diariamente no YouTube, Instagram, TikTok, LinkedIn, Threads, X e GitLab. Ficou conhecido
-              pelo meu quadro <strong class="text-white">"Dicionário do QA"</strong> e por defender que <span
-                class="italic text-red-400">"QA não é miojo"</span> — software profissional exige critério analítico,
-              técnicas de suposição de erro (error guessing) e precisão de escopo.
-            </p>
-            <p>
-              Além dos treinamentos gravados, presto consultoria para empresas e realizo mentorias particulares 1-on-1
-              para quem busca virar a chave na carreira nacional ou internacional.
-            </p>
+          <p class="text-base text-gray-300 font-body max-w-xl mx-auto mb-10">
+            Acesso completo aos 8 módulos práticos, repositórios de automação no GitHub, simulados comentados CTFL e suporte direto.
+          </p>
+
+          <!-- Urgency Countdown Timer (Coders Style Clean Tech Boxes) -->
+          <div class="inline-flex items-center justify-center gap-3 sm:gap-6 font-mono bg-[#0E1118]/80 backdrop-blur-md p-4 sm:p-6 rounded-xl border border-white/10 mb-10">
+            <div class="text-center min-w-[55px]">
+              <span id="timerDays" class="text-2xl sm:text-4xl font-black text-white">02</span>
+              <span class="block text-[10px] text-gray-400 uppercase mt-1">Dias</span>
+            </div>
+            <span class="text-xl sm:text-2xl text-[#1351B4] font-bold -mt-3">:</span>
+            <div class="text-center min-w-[55px]">
+              <span id="timerHours" class="text-2xl sm:text-4xl font-black text-white">14</span>
+              <span class="block text-[10px] text-gray-400 uppercase mt-1">Horas</span>
+            </div>
+            <span class="text-xl sm:text-2xl text-[#C5221F] font-bold -mt-3">:</span>
+            <div class="text-center min-w-[55px]">
+              <span id="timerMinutes" class="text-2xl sm:text-4xl font-black text-white">28</span>
+              <span class="block text-[10px] text-gray-400 uppercase mt-1">Minutos</span>
+            </div>
+            <span class="text-xl sm:text-2xl text-[#1351B4] font-bold -mt-3">:</span>
+            <div class="text-center min-w-[55px]">
+              <span id="timerSeconds" class="text-2xl sm:text-4xl font-black text-red-400">45</span>
+              <span class="block text-[10px] text-gray-400 uppercase mt-1">Segundos</span>
+            </div>
           </div>
 
-          <!-- Channels Bar -->
-          <div
-            class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400">
-            <span class="text-white font-bold">CANAIS ATIVOS:</span>
-            <span class="px-3 py-1.5 rounded-lg glass-card border border-white/10 text-gray-300">YouTube</span>
-            <span class="px-3 py-1.5 rounded-lg glass-card border border-white/10 text-gray-300">Instagram</span>
-            <span class="px-3 py-1.5 rounded-lg glass-card border border-white/10 text-gray-300">LinkedIn</span>
-            <span class="px-3 py-1.5 rounded-lg glass-card border border-white/10 text-gray-300">GitHub</span>
-            <span class="px-3 py-1.5 rounded-lg glass-card border border-white/10 text-gray-300">GitLab</span>
+          <!-- Price Display -->
+          <div class="mb-10">
+            <p class="text-sm text-gray-400">De <span class="line-through text-gray-500">R$ 997,00</span> por apenas:</p>
+            <div class="flex items-baseline justify-center gap-2 mt-2">
+              <span class="text-2xl text-gray-300 font-bold">12x de</span>
+              <span class="text-5xl sm:text-6xl font-black text-white font-mono tracking-tight">R$ 29,65</span>
+            </div>
+            <p class="text-sm text-blue-300 font-mono mt-2">ou <strong>R$ 297,00 à vista</strong> no Pix / Boleto / Cartão</p>
+          </div>
+
+          <!-- CTA Button (Huge Coders Primary Button) -->
+          <a href="#oferta" class="button-primary-coders !h-16 !px-10 !text-lg !w-full !max-w-md mx-auto">
+            <span>SIM, QUERO MINHA VAGA POR R$ 297</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-xs text-gray-400 font-mono">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Pagamento 100% Seguro
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Acesso Imediato
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              7 Dias de Garantia Incondicional
+            </span>
           </div>
 
         </div>
@@ -1330,205 +1402,78 @@
   </section>
 
 
-  <!-- ================= SECTION: FAQ ACCORDION ================= -->
-  <section id="faq" class="py-24 relative bg-[#0e1118] border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ================= 10. FOOTER (EXACT CODERS ROUNDED MARGIN FRAME) ================= -->
+  <footer class="footer-frame-coders py-14 px-6 sm:px-12 text-xs text-gray-400 font-body">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
 
-      <!-- Section Header -->
-      <div class="text-center mb-16" data-aos="fade-up">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-blue-400 bg-blue-950/40 border border-blue-900/40 mb-4">
-          <span>[ DÚVIDAS::FREQUENTES ]</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Perguntas Frequentes
-        </h2>
-        <p class="mt-3 text-gray-400 text-base">
-          Tire suas dúvidas antes de dar o próximo passo na sua carreira.
-        </p>
-      </div>
-
-      <!-- Accordion Container -->
-      <div class="space-y-4" id="faqAccordion">
-
-        <!-- FAQ Item 1 -->
-        <div class="glass-card rounded-2xl border border-white/10 overflow-hidden" data-aos="fade-up"
-          data-aos-delay="50">
-          <button
-            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold focus:outline-none"
-            aria-expanded="false">
-            <span class="flex items-center gap-3">
-              <span class="text-[#1351B4] font-mono font-bold">::</span>
-              Preciso já saber programar para aproveitar o curso?
-            </span>
-            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300 shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-gray-300 leading-relaxed bg-black/20">
-            <div class="pb-5 pt-1">
-              Não! O curso conta com um módulo completo de introdução à lógica de programação com Python e uso do
-              Git/GitHub do absoluto zero. Você aprenderá cada comando de automação com Cypress e Robot de forma prática
-              e gradual.
-            </div>
+        <!-- Brand Col -->
+        <div class="md:col-span-4 space-y-4">
+          <div class="flex items-center font-extrabold tracking-tight text-xl text-white font-mono">
+            <span>GUSTAVO</span>
+            <span class="text-[#C5221F] font-black mx-0.5">::</span>
+            <span class="text-gray-100">MACHADO</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed font-body max-w-sm">
+            QAGES® &bull; Quality Assurance Engineering Systems. Formação e capacitação prática em Qualidade de Software e Automação para estudantes, estagiários e juniores.
+          </p>
+          <!-- Social Icons (Coders Style Square Rounded Links) -->
+          <div class="flex items-center gap-2.5 pt-2">
+            <a href="https://instagram.com/qagesmachado" target="_blank" rel="noopener noreferrer"
+              class="w-9 h-9 rounded-md bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white flex items-center justify-center text-gray-300 transition-colors font-mono text-xs font-bold">
+              IG
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              class="w-9 h-9 rounded-md bg-white/5 border border-white/10 hover:border-red-500 hover:text-white flex items-center justify-center text-gray-300 transition-colors font-mono text-xs font-bold">
+              YT
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="w-9 h-9 rounded-md bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white flex items-center justify-center text-gray-300 transition-colors font-mono text-xs font-bold">
+              IN
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+              class="w-9 h-9 rounded-md bg-white/5 border border-white/10 hover:border-white/30 hover:text-white flex items-center justify-center text-gray-300 transition-colors font-mono text-xs font-bold">
+              GH
+            </a>
           </div>
         </div>
 
-        <!-- FAQ Item 2 -->
-        <div class="glass-card rounded-2xl border border-white/10 overflow-hidden" data-aos="fade-up"
-          data-aos-delay="100">
-          <button
-            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold focus:outline-none"
-            aria-expanded="false">
-            <span class="flex items-center gap-3">
-              <span class="text-[#C5221F] font-mono font-bold">::</span>
-              O curso prepara para o exame de certificação CTFL/ISTQB?
-            </span>
-            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300 shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-gray-300 leading-relaxed bg-black/20">
-            <div class="pb-5 pt-1">
-              Sim! Há um módulo preparatório completo alinhado ao Syllabus oficial da certificação internacional CTFL
-              (Certified Tester Foundation Level) do BSTQB/ISTQB, incluindo glossário técnico, técnicas de teste e
-              simulados comentados questão por questão.
-            </div>
-          </div>
+        <!-- Links Col 1 -->
+        <div class="md:col-span-2 space-y-3 font-mono text-xs">
+          <div class="text-white font-bold tracking-wider uppercase mb-2">Navegação</div>
+          <div><a href="#ecossistema" class="hover:text-white transition-colors">Ecossistema</a></div>
+          <div><a href="#oportunidade" class="hover:text-white transition-colors">Oportunidade</a></div>
+          <div><a href="#rota" class="hover:text-white transition-colors">A Rota Prática</a></div>
+          <div><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a></div>
         </div>
 
-        <!-- FAQ Item 3 -->
-        <div class="glass-card rounded-2xl border border-white/10 overflow-hidden" data-aos="fade-up"
-          data-aos-delay="150">
-          <button
-            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold focus:outline-none"
-            aria-expanded="false">
-            <span class="flex items-center gap-3">
-              <span class="text-[#1351B4] font-mono font-bold">::</span>
-              Como funciona a sessão de mentoria individual (1-on-1)?
-            </span>
-            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300 shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-gray-300 leading-relaxed bg-black/20">
-            <div class="pb-5 pt-1">
-              Os primeiros 50 inscritos ganham uma sessão exclusiva via Google Meet de 60 minutos comigo. Você agendará
-              direto no calendário e nós analisaremos seu momento profissional, projetos, LinkedIn, ou tiraremos dúvidas
-              avançadas sobre sua esteira de testes.
-            </div>
-          </div>
+        <!-- Links Col 2 -->
+        <div class="md:col-span-2 space-y-3 font-mono text-xs">
+          <div class="text-white font-bold tracking-wider uppercase mb-2">Políticas</div>
+          <div><a href="#" class="hover:text-white transition-colors">Termos de Uso</a></div>
+          <div><a href="#" class="hover:text-white transition-colors">Políticas de Privacidade</a></div>
+          <div><a href="#" class="hover:text-white transition-colors">Garantia de 7 Dias</a></div>
         </div>
 
-        <!-- FAQ Item 4 -->
-        <div class="glass-card rounded-2xl border border-white/10 overflow-hidden" data-aos="fade-up"
-          data-aos-delay="200">
-          <button
-            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold focus:outline-none"
-            aria-expanded="false">
-            <span class="flex items-center gap-3">
-              <span class="text-[#C5221F] font-mono font-bold">::</span>
-              Por quanto tempo terei acesso ao curso e às atualizações?
-            </span>
-            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300 shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-gray-300 leading-relaxed bg-black/20">
-            <div class="pb-5 pt-1">
-              Você tem acesso por 1 ano completo a todas as aulas, aos repositórios de código no GitHub, atualizações
-              das ferramentas (novas versões do Cypress, Robot e Postman) e à comunidade de suporte.
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div class="glass-card rounded-2xl border border-white/10 overflow-hidden" data-aos="fade-up"
-          data-aos-delay="250">
-          <button
-            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between text-white font-semibold focus:outline-none"
-            aria-expanded="false">
-            <span class="flex items-center gap-3">
-              <span class="text-[#1351B4] font-mono font-bold">::</span>
-              Como recebo os templates prontos de GitHub Actions e Cypress?
-            </span>
-            <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform duration-300 shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-gray-300 leading-relaxed bg-black/20">
-            <div class="pb-5 pt-1">
-              Imediatamente após a confirmação da sua inscrição, você recebe login na plataforma e convite para a
-              organização do GitHub da turma, onde todos os repositórios modelo estão disponíveis para fork e download.
-            </div>
+        <!-- Newsletter Col -->
+        <div class="md:col-span-4 space-y-3">
+          <div class="text-white font-bold tracking-wider font-mono uppercase mb-2">Newsletter do QA</div>
+          <p class="text-xs text-gray-400">Receba análises de vagas, dicas de automação e artigos exclusivos do Gustavo Machado.</p>
+          <div class="flex items-center gap-2">
+            <input type="email" placeholder="Seu melhor e-mail"
+              class="bg-white/5 border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 flex-1" />
+            <button class="bg-[#1351B4] hover:bg-blue-600 text-white px-4 py-2.5 rounded-lg text-xs font-bold font-mono transition-colors">
+              Inscrever
+            </button>
           </div>
         </div>
 
       </div>
 
-    </div>
-  </section>
-
-
-  <!-- ================= FINAL CTA STRIP ================= -->
-  <section class="py-20 relative bg-[#0B0D13] border-t border-white/10 overflow-hidden">
-    <div class="max-w-5xl mx-auto px-4 text-center relative z-10" data-aos="zoom-in">
-      <div
-        class="inline-flex items-center gap-2 px-3 py-1 rounded font-mono text-xs font-bold text-red-400 bg-red-950/40 border border-red-900/40 mb-6">
-        <span>[ DECISÃO::AGORA ]</span>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-mono">
+        <div>Todos os direitos reservados © 2026 Gustavo Machado :: QAGES®. 9 anos de experiência e +2.000 alunos.</div>
+        <div class="text-gray-400">"QA não é miojo."</div>
       </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
-        Pronto para ser o QA que domina o escopo e lidera a qualidade?
-      </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-        Não perca a oportunidade de garantir acesso à formação completa com a mentoria individual de bônus antes que o
-        timer zere.
-      </p>
-      <a href="#investimento"
-        class="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-extrabold text-lg text-white bg-gradient-to-r from-[#1351B4] via-[#1a5fd0] to-[#C5221F] hover:brightness-110 shadow-glow-blue transition-all duration-300 transform hover:scale-105">
-        <span class="font-mono text-sm text-blue-200">::</span>
-        <span>GARANTIR MINHA VAGA COM BÔNUS</span>
-      </a>
-    </div>
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="py-12 bg-[#08090D] border-t border-white/5 text-xs text-gray-500 font-mono">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-
-      <!-- Brand & Copyright -->
-      <div class="flex items-center gap-3">
-        <div class="font-black text-lg text-white font-mono tracking-wider">
-          GUSTAVO<span class="text-[#C5221F]">::</span>MACHADO
-        </div>
-        <span class="text-gray-600">|</span>
-        <span class="text-gray-400">QAGES &bull; Quality Assurance Engineering Systems</span>
-      </div>
-
-      <!-- Legal Links -->
-      <div class="flex items-center gap-6 text-gray-400">
-        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
-        <a href="#" class="hover:text-white transition-colors">Privacidade</a>
-        <a href="https://instagram.com/qagesmachado" target="_blank" rel="noopener noreferrer"
-          class="hover:text-white transition-colors">@qagesmachado</a>
-      </div>
-
-      <!-- Scope note -->
-      <div class="text-gray-600">
-        &copy; 2026 Gustavo Machado. Todos os direitos reservados.
-      </div>
-
     </div>
   </footer>
 
@@ -1537,17 +1482,13 @@
   <!-- AOS Script via CDN -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <!-- GSAP & ScrollTrigger via CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script>
-    // 1. Initialize AOS (Animate on Scroll)
+    // 1. Initialize AOS
     AOS.init({
       once: true,
-      duration: 800,
+      duration: 750,
       easing: 'ease-out-cubic',
-      offset: 60
+      offset: 50
     });
 
     // 2. Mobile Menu Toggle
@@ -1566,73 +1507,95 @@
       });
     }
 
-    // 3. GSAP Mouse Parallax for Hero Ambient Blobs
-    const heroBlobBlue = document.getElementById('heroBlobBlue');
-    const heroBlobRed = document.getElementById('heroBlobRed');
+    // 3. Testimonials Interactive Tabs (Exact Coders Pattern)
+    function switchTestimonial(index) {
+      const tabs = [
+        document.getElementById('tabBtn0'),
+        document.getElementById('tabBtn1'),
+        document.getElementById('tabBtn2'),
+        document.getElementById('tabBtn3')
+      ];
+      const panes = [
+        document.getElementById('testPane0'),
+        document.getElementById('testPane1'),
+        document.getElementById('testPane2'),
+        document.getElementById('testPane3')
+      ];
 
-    if (heroBlobBlue && heroBlobRed && window.innerWidth > 768) {
-      window.addEventListener('mousemove', (e) => {
-        const mouseX = (e.clientX / window.innerWidth) - 0.5;
-        const mouseY = (e.clientY / window.innerHeight) - 0.5;
+      tabs.forEach((tab, i) => {
+        if (!tab) return;
+        if (i === index) {
+          tab.classList.add('active');
+          tab.classList.remove('opacity-60');
+        } else {
+          tab.classList.remove('active');
+          tab.classList.add('opacity-60');
+        }
+      });
 
-        gsap.to(heroBlobBlue, {
-          x: mouseX * 50,
-          y: mouseY * 50,
-          duration: 1.5,
-          ease: 'power2.out'
-        });
-
-        gsap.to(heroBlobRed, {
-          x: mouseX * -40,
-          y: mouseY * -40,
-          duration: 1.8,
-          ease: 'power2.out'
-        });
+      panes.forEach((pane, i) => {
+        if (!pane) return;
+        if (i === index) {
+          pane.classList.remove('hidden');
+        } else {
+          pane.classList.add('hidden');
+        }
       });
     }
 
-    // 4. GSAP Counter Animation
-    gsap.registerPlugin(ScrollTrigger);
+    // 4. FAQ Accordion Functionality with '+' Rotate (Coders Style)
+    const faqButtons = document.querySelectorAll('.faq-btn');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const iconCircle = button.querySelector('.faq-icon-circle-coders');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const target = counter.getAttribute('data-target');
-      if (target) {
-        ScrollTrigger.create({
-          trigger: counter,
-          start: 'top 85%',
-          once: true,
-          onEnter: () => {
-            const isPercent = counter.innerText.includes('%');
-            const hasPlus = counter.innerText.includes('+');
-            const isFormatted = counter.innerText.includes('.');
-
-            const obj = { val: 0 };
-            gsap.to(obj, {
-              val: parseFloat(target),
-              duration: 2,
-              ease: 'power2.out',
-              onUpdate: () => {
-                let formattedVal = Math.floor(obj.val);
-                if (isFormatted && formattedVal >= 1000) {
-                  formattedVal = formattedVal.toLocaleString('pt-BR');
-                }
-                counter.innerText = (hasPlus ? '+' : '') + formattedVal + (isPercent ? '%' : '');
-              }
-            });
+        // Close all others
+        faqButtons.forEach(otherBtn => {
+          if (otherBtn !== button) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+            otherBtn.nextElementSibling.style.maxHeight = '0px';
+            const otherIcon = otherBtn.querySelector('.faq-icon-circle-coders');
+            if (otherIcon) {
+              otherIcon.innerText = '+';
+              otherIcon.style.transform = 'rotate(0deg)';
+              otherIcon.classList.remove('bg-[#1351B4]', 'text-white');
+              otherIcon.classList.add('bg-[#F3F4F6]', 'text-[#374151]');
+            }
           }
         });
-      }
+
+        // Toggle current
+        if (isExpanded) {
+          button.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0px';
+          if (iconCircle) {
+            iconCircle.innerText = '+';
+            iconCircle.style.transform = 'rotate(0deg)';
+            iconCircle.classList.remove('bg-[#1351B4]', 'text-white');
+            iconCircle.classList.add('bg-[#F3F4F6]', 'text-[#374151]');
+          }
+        } else {
+          button.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          if (iconCircle) {
+            iconCircle.innerText = '−';
+            iconCircle.style.transform = 'rotate(180deg)';
+            iconCircle.classList.remove('bg-[#F3F4F6]', 'text-[#374151]');
+            iconCircle.classList.add('bg-[#1351B4]', 'text-white');
+          }
+        }
+      });
     });
 
-    // 5. Urgency Countdown Timer
+    // 5. Countdown Timer
     function startCountdown() {
-      // Countdown for 2 days, 14 hours, 28 minutes from user visit, stored in localStorage
-      let targetTime = localStorage.getItem('qages_timer_target');
+      let targetTime = localStorage.getItem('qages_coders_timer');
       if (!targetTime) {
         const now = new Date().getTime();
         targetTime = now + (2 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (28 * 60 * 1000);
-        localStorage.setItem('qages_timer_target', targetTime);
+        localStorage.setItem('qages_coders_timer', targetTime);
       } else {
         targetTime = parseInt(targetTime, 10);
       }
@@ -1642,8 +1605,7 @@
         const difference = targetTime - now;
 
         if (difference <= 0) {
-          // Reset to 24h if expired for continuous landing page presentation
-          localStorage.setItem('qages_timer_target', now + (24 * 60 * 60 * 1000));
+          localStorage.setItem('qages_coders_timer', now + (24 * 60 * 60 * 1000));
           return;
         }
 
@@ -1668,46 +1630,13 @@
     }
     startCountdown();
 
-    // 6. Accordion Functionality
-    const faqButtons = document.querySelectorAll('.faq-btn');
-    faqButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('.faq-icon');
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-        // Close all others
-        faqButtons.forEach(otherBtn => {
-          if (otherBtn !== button) {
-            otherBtn.setAttribute('aria-expanded', 'false');
-            otherBtn.nextElementSibling.style.maxHeight = '0px';
-            const otherIcon = otherBtn.querySelector('.faq-icon');
-            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-          }
-        });
-
-        // Toggle current
-        if (isExpanded) {
-          button.setAttribute('aria-expanded', 'false');
-          content.style.maxHeight = '0px';
-          if (icon) icon.style.transform = 'rotate(0deg)';
-        } else {
-          button.setAttribute('aria-expanded', 'true');
-          content.style.maxHeight = content.scrollHeight + 'px';
-          if (icon) icon.style.transform = 'rotate(180deg)';
-        }
-      });
-    });
-
-    // 7. Navbar shrink on scroll
+    // 6. Navbar shrink / shadow on scroll
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('py-2');
-        navbar.classList.add('shadow-xl');
+      if (window.scrollY > 40) {
+        navbar.classList.add('shadow-2xl');
       } else {
-        navbar.classList.remove('py-2');
-        navbar.classList.remove('shadow-xl');
+        navbar.classList.remove('shadow-2xl');
       }
     });
   </script>

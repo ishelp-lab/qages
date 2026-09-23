@@ -1,0 +1,10 @@
+
+Olá, meu nome é Pedro Henrique e fui aluno do curso de Capacitação para QA, ministrado pelo professor Gustavo Machado.
+O curso é incrível e proporciona uma experiência muito próxima da realidade do trabalho de um profissional de QA. Durante as aulas, consegui compreender de forma detalhada o que é teste de software, os diferentes tipos de testes e, principalmente, como esses conhecimentos são aplicados na prática.
+O curso apresenta uma base teórica muito importante para quem deseja ingressar ou se desenvolver no mercado de trabalho. Os questionários também são um ponto muito positivo, pois são objetivos e ajudam bastante na revisão e fixação dos conteúdos estudados.
+Outro grande diferencial é a didática do professor Gustavo. Ele consegue explicar cada assunto de forma clara e objetiva, tornando até os conteúdos mais complexos fáceis de compreender — sem precisar sofrer muito kkkkk.
+Fico muito feliz por ter tido a oportunidade de realizar essa capacitação e poder agregar esses conhecimentos ao meu currículo e à minha formação profissional.
+Sou formado em Ciência da Computação e, durante o curso, pude revisar alguns conteúdos que já havia estudado na faculdade, além de aprender diversos conceitos e práticas que vão muito além da teoria acadêmica e que fazem parte da realidade do dia a dia de um profissional de QA.
+Com certeza, foi uma experiência muito importante para minha formação e uma excelente oportunidade para conhecer melhor a área de Qualidade de Software.
+
+Pedro Henrique
