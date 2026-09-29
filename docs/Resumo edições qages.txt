@@ -1,0 +1,18 @@
+[X] Tirar o QAGES Ecosystem
+[ ] Trocar a info. de 3 aval. verif. para +2000 alunos.
+
+[ ] Reduzir o padding novamente
+[ ] No mobile, subir o vídeo para depois do H1
+[ ] Tentar transformar os badges abaixo dos 2 botoes em menos parecidos com botões
+[ ] Trocar a foto do lado direito para o vídeo que ele vai enviar
+[ ] Trocar a parte do passo a passo para algo como requisitos para a área
+[ ] Embaixo da parte de requisitos, deixar como está, mas adequar
+[ ] Trocar o layout dos depoimentos para um carrossel com seta e as opções passando
+[ ] Na parte sobre o gusta, trocar conteudo dos badges
+[ ] Melhorar a parte do pitch
+
+[ ] Trocar o e-mail dele pelo que ele me mostrou
+[ ] Trocar o "Capacitação prática com ..." (ver qual)
+[ ] Conferir na kiwifi qual será o conteúdo dos módulos
+[ ] Trocar a foto por uma dele
+[ ] Começar a implementar mais imagens de dentro do curso
