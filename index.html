@@ -26,6 +26,7 @@
       theme: {
         extend: {
           colors: {
+            s
             brand: {
               blue: '#1351B4',
               blueLight: '#2563EB',
@@ -49,7 +50,9 @@
 
   <style>
     /* ===================== BASE ===================== */
-    * { -webkit-font-smoothing: antialiased; }
+    * {
+      -webkit-font-smoothing: antialiased;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -63,14 +66,15 @@
       background-color: #080A10;
       position: relative;
     }
+
     .bg-aurora::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
         radial-gradient(ellipse 80% 60% at 15% -10%, rgba(19, 81, 180, 0.28) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 20%,  rgba(197, 34, 31, 0.15)  0%, transparent 55%),
-        radial-gradient(ellipse 70% 40% at 50% 100%, rgba(37, 99, 235, 0.12)  0%, transparent 50%);
+        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(197, 34, 31, 0.15) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 40% at 50% 100%, rgba(37, 99, 235, 0.12) 0%, transparent 50%);
       pointer-events: none;
       z-index: 0;
     }
@@ -81,15 +85,18 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 80px 80px;
       pointer-events: none;
       z-index: 0;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 40%, transparent 100%);
     }
 
-    .bg-aurora > * { position: relative; z-index: 1; }
+    .bg-aurora>* {
+      position: relative;
+      z-index: 1;
+    }
 
     /* Dark sections without dots, just color */
     .bg-section-dark {
@@ -108,7 +115,7 @@
     .glass-card-light {
       background: #FFFFFF;
       border: 1px solid #E5E7EB;
-      box-shadow: 0 10px 30px -5px rgba(0,0,0,0.03);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
       border-radius: 1.5rem;
     }
 
@@ -117,17 +124,22 @@
       background-color: #FAFAFA;
       position: relative;
     }
+
     .bg-section-light::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
         radial-gradient(ellipse 80% 60% at 15% -10%, rgba(19, 81, 180, 0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 20%,  rgba(197, 34, 31, 0.03)  0%, transparent 55%);
+        radial-gradient(ellipse 60% 50% at 90% 20%, rgba(197, 34, 31, 0.03) 0%, transparent 55%);
       pointer-events: none;
       z-index: 0;
     }
-    .bg-section-light > * { position: relative; z-index: 1; }
+
+    .bg-section-light>* {
+      position: relative;
+      z-index: 1;
+    }
 
     /* ===================== LABEL PILL ===================== */
     .label-pill {
@@ -142,11 +154,13 @@
       text-transform: uppercase;
       font-family: 'JetBrains Mono', monospace;
     }
+
     .label-pill.dark {
       background: rgba(19, 81, 180, 0.18);
       color: #7EB3FF;
       border: 1px solid rgba(19, 81, 180, 0.35);
     }
+
     .label-pill.light {
       background: rgba(19, 81, 180, 0.08);
       color: #1351B4;
@@ -166,15 +180,16 @@
       font-weight: 600;
       color: #FFFFFF;
       background: linear-gradient(135deg, #1351B4 0%, #1a6cf0 100%);
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 0 28px rgba(19, 81, 180, 0.45), 0 4px 16px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 28px rgba(19, 81, 180, 0.45), 0 4px 16px rgba(0, 0, 0, 0.3);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       letter-spacing: -0.01em;
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 45px rgba(37, 99, 235, 0.6), 0 8px 24px rgba(0,0,0,0.4);
+      box-shadow: 0 0 45px rgba(37, 99, 235, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4);
       background: linear-gradient(135deg, #1a5dc7 0%, #2070ff 100%);
     }
 
@@ -189,15 +204,16 @@
       font-size: 1rem;
       font-weight: 500;
       color: #C8CFDF;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(12px);
       transition: all 0.3s ease;
       text-decoration: none;
     }
+
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.22);
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 255, 255, 0.22);
       color: #fff;
       transform: translateY(-2px);
     }
@@ -207,22 +223,23 @@
       background: rgba(8, 10, 16, 0.75);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     /* ===================== STEP CARDS ===================== */
     .step-card {
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 1.25rem;
       padding: 1.75rem;
       transition: all 0.3s ease;
     }
+
     .step-card:hover {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       border-color: rgba(19, 81, 180, 0.4);
       transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(19, 81, 180, 0.15);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(19, 81, 180, 0.15);
     }
 
     .step-card-light {
@@ -232,16 +249,22 @@
       padding: 1.75rem;
       transition: all 0.3s ease;
     }
+
     .step-card-light:hover {
       background: #FAFAFA;
       border-color: rgba(19, 81, 180, 0.4);
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06), 0 0 0 1px rgba(19, 81, 180, 0.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(19, 81, 180, 0.15);
     }
 
     /* ===================== TESTIMONIAL ===================== */
-    .test-pane { display: none; }
-    .test-pane.active { display: block; }
+    .test-pane {
+      display: none;
+    }
+
+    .test-pane.active {
+      display: block;
+    }
 
     .tab-btn {
       display: flex;
@@ -256,10 +279,12 @@
       text-align: left;
       width: 100%;
     }
+
     .tab-btn:hover {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
     }
+
     .tab-btn.active {
       background: rgba(19, 81, 180, 0.12);
       border-color: rgba(19, 81, 180, 0.35);
@@ -278,10 +303,12 @@
       text-align: left;
       width: 100%;
     }
+
     .tab-btn-light:hover {
       background: #F3F4F6;
       border-color: #E5E7EB;
     }
+
     .tab-btn-light.active {
       background: rgba(19, 81, 180, 0.06);
       border-color: rgba(19, 81, 180, 0.15);
@@ -289,8 +316,9 @@
 
     /* ===================== FAQ ===================== */
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
+
     .faq-btn-q {
       width: 100%;
       display: flex;
@@ -307,14 +335,17 @@
       background: none;
       border: none;
     }
-    .faq-btn-q:hover { color: #FFFFFF; }
+
+    .faq-btn-q:hover {
+      color: #FFFFFF;
+    }
 
     .faq-icon {
       width: 32px;
       height: 32px;
       min-width: 32px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -324,6 +355,7 @@
       transition: all 0.3s ease;
       font-family: 'JetBrains Mono', monospace;
     }
+
     .faq-icon.open {
       background: rgba(19, 81, 180, 0.25);
       color: #7EB3FF;
@@ -337,8 +369,8 @@
       gap: 8px;
       padding: 8px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.10);
       font-size: 0.8125rem;
       font-weight: 500;
       color: #D1D5DB;
@@ -347,16 +379,21 @@
     /* ===================== FOOTER ===================== */
     .footer-wrap {
       background: #06080D;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     /* ===================== SCROLL-SMOOTH FIX ===================== */
     @media (prefers-reduced-motion: no-preference) {
-      html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
     }
 
     /* ===================== SELECTION ===================== */
-    ::selection { background: #1351B4; color: #fff; }
+    ::selection {
+      background: #1351B4;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -373,7 +410,8 @@
           <span class="text-[#C5221F] mx-0.5 group-hover:text-[#2563EB] transition-colors duration-300">::</span>
           MACHADO
         </div>
-        <span class="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest text-blue-400 bg-blue-950/50 border border-blue-800/40 rounded-full">
+        <span
+          class="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest text-blue-400 bg-blue-950/50 border border-blue-800/40 rounded-full">
           QAGES®
         </span>
       </a>
@@ -404,12 +442,16 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#0F1219]/95 backdrop-blur-xl border-t border-white/07 px-6 py-5 space-y-4">
-      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como funciona</a>
-      <a href="#depoimentos" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Depoimentos</a>
+    <div id="mobileMenu"
+      class="hidden md:hidden bg-[#0F1219]/95 backdrop-blur-xl border-t border-white/07 px-6 py-5 space-y-4">
+      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como
+        funciona</a>
+      <a href="#depoimentos"
+        class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Depoimentos</a>
       <a href="#mentor" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Mentor</a>
       <a href="#faq" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">FAQ</a>
-      <a href="#oferta" class="block text-center w-full py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#1351B4] to-[#1a6cf0] rounded-2xl mobile-link mt-2">
+      <a href="#oferta"
+        class="block text-center w-full py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#1351B4] to-[#1a6cf0] rounded-2xl mobile-link mt-2">
         Garantir Vaga ↗
       </a>
     </div>
@@ -440,15 +482,19 @@
 
           <!-- Subhead -->
           <p class="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-            Capacitação prática com <strong class="text-gray-200 font-medium">Cypress, Robot Framework, Postman e Python</strong> — do zero até a contratação como QA Júnior.
+            Capacitação prática com <strong class="text-gray-200 font-medium">Cypress, Robot Framework, Postman e
+              Python</strong> — do zero até a contratação como QA Júnior.
           </p>
 
           <!-- Social proof — honest -->
           <div class="flex items-center justify-center lg:justify-start gap-4 mb-9">
             <div class="flex items-center -space-x-3">
-              <img src="assets/foto-dep1.jpg" alt="Pedro Henrique" class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
-              <img src="assets/foto-dep2.png" alt="José Lima" class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
-              <img src="assets/foto-dep3.jpg" alt="Larissa Miranda" class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
+              <img src="assets/foto-dep1.jpg" alt="Pedro Henrique"
+                class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
+              <img src="assets/foto-dep2.png" alt="José Lima"
+                class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
+              <img src="assets/foto-dep3.jpg" alt="Larissa Miranda"
+                class="w-10 h-10 rounded-full object-cover border-2 border-[#080A10]" />
             </div>
             <div class="text-left">
               <div class="flex items-center gap-1.5">
@@ -477,8 +523,10 @@
           <div class="flex flex-wrap justify-center lg:justify-start gap-2 mt-8">
             <span class="stat-chip"><span class="text-[#2563EB] font-mono text-xs">::</span> 8 módulos práticos</span>
             <span class="stat-chip"><span class="text-[#C5221F] font-mono text-xs">::</span> Cypress & Robot FW</span>
-            <span class="stat-chip"><span class="text-[#2563EB] font-mono text-xs">::</span> CI/CD & GitHub Actions</span>
-            <span class="stat-chip"><span class="text-[#C5221F] font-mono text-xs">::</span> Preparatório CTFL/ISTQB</span>
+            <span class="stat-chip"><span class="text-[#2563EB] font-mono text-xs">::</span> CI/CD & GitHub
+              Actions</span>
+            <span class="stat-chip"><span class="text-[#C5221F] font-mono text-xs">::</span> Preparatório
+              CTFL/ISTQB</span>
             <span class="stat-chip"><span class="text-[#2563EB] font-mono text-xs">::</span> Guia de Entrevistas</span>
           </div>
 
@@ -488,7 +536,8 @@
         <div class="lg:col-span-6 relative">
 
           <!-- Terminal mock -->
-          <div class="glass-card overflow-hidden shadow-2xl" style="box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);">
+          <div class="glass-card overflow-hidden shadow-2xl"
+            style="box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);">
             <!-- Titlebar -->
             <div class="h-10 bg-white/[0.03] border-b border-white/08 px-4 flex items-center justify-between">
               <div class="flex items-center gap-1.5">
@@ -504,27 +553,32 @@
             <div class="relative">
               <img src="assets/hero_dashboard.jpg" alt="QAGES Automated Dashboard"
                 class="w-full h-auto object-cover max-h-[400px] opacity-90 mix-blend-lighten" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10] via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10] via-transparent to-transparent opacity-80">
+              </div>
             </div>
 
             <!-- Status bar -->
             <div class="px-5 py-4 flex items-center justify-between">
               <div>
-                <span class="text-[10px] font-mono text-blue-400 uppercase tracking-wider font-semibold">STATUS :: GITHUB ACTIONS</span>
+                <span class="text-[10px] font-mono text-blue-400 uppercase tracking-wider font-semibold">STATUS ::
+                  GITHUB ACTIONS</span>
                 <p class="text-sm font-medium text-gray-200 mt-0.5">Testes de Regressão — Main</p>
               </div>
-              <span class="px-3 py-1 text-xs font-mono font-bold text-green-400 bg-green-950/60 border border-green-800/50 rounded-full">
+              <span
+                class="px-3 py-1 text-xs font-mono font-bold text-green-400 bg-green-950/60 border border-green-800/50 rounded-full">
                 ✓ 100% PASS
               </span>
             </div>
           </div>
 
           <!-- Floating badges -->
-          <div class="absolute -top-5 -right-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
+          <div
+            class="absolute -top-5 -right-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
             <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
             <span class="text-xs font-mono text-gray-200 font-medium">Estagiário → R$ 1.5k–2.5k</span>
           </div>
-          <div class="absolute -bottom-5 -left-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
+          <div
+            class="absolute -bottom-5 -left-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
             <span class="text-[#C5221F] font-bold font-mono text-sm">::</span>
             <span class="text-xs font-mono text-gray-200 font-medium">9 anos de experiência em QA</span>
           </div>
@@ -549,7 +603,8 @@
           O passo a passo exato para entrar em TI através de QA
         </h2>
         <p class="text-base text-gray-600 font-light leading-relaxed">
-          Esqueça a teoria maçante. Em poucas semanas você constrói um portfólio prático com as ferramentas que os recrutadores realmente exigem.
+          Esqueça a teoria maçante. Em poucas semanas você constrói um portfólio prático com as ferramentas que os
+          recrutadores realmente exigem.
         </p>
       </div>
 
@@ -560,35 +615,40 @@
           <div class="font-mono text-2xl font-bold text-brand-blue mb-3">01</div>
           <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Fundamentos</span>
           <h4 class="text-sm font-semibold text-gray-900 mb-2">Mentalidade Analítica</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios técnicos que devs respeitam.</p>
+          <p class="text-xs text-gray-600 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios
+            técnicos que devs respeitam.</p>
         </div>
 
         <div class="step-card-light">
           <div class="font-mono text-2xl font-bold text-brand-red mb-3">02</div>
           <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Ferramentas</span>
           <h4 class="text-sm font-semibold text-gray-900 mb-2">Git, GitHub & APIs</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e versionamento profissional.</p>
+          <p class="text-xs text-gray-600 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e
+            versionamento profissional.</p>
         </div>
 
         <div class="step-card-light">
           <div class="font-mono text-2xl font-bold text-brand-blue mb-3">03</div>
           <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Automação</span>
           <h4 class="text-sm font-semibold text-gray-900 mb-2">Cypress & Robot FW</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands, intercepts, keywords BDD.</p>
+          <p class="text-xs text-gray-600 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands,
+            intercepts, keywords BDD.</p>
         </div>
 
         <div class="step-card-light">
           <div class="font-mono text-2xl font-bold text-brand-blue mb-3">04</div>
           <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Pipelines</span>
           <h4 class="text-sm font-semibold text-gray-900 mb-2">CI/CD GitHub Actions</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request. Impressione recrutadores.</p>
+          <p class="text-xs text-gray-600 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request.
+            Impressione recrutadores.</p>
         </div>
 
         <div class="step-card-light hover:border-green-400">
           <div class="font-mono text-2xl font-bold text-green-600 mb-3">05</div>
           <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Mercado</span>
           <h4 class="text-sm font-semibold text-gray-900 mb-2">Vaga ou Efetivação</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas técnicas e negociação.</p>
+          <p class="text-xs text-gray-600 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas
+            técnicas e negociação.</p>
         </div>
 
       </div>
@@ -597,14 +657,30 @@
       <div class="glass-card-light p-8 sm:p-10 text-center">
         <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-5">Conteúdo dos 8 módulos</p>
         <div class="flex flex-wrap justify-center gap-2.5">
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Fundamentos & Git</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Python para QA</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Robot Framework</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Cypress Moderno E2E</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Testes de API · Postman</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">CI/CD · GitHub Actions</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-brand-blue bg-blue-50 border border-blue-200">Preparatório CTFL / ISTQB</span>
-          <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-700 bg-green-50 border border-green-200">Entrevistas & Mercado</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Fundamentos
+            & Git</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Python
+            para QA</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Robot
+            Framework</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Cypress
+            Moderno E2E</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Testes
+            de API · Postman</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">CI/CD
+            · GitHub Actions</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-brand-blue bg-blue-50 border border-blue-200">Preparatório
+            CTFL / ISTQB</span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-700 bg-green-50 border border-green-200">Entrevistas
+            & Mercado</span>
         </div>
       </div>
 
@@ -634,33 +710,48 @@
         <div id="testPane0" class="test-pane active">
           <div class="glass-card-light p-8 sm:p-12 text-center">
             <div class="flex justify-center text-yellow-400 mb-6 tracking-wide text-base">★★★★★</div>
-            <blockquote class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
-              "O curso é incrível e proporciona uma experiência muito próxima da realidade do trabalho de um profissional de QA. O grande diferencial é a didática do professor Gustavo: ele explica cada assunto de forma clara e objetiva, tornando até os conteúdos mais complexos fáceis de compreender. Sou formado em Ciência da Computação e pude aprender práticas que vão muito além da teoria acadêmica!"
+            <blockquote
+              class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
+              "O curso é incrível e proporciona uma experiência muito próxima da realidade do trabalho de um
+              profissional de QA. O grande diferencial é a didática do professor Gustavo: ele explica cada assunto de
+              forma clara e objetiva, tornando até os conteúdos mais complexos fáceis de compreender. Sou formado em
+              Ciência da Computação e pude aprender práticas que vão muito além da teoria acadêmica!"
             </blockquote>
             <div class="text-base font-semibold text-gray-900">Pedro Henrique</div>
-            <div class="text-xs font-mono text-brand-blue mt-1 uppercase tracking-wider">Ciência da Computação · Aluno QAGES</div>
+            <div class="text-xs font-mono text-brand-blue mt-1 uppercase tracking-wider">Ciência da Computação · Aluno
+              QAGES</div>
           </div>
         </div>
 
         <div id="testPane1" class="test-pane">
           <div class="glass-card-light p-8 sm:p-12 text-center">
             <div class="flex justify-center text-yellow-400 mb-6 tracking-wide text-base">★★★★★</div>
-            <blockquote class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
-              "Fui demitido e conheci o trabalho do professor Gustavo pelo LinkedIn. Na mentoria, consegui clarear minha visão sobre automação e testes de API. Nas entrevistas seguintes, percebi claramente que estava muito mais preparado. Consegui minha realocação e voltei a trabalhar na área de Qualidade! O Gustavo continuou sempre à disposição para ajudar."
+            <blockquote
+              class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
+              "Fui demitido e conheci o trabalho do professor Gustavo pelo LinkedIn. Na mentoria, consegui clarear minha
+              visão sobre automação e testes de API. Nas entrevistas seguintes, percebi claramente que estava muito mais
+              preparado. Consegui minha realocação e voltei a trabalhar na área de Qualidade! O Gustavo continuou sempre
+              à disposição para ajudar."
             </blockquote>
             <div class="text-base font-semibold text-gray-900">José Lima</div>
-            <div class="text-xs font-mono text-green-600 mt-1 uppercase tracking-wider">Recolocado no Mercado · QA Engineer</div>
+            <div class="text-xs font-mono text-green-600 mt-1 uppercase tracking-wider">Recolocado no Mercado · QA
+              Engineer</div>
           </div>
         </div>
 
         <div id="testPane2" class="test-pane">
           <div class="glass-card-light p-8 sm:p-12 text-center">
             <div class="flex justify-center text-yellow-400 mb-6 tracking-wide text-base">★★★★★</div>
-            <blockquote class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
-              "Hoje sinto que tenho um conhecimento muito maior graças a tudo que aprendi com você. As aulas de automação e técnicas de QA abriram muito a minha mente. Aprendi bastante sobre entrevistas e sobre o mercado de trabalho, o que me deixou muito mais preparada para buscar novas oportunidades. Obrigada por compartilhar tanto conhecimento de forma tão clara e prática! ❤️"
+            <blockquote
+              class="text-base sm:text-xl text-gray-700 font-light italic leading-relaxed mb-8 max-w-2xl mx-auto">
+              "Hoje sinto que tenho um conhecimento muito maior graças a tudo que aprendi com você. As aulas de
+              automação e técnicas de QA abriram muito a minha mente. Aprendi bastante sobre entrevistas e sobre o
+              mercado de trabalho, o que me deixou muito mais preparada para buscar novas oportunidades. Obrigada por
+              compartilhar tanto conhecimento de forma tão clara e prática! ❤️"
             </blockquote>
             <div class="text-base font-semibold text-gray-900">Larissa Miranda</div>
-            <div class="text-xs font-mono text-pink-600 mt-1 uppercase tracking-wider">Aluna QAGES · Analista em Qualidade de Software</div>
+            <div class="text-xs font-mono text-pink-600 mt-1 uppercase tracking-wider">Aluna QAGES · Analista em
+              Qualidade de Software</div>
           </div>
         </div>
 
@@ -715,7 +806,10 @@
             Sem teoria vazia<span class="text-[#1351B4]">.</span>
           </h2>
           <p class="text-base text-gray-400 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-            Sou <strong class="text-gray-200 font-medium">Gustavo Machado</strong>, profissional com mais de <strong class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Criei a QAGES para que estudantes e estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados de verdade.
+            Sou <strong class="text-gray-200 font-medium">Gustavo Machado</strong>, profissional com mais de <strong
+              class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Criei a QAGES
+            para que estudantes e estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados
+            de verdade.
           </p>
 
           <!-- Chips -->
@@ -736,7 +830,8 @@
         <!-- Right: Photo -->
         <div class="lg:col-span-5">
           <div class="relative mx-auto max-w-xs lg:max-w-none">
-            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style="box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
+            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+              style="box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
               <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" class="w-full h-auto object-cover" />
               <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div class="font-mono text-sm font-bold text-white flex items-center gap-1">
@@ -760,53 +855,63 @@
 
       <!-- Offer Card -->
       <div>
-        <div class="glass-card p-8 sm:p-12 text-center" style="box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(19, 81, 180, 0.12);">
+        <div class="glass-card p-8 sm:p-12 text-center"
+          style="box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(19, 81, 180, 0.12);">
 
-            <div class="label-pill dark mb-6 mx-auto w-fit">
-              <span class="text-[#C5221F]">::</span>
-              condição especial
+          <div class="label-pill dark mb-6 mx-auto w-fit">
+            <span class="text-[#C5221F]">::</span>
+            condição especial
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-4">
+            Leve sua carreira para TI com quem vive a área há 9 anos
+          </h2>
+          <p class="text-sm text-gray-400 font-light mb-8 max-w-md mx-auto">
+            Acesso completo aos 8 módulos práticos, repositórios no GitHub, simulados CTFL e suporte direto.
+          </p>
+
+          <!-- Price -->
+          <div class="mb-8">
+            <p class="text-xs text-gray-500 font-mono mb-2">De <s class="text-gray-600">R$ 997,00</s> por apenas:</p>
+            <div class="flex items-baseline justify-center gap-2 mb-1">
+              <span class="text-lg text-gray-400 font-medium">12x de</span>
+              <span class="text-5xl sm:text-6xl font-black text-white font-mono">R$ 29,65</span>
             </div>
+            <p class="text-sm text-blue-400 font-mono">ou <strong>R$ 297,00 à vista</strong> — Pix / Boleto / Cartão</p>
+          </div>
 
-            <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-4">
-              Leve sua carreira para TI com quem vive a área há 9 anos
-            </h2>
-            <p class="text-sm text-gray-400 font-light mb-8 max-w-md mx-auto">
-              Acesso completo aos 8 módulos práticos, repositórios no GitHub, simulados CTFL e suporte direto.
-            </p>
+          <!-- CTA -->
+          <a href="#oferta"
+            class="btn-primary w-full max-w-sm mx-auto !h-[58px] !text-base !rounded-2xl flex justify-center">
+            SIM, QUERO MINHA VAGA
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
 
-            <!-- Price -->
-            <div class="mb-8">
-              <p class="text-xs text-gray-500 font-mono mb-2">De <s class="text-gray-600">R$ 997,00</s> por apenas:</p>
-              <div class="flex items-baseline justify-center gap-2 mb-1">
-                <span class="text-lg text-gray-400 font-medium">12x de</span>
-                <span class="text-5xl sm:text-6xl font-black text-white font-mono">R$ 29,65</span>
-              </div>
-              <p class="text-sm text-blue-400 font-mono">ou <strong>R$ 297,00 à vista</strong> — Pix / Boleto / Cartão</p>
-            </div>
-
-            <!-- CTA -->
-            <a href="#oferta" class="btn-primary w-full max-w-sm mx-auto !h-[58px] !text-base !rounded-2xl flex justify-center">
-              SIM, QUERO MINHA VAGA
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+          <!-- Trust -->
+          <div class="flex flex-wrap items-center justify-center gap-5 mt-8 text-xs text-gray-500 font-mono">
+            <span class="flex items-center gap-1.5 text-green-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-            </a>
-
-            <!-- Trust -->
-            <div class="flex flex-wrap items-center justify-center gap-5 mt-8 text-xs text-gray-500 font-mono">
-              <span class="flex items-center gap-1.5 text-green-500">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                Pagamento Seguro
-              </span>
-              <span class="flex items-center gap-1.5 text-blue-400">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                Acesso Imediato
-              </span>
-              <span class="flex items-center gap-1.5 text-red-400">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                7 Dias de Garantia
-              </span>
-            </div>
+              Pagamento Seguro
+            </span>
+            <span class="flex items-center gap-1.5 text-blue-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Acesso Imediato
+            </span>
+            <span class="flex items-center gap-1.5 text-red-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              7 Dias de Garantia
+            </span>
+          </div>
 
         </div>
       </div>
@@ -818,86 +923,99 @@
   <section id="faq" class="bg-section-dark py-20 sm:py-24 border-t border-white/06">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center sm:text-left">
 
-          <div class="label-pill dark mb-5 mx-auto sm:mx-0 w-fit">
-            <span class="text-[#C5221F]">::</span>
-            faq
+      <div class="label-pill dark mb-5 mx-auto sm:mx-0 w-fit">
+        <span class="text-[#C5221F]">::</span>
+        faq
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">Perguntas frequentes</h3>
+
+      <div id="faqAccordion" class="space-y-0 text-left">
+
+        <div class="faq-item">
+          <button class="faq-btn-q" aria-expanded="false">
+            <span>Ainda estou na faculdade. Consigo acompanhar?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div
+            class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
+            <div class="pb-4">
+              Sim! A capacitação foi planejada exatamente para suprir a falta de prática das faculdades. Você aprende
+              desde fundamentos até automação completa, passo a passo.
+            </div>
           </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">Perguntas frequentes</h3>
+        </div>
 
-          <div id="faqAccordion" class="space-y-0 text-left">
-
-            <div class="faq-item">
-              <button class="faq-btn-q" aria-expanded="false">
-                <span>Ainda estou na faculdade. Consigo acompanhar?</span>
-                <div class="faq-icon">+</div>
-              </button>
-              <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-                <div class="pb-4">
-                  Sim! A capacitação foi planejada exatamente para suprir a falta de prática das faculdades. Você aprende desde fundamentos até automação completa, passo a passo.
-                </div>
-              </div>
+        <div class="faq-item">
+          <button class="faq-btn-q" aria-expanded="false">
+            <span>Estou estagiando. Como isso me ajuda a ser efetivado?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div
+            class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
+            <div class="pb-4">
+              Quando você automatiza fluxos e cria pipelines no GitHub Actions do time, seus líderes percebem que você
+              já entrega valor de Júnior/Pleno — acelerando a efetivação.
             </div>
-
-            <div class="faq-item">
-              <button class="faq-btn-q" aria-expanded="false">
-                <span>Estou estagiando. Como isso me ajuda a ser efetivado?</span>
-                <div class="faq-icon">+</div>
-              </button>
-              <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-                <div class="pb-4">
-                  Quando você automatiza fluxos e cria pipelines no GitHub Actions do time, seus líderes percebem que você já entrega valor de Júnior/Pleno — acelerando a efetivação.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn-q" aria-expanded="false">
-                <span>Preciso saber programar para começar?</span>
-                <div class="faq-icon">+</div>
-              </button>
-              <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-                <div class="pb-4">
-                  Não! O curso inclui um módulo de lógica com Python focado no que você usará para criar scripts de QA. Didática direta, sem sofrimento.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn-q" aria-expanded="false">
-                <span>Prepara para a certificação CTFL/ISTQB?</span>
-                <div class="faq-icon">+</div>
-              </button>
-              <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-                <div class="pb-4">
-                  Sim! Módulo preparatório completo alinhado ao Syllabus oficial BSTQB/ISTQB com 200+ simulados comentados.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn-q" aria-expanded="false">
-                <span>Quanto tempo tenho de acesso?</span>
-                <div class="faq-icon">+</div>
-              </button>
-              <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-                <div class="pb-4">
-                  1 ano de acesso a todas as aulas, repositórios e comunidade. E 7 dias de garantia incondicional — não gostou, devolvo 100%.
-                </div>
-              </div>
-            </div>
-
-            <!-- Email contact -->
-            <div class="mt-6 flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/07">
-              <div class="w-10 h-10 rounded-xl bg-blue-950/50 border border-blue-800/40 flex items-center justify-center text-blue-400 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              </div>
-              <div>
-                <p class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Ficou alguma dúvida?</p>
-                <p class="text-sm font-medium text-gray-200">suporte@qages.com.br</p>
-              </div>
-            </div>
-
           </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn-q" aria-expanded="false">
+            <span>Preciso saber programar para começar?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div
+            class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
+            <div class="pb-4">
+              Não! O curso inclui um módulo de lógica com Python focado no que você usará para criar scripts de QA.
+              Didática direta, sem sofrimento.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn-q" aria-expanded="false">
+            <span>Prepara para a certificação CTFL/ISTQB?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div
+            class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
+            <div class="pb-4">
+              Sim! Módulo preparatório completo alinhado ao Syllabus oficial BSTQB/ISTQB com 200+ simulados comentados.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn-q" aria-expanded="false">
+            <span>Quanto tempo tenho de acesso?</span>
+            <div class="faq-icon">+</div>
+          </button>
+          <div
+            class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
+            <div class="pb-4">
+              1 ano de acesso a todas as aulas, repositórios e comunidade. E 7 dias de garantia incondicional — não
+              gostou, devolvo 100%.
+            </div>
+          </div>
+        </div>
+
+        <!-- Email contact -->
+        <div class="mt-6 flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/07">
+          <div
+            class="w-10 h-10 rounded-xl bg-blue-950/50 border border-blue-800/40 flex items-center justify-center text-blue-400 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Ficou alguma dúvida?</p>
+            <p class="text-sm font-medium text-gray-200">suporte@qages.com.br</p>
+          </div>
+        </div>
+
+      </div>
 
     </div>
   </section>
@@ -905,7 +1023,8 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer-wrap py-12 px-5 sm:px-8">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between gap-8 text-center sm:text-left">
+    <div
+      class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between gap-8 text-center sm:text-left">
 
       <!-- Brand -->
       <div class="flex flex-col items-center sm:items-start">
@@ -949,7 +1068,8 @@
 
     </div>
 
-    <div class="max-w-6xl mx-auto mt-8 pt-8 border-t border-white/06 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 font-mono">
+    <div
+      class="max-w-6xl mx-auto mt-8 pt-8 border-t border-white/06 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 font-mono">
       <span>© 2026 Gustavo Machado :: QAGES® · Todos os direitos reservados</span>
       <span class="text-gray-600">"QA não é miojo."</span>
     </div>
@@ -1029,4 +1149,5 @@
   </script>
 
 </body>
+
 </html>
