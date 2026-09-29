@@ -1,5 +1,6 @@
 [X] Tirar o QAGES Ecosystem
 [ ] Trocar a info. de 3 aval. verif. para +2000 alunos.
+[ ] Olhar o link que o Gustavo mandou no grupo como referência para a landingpage
 
 [ ] Reduzir o padding novamente
 [ ] No mobile, subir o vídeo para depois do H1
