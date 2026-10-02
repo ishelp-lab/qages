@@ -59,6 +59,20 @@
       color: #C8CFDF;
     }
 
+    /* ===================== SMOKY BODY OVERLAY ===================== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 100% 60% at 30% 0%, rgba(19, 81, 180, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 80% 80%, rgba(197, 34, 31, 0.04) 0%, transparent 50%);
+      backdrop-filter: blur(0.4px);
+      -webkit-backdrop-filter: blur(0.4px);
+    }
+
     /* ===================== AURORA BACKGROUND ===================== */
     .bg-aurora {
       background-color: #080A10;
@@ -106,14 +120,14 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1.5rem;
+      border-radius: 22px;
     }
 
     .glass-card-light {
       background: #FFFFFF;
       border: 1px solid #E5E7EB;
       box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
-      border-radius: 1.5rem;
+      border-radius: 22px;
     }
 
     .bg-section-light {
@@ -226,7 +240,7 @@
     .step-card-light {
       background: #FFFFFF;
       border: 1px solid #E5E7EB;
-      border-radius: 1.25rem;
+      border-radius: 22px;
       padding: 1.75rem;
       transition: all 0.3s ease;
     }
@@ -468,7 +482,103 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 2rem;
+      border-radius: 22px;
+    }
+
+    /* ===================== REFERENCE SECTIONS ===================== */
+    .ref-section-dark {
+      background: #070910;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .audience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.9375rem;
+      color: #CBD5E1;
+      line-height: 1.55;
+    }
+
+    .audience-item:last-child {
+      border-bottom: none;
+    }
+
+    .audience-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 0.65rem;
+      color: #60A5FA;
+    }
+
+    .journey-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 22px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .journey-card:hover {
+      background: rgba(19,81,180,0.07);
+      border-color: rgba(19,81,180,0.3);
+      transform: translateY(-3px);
+    }
+
+    .journey-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(19,81,180,0.4);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .module-item {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 22px;
+      padding: 1.25rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .module-item:hover {
+      background: rgba(19,81,180,0.06);
+      border-color: rgba(19,81,180,0.25);
+    }
+
+    .module-item.advanced {
+      background: rgba(19,81,180,0.06);
+      border-color: rgba(19,81,180,0.2);
+    }
+
+    .deliverable-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.875rem;
+      color: #CBD5E1;
+    }
+
+    .guarantee-box {
+      background: rgba(34, 197, 94, 0.07);
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      border-radius: 22px;
+      padding: 1.25rem 1.5rem;
     }
 
     /* ===================== FOOTER ===================== */
@@ -533,6 +643,8 @@
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-400">
         <a href="#rota" class="hover:text-white transition-colors">Como funciona</a>
+        <a href="#jornada" class="hover:text-white transition-colors">Jornada</a>
+        <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
         <a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a>
         <a href="#mentor" class="hover:text-white transition-colors">Mentor</a>
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
@@ -540,7 +652,7 @@
 
       <!-- CTA + Hamburger -->
       <div class="flex items-center gap-2 flex-shrink-0">
-        <a href="#oferta" class="btn-primary !h-[40px] !px-4 !text-sm !rounded-full whitespace-nowrap">
+        <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary !h-[40px] !px-4 !text-sm !rounded-full whitespace-nowrap">
           Garantir Vaga
           <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -558,13 +670,14 @@
     <!-- Mobile Dropdown -->
     <div id="mobileMenu"
       class="hidden md:hidden bg-[#0F1219]/95 backdrop-blur-xl border-t border-white/07 px-6 py-5 space-y-4">
-      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como
-        funciona</a>
+      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como funciona</a>
+      <a href="#jornada" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Jornada</a>
+      <a href="#modulos" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Módulos</a>
       <a href="#depoimentos"
         class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Depoimentos</a>
       <a href="#mentor" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Mentor</a>
       <a href="#faq" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">FAQ</a>
-      <a href="#oferta"
+      <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
         class="block text-center w-full py-3 text-sm font-semibold text-white bg-gradient-to-r from-[#1351B4] to-[#1a6cf0] rounded-2xl mobile-link mt-2">
         Garantir Vaga
       </a>
@@ -584,9 +697,8 @@
 
           <!-- Heading -->
           <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-bold text-white tracking-tight leading-[1.1] mb-5">
-            Entre em TI pela<br>
-            porta certa<span class="text-[#1351B4]">.</span><br>
-            <span class="text-[#2563EB]">Qualidade de Software</span>
+            Mentoria e Capacitação em<br>
+            <span class="text-[#2563EB]">Software QA Engineer</span>
           </h1>
 
           <!-- VIDEO — APENAS MOBILE (logo após o H1) -->
@@ -641,8 +753,8 @@
 
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
-            <a href="#oferta" class="btn-primary">
-              Quero minha vaga — R$ 297
+            <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary">
+              Garantir minha vaga
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
@@ -840,8 +952,298 @@
   </section>
 
 
-  <!-- ===================== 3. DEPOIMENTOS — CARROSSEL ===================== -->
-  <section id="depoimentos" class="bg-section-light py-20 sm:py-28 relative overflow-hidden border-b border-gray-200">
+  <!-- ===================== 3. PARA QUEM É ===================== -->
+  <section id="para-quem" class="bg-section-dark py-20 sm:py-28 border-t border-white/06">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+
+        <!-- Left: Audience -->
+        <div>
+          <div class="label-pill dark mb-5 w-fit">
+            <span class="text-[#C5221F]">::</span>
+            para quem é
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight mb-7">
+            Essa mentoria é para você que:
+          </h2>
+          <div class="space-y-1">
+            <div class="audience-item">
+              <div class="audience-check">✓</div>
+              <span>Está na graduação e quer sair da faculdade já com base em QA.</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-check">✓</div>
+              <span>Quer entrar em testes de software do zero e não sabe por onde começar.</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-check">✓</div>
+              <span>Já estuda QA, mas trava na hora de conseguir a primeira vaga.</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-check">✓</div>
+              <span>Se sente perdido(a) sobre o que estudar e como evoluir com direção.</span>
+            </div>
+            <div class="audience-item">
+              <div class="audience-check">✓</div>
+              <span>Prefere um caminho prático, com exercícios e acompanhamento, em vez de conteúdo solto.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Deliverables -->
+        <div>
+          <div class="label-pill dark mb-5 w-fit">
+            <span class="text-[#C5221F]">::</span>
+            o que você recebe
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight mb-7">
+            O que você recebe na mentoria:
+          </h2>
+          <div class="grid grid-cols-1 gap-2.5">
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Aulas teóricas e práticas (gravadas)
+            </div>
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Acompanhamento direto para tirar dúvidas
+            </div>
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Exercícios práticos para aplicar o que aprendeu
+            </div>
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Material de apoio com dicas e recursos
+            </div>
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Mapa de carreira com próximos passos claros
+            </div>
+            <div class="deliverable-item">
+              <span class="text-blue-400">▸</span>
+              Acesso por 1 ano
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 4. COMO O QA TRABALHA ===================== -->
+  <section id="jeito-qa" class="bg-section-light py-20 sm:py-28 border-y border-gray-200">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <div class="label-pill light mb-5 w-fit mx-auto">
+        <span class="text-[#C5221F]">::</span>
+        na prática
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight mb-10 text-center">
+        Aprenda o jeito de trabalhar de um QA
+      </h2>
+      <div class="space-y-5 text-base text-gray-600 leading-relaxed font-light">
+        <p>Muita gente começa achando que <strong class="text-gray-800 font-medium">testar é só abrir o sistema</strong>, clicar e ver se apareceu um erro. Em um projeto de verdade, <strong class="text-gray-800 font-medium">o QA entra antes</strong> disso: <strong class="text-gray-800 font-medium">entende</strong> o que o software precisa fazer, <strong class="text-gray-800 font-medium">planeja</strong> o que vale o tempo, <strong class="text-gray-800 font-medium">escreve casos de testes</strong>, <strong class="text-gray-800 font-medium">executa</strong> com critério e <strong class="text-gray-800 font-medium">reporta o bug</strong> de um jeito que o time consiga corrigir.</p>
+        <p>Esse é um processo bom e real, organizado, com prioridade e evidência. Não é um checklist improvisado na véspera da entrega. É o <strong class="text-gray-800 font-medium">raciocínio que o mercado</strong> espera, inclusive de quem ainda está na <strong class="text-gray-800 font-medium">graduação</strong> ou buscando a <strong class="text-gray-800 font-medium">primeira vaga</strong>.</p>
+        <p>Nesta mentoria você aprende esse fluxo na prática, passo a passo, para chegar na entrevista já <strong class="text-gray-800 font-medium">sabendo como um QA trabalha de verdade</strong>, e não só o nome das ferramentas.</p>
+      </div>
+
+      <!-- Testimonial inline -->
+      <div class="mt-10 glass-card-light p-8 text-center">
+        <div class="flex justify-center text-yellow-400 mb-4 tracking-wide text-base">★★★★★</div>
+        <blockquote class="text-base sm:text-lg text-gray-700 font-light italic leading-relaxed mb-5 max-w-xl mx-auto">
+          "Em 2 meses de mentoria eu organizei meus estudos, melhorei meu curriculo e conquistei minha primeira oportunidade em QA."
+        </blockquote>
+        <p class="text-xs font-mono text-gray-500 uppercase tracking-widest">Depoimento de aluno</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 5. JORNADA / PASSO A PASSO ===================== -->
+  <section id="jornada" class="bg-section-dark py-20 sm:py-28 border-t border-white/06">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="label-pill dark mb-5 mx-auto w-fit">
+          <span class="text-[#C5221F]">::</span>
+          o caminho
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+          O passo a passo da mentoria
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+
+        <div class="journey-card">
+          <p class="journey-number">01</p>
+          <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Fundamentos</p>
+          <h3 class="text-sm font-semibold text-white mb-2">Mentalidade de QA</h3>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Papel do testador, princípios, níveis e tipos de teste. Aprenda a base antes de qualquer ferramenta.</p>
+        </div>
+
+        <div class="journey-card">
+          <p class="journey-number">02</p>
+          <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Processo</p>
+          <h3 class="text-sm font-semibold text-white mb-2">Como o QA trabalha</h3>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Planejamento, escrita e execução de casos de teste. Escreva bons bugs para o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
+        </div>
+
+        <div class="journey-card">
+          <p class="journey-number">03</p>
+          <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Projetos</p>
+          <h3 class="text-sm font-semibold text-white mb-2">Frontend e API na prática</h3>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprender o que testar em tela e API, e como testar na prática com projetos reais.</p>
+        </div>
+
+        <div class="journey-card">
+          <p class="journey-number">04</p>
+          <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Automação</p>
+          <h3 class="text-sm font-semibold text-white mb-2">Do caso ao script</h3>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprenda o que vale automatizar, escreva e execute seus primeiros testes E2E e de API.</p>
+        </div>
+
+        <div class="journey-card">
+          <p class="journey-number">05</p>
+          <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Carreira</p>
+          <h3 class="text-sm font-semibold text-white mb-2">Primeira oportunidade</h3>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Dicas e guias para montar seu currículo, ajustar seu LinkedIn, se preparar para as entrevistas e trilhas de estudos para a sua carreira.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== 6. MÓDULOS COMPLETOS ===================== -->
+  <section id="modulos" class="bg-section-light py-20 sm:py-28 border-y border-gray-200">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="label-pill light mb-5 mx-auto w-fit">
+          <span class="text-[#C5221F]">::</span>
+          conteúdo completo
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+          Conteúdo da mentoria em módulos:
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 1 — Introdução ao Teste de Software</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai entender o papel do QA no mercado, por que os testes são essenciais e como pensar como um profissional de qualidade desde o início.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 2 — Fundamentos dos Testes de Software</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Aqui você constrói a base sólida: conceitos fundamentais, princípios de testes e como funciona o processo de qualidade no desenvolvimento de software.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 3 — Níveis e Tipos de Teste</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você aprende a diferenciar e aplicar os principais tipos de teste, entendendo quando usar cada abordagem (manual, automatizado, exploratório, regressão, etc).</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 4 — Entendendo o Processo de Teste</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai dominar o fluxo completo de testes dentro de um projeto real — do planejamento até a entrega final com qualidade.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 5 — Boas práticas e ferramentas para escrita e gerenciamento de casos de teste</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Aprenda a documentar testes de forma profissional, clara e organizada, utilizando boas práticas e padrões usados no mercado.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 6 — Boas práticas para reportar Bugs</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender a identificar, classificar e reportar bugs de forma estratégica, aumentando sua credibilidade como QA.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 7 — Metodologias de desenvolvimento de software e atuação do QA</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Entenda como funcionam os projetos de software e como o QA se posiciona dentro dos times ágeis e tradicionais.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 8 — Introdução aos testes de API</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender os fundamentos para testar APIs, entendendo estrutura de requisições, respostas e principais validações.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 9 — Projetos de testes de front-end na prática</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Aplicação real de testes em interfaces web, focando em comportamento do usuário, usabilidade e qualidade visual.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 10 — Projetos de teste de API na prática</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender a testar APIs na prática, validando requisições, respostas e integrações entre sistemas.</p>
+        </div>
+
+        <div class="module-item">
+          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 11 — Introdução aos testes automatizados</h3>
+          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai ver como um caso de teste que já testou manualmente vira um teste automático, também vai entender o que vale automatizar, e realizar os primeiros testes de E2E e de API.</p>
+        </div>
+
+        <div class="module-item advanced bg-blue-50 border-blue-200">
+          <h3 class="text-sm font-semibold text-[#1351B4] mb-3">Módulos extras e bônus — você também vai aprender:</h3>
+          <ul class="space-y-1.5">
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 1 — Técnicas de teste de software</li>
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 2 — Padrões e antipadrões para planejamento de testes</li>
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 3 — Utilização de IA no dia a dia do QA</li>
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 1 — Dicas, perguntas e respostas para Entrevistas</li>
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 2 — Dicas para montar seu LinkedIn e currículo</li>
+            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 3 — Guias e trilhas pra carreira</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Garantia -->
+      <div class="guarantee-box mt-8 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <p class="text-sm text-green-700 font-light leading-relaxed">
+          <strong class="font-semibold">Garantia de 7 dias:</strong> se o conteúdo não for para você, devolvemos seu investimento dentro do prazo.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ===================== 7. VAGAS LIMITADAS ===================== -->
+  <section id="vagas" class="bg-section-dark py-20 sm:py-24 border-t border-white/06">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center">
+      <div class="label-pill dark mb-5 mx-auto w-fit">
+        <span class="text-[#C5221F]">::</span>
+        vagas limitadas
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-6">
+        Vagas limitadas
+      </h2>
+      <p class="text-base text-gray-400 font-light leading-relaxed mb-4">
+        Para manter a qualidade da mentoria, atendo poucos alunos por vez, inclusive quem está começando agora.
+      </p>
+      <p class="text-base text-gray-400 font-light leading-relaxed mb-10">
+        Se você quer um caminho claro rumo à primeira oportunidade em QA, essa pode ser sua vaga.
+      </p>
+      <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary mx-auto">
+        Garantir minha vaga
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </a>
+      <p class="text-xs font-mono text-gray-600 mt-4">Vagas limitadas · mentoria com acompanhamento</p>
+    </div>
+  </section>
+
+
+  <!-- ===================== 8. DEPOIMENTOS ===================== -->
+  <section id="depoimentos" class="bg-section-light py-20 sm:py-28 border-y border-gray-200">
 
     <div class="max-w-4xl mx-auto px-5 sm:px-8 relative z-10">
 
@@ -875,8 +1277,7 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Pedro Henrique</div>
-                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno
-                    QAGES</div>
+                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno QAGES</div>
                 </div>
               </div>
             </div>
@@ -897,8 +1298,7 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">José Lima</div>
-                  <div class="text-xs font-mono text-green-600 uppercase tracking-wider">Recolocado no Mercado · QA
-                    Engineer</div>
+                  <div class="text-xs font-mono text-green-600 uppercase tracking-wider">Recolocado no Mercado · QA Engineer</div>
                 </div>
               </div>
             </div>
@@ -919,8 +1319,7 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Larissa Miranda</div>
-                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna QAGES · Analista em
-                    Qualidade de Software</div>
+                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna QAGES · Analista em Qualidade de Software</div>
                 </div>
               </div>
             </div>
@@ -1002,8 +1401,8 @@
             </div>
           </div>
 
-          <a href="#oferta" class="btn-primary flex mx-auto lg:mx-0 w-fit">
-            Fazer parte da turma
+          <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary flex mx-auto lg:mx-0 w-fit">
+            Garantir minha vaga
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
@@ -1064,8 +1463,8 @@
         </div>
 
         <!-- CTA -->
-        <a href="#oferta" class="btn-primary w-full !h-[58px] !text-base !rounded-2xl flex justify-center mb-10">
-          SIM, QUERO MINHA VAGA
+        <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full !h-[58px] !text-base !rounded-2xl flex justify-center mb-10">
+          GARANTIR MINHA VAGA
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
           </svg>
