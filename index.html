@@ -617,6 +617,46 @@
         display: none;
       }
     }
+  
+    /* ===================== SCROLL REVEAL ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 150ms; }
+    .reveal-delay-2 { transition-delay: 300ms; }
+    .reveal-delay-3 { transition-delay: 450ms; }
+
+    /* ===================== BTN GLOW ===================== */
+    .btn-glow {
+      position: relative;
+    }
+    .btn-glow::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(90deg, #1351B4, #2563EB, #1351B4);
+      background-size: 200% 100%;
+      border-radius: 999px;
+      filter: blur(12px);
+      z-index: -1;
+      opacity: 0.6;
+      animation: glow-pulse 3s infinite linear;
+    }
+    @keyframes glow-pulse {
+      0% { background-position: 0% 50%; opacity: 0.5; }
+      50% { background-position: 100% 50%; opacity: 0.9; }
+      100% { background-position: 0% 50%; opacity: 0.5; }
+    }
+    .shadow-blue {
+      box-shadow: 0 0 30px rgba(37,99,235,0.4);
+    }
+
   </style>
 </head>
 
@@ -753,7 +793,7 @@
 
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
-            <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary">
+            <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary btn-glow shadow-blue">
               Garantir minha vaga
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -819,128 +859,98 @@
   </section>
 
 
-  <!-- ===================== 2. REQUISITOS ===================== -->
-  <section id="rota" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <!-- ===================== 2. REQUISITOS ===================== -->
+  <section id="rota" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-y border-gray-200/50">
+    <!-- background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1351B4]/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
 
       <!-- Header -->
-      <div class="max-w-2xl mx-auto mb-16 text-center">
+      <div class="max-w-2xl mx-auto mb-12 text-center reveal">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-5">
           Requisitos para entrar em TI através de QA
         </h2>
         <p class="text-base text-gray-600 font-light leading-relaxed">
-          Antes de mandar o currículo, entenda o que os recrutadores realmente avaliam em um QA Júnior. São essas
-          habilidades que separam quem passa do processo seletivo de quem não passa.
+          Antes de mandar o currículo, entenda o que os recrutadores realmente avaliam em um QA Júnior. São essas habilidades que separam quem passa de quem não passa.
         </p>
       </div>
 
-      <!-- Requirement Cards (ícones SVG, sem numeração) -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
+      <div class="bg-white/40 backdrop-blur-xl border border-blue-100 p-1 sm:p-2 rounded-[2rem] shadow-xl shadow-blue-900/5 reveal reveal-delay-1">
+        <div class="bg-white rounded-[1.75rem] p-6 sm:p-10 border border-gray-100 relative overflow-hidden shadow-sm">
+          
+          <!-- Requirement Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
 
-        <div class="step-card-light">
-          <div class="mb-3">
-            <svg class="w-7 h-7 text-[#1351B4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/50 transition-colors">
+              <div class="mb-4">
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+              </div>
+              <span class="text-[10px] font-mono text-blue-500 uppercase tracking-widest block mb-2">Fundamentos</span>
+              <h4 class="text-sm font-semibold text-gray-900 mb-2">Mentalidade Analítica</h4>
+              <p class="text-xs text-gray-600 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios técnicos que devs respeitam.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-red-200 hover:bg-red-50/50 transition-colors">
+              <div class="mb-4">
+                <svg class="w-8 h-8 text-[#C5221F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <span class="text-[10px] font-mono text-red-500 uppercase tracking-widest block mb-2">Ferramentas</span>
+              <h4 class="text-sm font-semibold text-gray-900 mb-2">Git, GitHub &amp; APIs</h4>
+              <p class="text-xs text-gray-600 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e versionamento profissional.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/50 transition-colors">
+              <div class="mb-4">
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <span class="text-[10px] font-mono text-blue-500 uppercase tracking-widest block mb-2">Automação</span>
+              <h4 class="text-sm font-semibold text-gray-900 mb-2">Cypress &amp; Robot</h4>
+              <p class="text-xs text-gray-600 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands, intercepts, keywords BDD.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-50/50 transition-colors">
+              <div class="mb-4">
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+              </div>
+              <span class="text-[10px] font-mono text-blue-500 uppercase tracking-widest block mb-2">Pipelines</span>
+              <h4 class="text-sm font-semibold text-gray-900 mb-2">CI/CD GitHub Actions</h4>
+              <p class="text-xs text-gray-600 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request. Impressione recrutadores.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-green-200 hover:bg-green-50/50 transition-colors">
+              <div class="mb-4">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <span class="text-[10px] font-mono text-green-500 uppercase tracking-widest block mb-2">Mercado</span>
+              <h4 class="text-sm font-semibold text-gray-900 mb-2">Vaga ou Efetivação</h4>
+              <p class="text-xs text-gray-600 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas técnicas e negociação.</p>
+            </div>
+
           </div>
-          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Fundamentos</span>
-          <h4 class="text-sm font-semibold text-gray-900 mb-2">Mentalidade Analítica</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios
-            técnicos que devs respeitam.</p>
-        </div>
 
-        <div class="step-card-light">
-          <div class="mb-3">
-            <svg class="w-7 h-7 text-[#C5221F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
+          <!-- O que a QAGES oferece -->
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <p class="text-[11px] font-mono font-semibold text-blue-500 uppercase tracking-widest mb-1">:: tudo isso, a QAGES cobre</p>
+                <p class="text-sm text-gray-600 font-light">Cada requisito acima tem um módulo dedicado na capacitação.</p>
+              </div>
+              <a href="#vagas" class="text-xs font-mono font-semibold text-blue-500 hover:text-blue-600 transition-colors whitespace-nowrap">Ver oferta →</a>
+            </div>
+            
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">Fundamentos &amp; Git</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">Python para QA</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">Robot Framework</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">Cypress Moderno E2E</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">Testes de API · Postman</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-white border border-gray-200">CI/CD · GitHub Actions</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-blue-700 bg-blue-50 border border-blue-200">Prep. CTFL / ISTQB</span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-700 bg-green-50 border border-green-200">Entrevistas &amp; Mercado</span>
+            </div>
           </div>
-          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Ferramentas</span>
-          <h4 class="text-sm font-semibold text-gray-900 mb-2">Git, GitHub &amp; APIs</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e
-            versionamento profissional.</p>
-        </div>
 
-        <div class="step-card-light">
-          <div class="mb-3">
-            <svg class="w-7 h-7 text-[#1351B4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Automação</span>
-          <h4 class="text-sm font-semibold text-gray-900 mb-2">Cypress &amp; Robot FW</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands,
-            intercepts, keywords BDD.</p>
-        </div>
-
-        <div class="step-card-light">
-          <div class="mb-3">
-            <svg class="w-7 h-7 text-[#1351B4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-            </svg>
-          </div>
-          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Pipelines</span>
-          <h4 class="text-sm font-semibold text-gray-900 mb-2">CI/CD GitHub Actions</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request.
-            Impressione recrutadores.</p>
-        </div>
-
-        <div class="step-card-light hover:border-green-400">
-          <div class="mb-3">
-            <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest block mb-2">Mercado</span>
-          <h4 class="text-sm font-semibold text-gray-900 mb-2">Vaga ou Efetivação</h4>
-          <p class="text-xs text-gray-600 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas
-            técnicas e negociação.</p>
-        </div>
-
-      </div>
-
-      <!-- O que a QAGES oferece (conecta com os requisitos acima) -->
-      <div class="glass-card-light p-8 sm:p-10">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7">
-          <div>
-            <p class="text-[11px] font-mono font-semibold text-[#1351B4] uppercase tracking-widest mb-1">:: tudo isso, a
-              QAGES cobre</p>
-            <p class="text-sm text-gray-600 font-light">Cada requisito acima tem um módulo dedicado na capacitação.</p>
-          </div>
-          <a href="#oferta"
-            class="text-xs font-mono font-semibold text-[#1351B4] hover:text-[#2563EB] transition-colors whitespace-nowrap">Ver
-            oferta →</a>
-        </div>
-        <p class="text-xs font-mono text-gray-400 uppercase tracking-widest mb-4">Conteúdo dos 8 módulos</p>
-        <div class="flex flex-wrap justify-center gap-2.5">
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Fundamentos
-            &amp; Git</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Python
-            para QA</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Robot
-            Framework</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Cypress
-            Moderno E2E</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">Testes
-            de API · Postman</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-700 bg-gray-50 border border-gray-200">CI/CD
-            · GitHub Actions</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-brand-blue bg-blue-50 border border-blue-200">Preparatório
-            CTFL / ISTQB</span>
-          <span
-            class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-700 bg-green-50 border border-green-200">Entrevistas
-            &amp; Mercado</span>
         </div>
       </div>
 
@@ -949,46 +959,41 @@
 
 
   <!-- ===================== 3. PARA QUEM É ===================== -->
-  <section id="para-quem" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-24 border-t border-white/06">
-    <div class="max-w-xl mx-auto px-5 sm:px-8">
-      <div>
-
-        <!-- Audience -->
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight mb-7">
-            Essa mentoria é para você que:
-          </h2>
-          <div class="space-y-1">
-            <div class="audience-item">
-              <div class="audience-check">✓</div>
-              <span>Está na graduação e quer sair da faculdade já com base em QA.</span>
-            </div>
-            <div class="audience-item">
-              <div class="audience-check">✓</div>
-              <span>Quer entrar em testes de software do zero e não sabe por onde começar.</span>
-            </div>
-            <div class="audience-item">
-              <div class="audience-check">✓</div>
-              <span>Já estuda QA, mas trava na hora de conseguir a primeira vaga.</span>
-            </div>
-            <div class="audience-item">
-              <div class="audience-check">✓</div>
-              <span>Se sente perdido(a) sobre o que estudar e como evoluir com direção.</span>
-            </div>
-            <div class="audience-item">
-              <div class="audience-check">✓</div>
-              <span>Prefere um caminho prático, com exercícios e acompanhamento, em vez de conteúdo solto.</span>
-            </div>
-          </div>
+  <section id="para-quem" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-24 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+          Essa mentoria é para você que...
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass-card p-6 reveal reveal-delay-1 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg></div>
+          <p class="text-sm text-gray-300">Está na graduação e quer sair da faculdade já com base em QA.</p>
         </div>
-
+        <div class="glass-card p-6 reveal reveal-delay-2 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <p class="text-sm text-gray-300">Quer entrar em testes de software do zero e não sabe por onde começar.</p>
+        </div>
+        <div class="glass-card p-6 reveal reveal-delay-3 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <p class="text-sm text-gray-300">Já estuda QA, mas trava na hora de conseguir a primeira vaga.</p>
+        </div>
+        <div class="glass-card p-6 reveal reveal-delay-1 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+          <p class="text-sm text-gray-300">Se sente perdido(a) sobre o que estudar e como evoluir com direção.</p>
+        </div>
+        <div class="glass-card p-6 sm:col-span-2 lg:col-span-1 reveal reveal-delay-2 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+          <p class="text-sm text-gray-300">Prefere um caminho prático, com exercícios e acompanhamento, em vez de conteúdo solto.</p>
+        </div>
       </div>
     </div>
   </section>
 
 
   <!-- ===================== 4. COMO O QA TRABALHA ===================== -->
-  <section id="jeito-qa" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200">
+  <section id="jeito-qa" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200/50">
     <div class="max-w-3xl mx-auto px-5 sm:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight mb-10 text-center">
         Aprenda o jeito de trabalhar de um QA
@@ -1012,9 +1017,9 @@
 
 
   <!-- ===================== 5. JORNADA / PASSO A PASSO ===================== -->
-  <section id="jornada" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-24 border-t border-white/06">
+  <section id="jornada" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-24 border-t border-white/5">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
           O passo a passo da mentoria
         </h2>
@@ -1022,35 +1027,35 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
 
-        <div class="journey-card">
+        <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">01</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Fundamentos</p>
           <h3 class="text-sm font-semibold text-white mb-2">Mentalidade de QA</h3>
           <p class="text-xs text-gray-400 leading-relaxed font-light">Papel do testador, princípios, níveis e tipos de teste. Aprenda a base antes de qualquer ferramenta.</p>
         </div>
 
-        <div class="journey-card">
+        <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">02</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Processo</p>
           <h3 class="text-sm font-semibold text-white mb-2">Como o QA trabalha</h3>
           <p class="text-xs text-gray-400 leading-relaxed font-light">Planejamento, escrita e execução de casos de teste. Escreva bons bugs para o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
         </div>
 
-        <div class="journey-card">
+        <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">03</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Projetos</p>
           <h3 class="text-sm font-semibold text-white mb-2">Frontend e API na prática</h3>
           <p class="text-xs text-gray-400 leading-relaxed font-light">Aprender o que testar em tela e API, e como testar na prática com projetos reais.</p>
         </div>
 
-        <div class="journey-card">
+        <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">04</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Automação</p>
           <h3 class="text-sm font-semibold text-white mb-2">Do caso ao script</h3>
           <p class="text-xs text-gray-400 leading-relaxed font-light">Aprenda o que vale automatizar, escreva e execute seus primeiros testes E2E e de API.</p>
         </div>
 
-        <div class="journey-card">
+        <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">05</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Carreira</p>
           <h3 class="text-sm font-semibold text-white mb-2">Primeira oportunidade</h3>
@@ -1063,86 +1068,237 @@
 
 
   <!-- ===================== 6. MÓDULOS COMPLETOS ===================== -->
-  <section id="modulos" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200">
-    <div class="max-w-4xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-14">
+  <section id="modulos" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200/50 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10 reveal">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
-          Conteúdo da mentoria em módulos:
+          Conteúdo da mentoria em módulos
         </h2>
       </div>
 
-      <div class="space-y-3">
+      <div class="relative w-full">
+        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: -300, behavior: 'smooth'})" class="absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: 300, behavior: 'smooth'})" class="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </button>
 
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 1 — Introdução ao Teste de Software</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai entender o papel do QA no mercado, por que os testes são essenciais e como pensar como um profissional de qualidade desde o início.</p>
+        <div id="modulesCarousel" class="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 -mx-2 sm:px-4 sm:-mx-4 hide-scrollbar" style="scroll-behavior: smooth;">
+
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_cbc4a531-4c89-4ab1-94c2-e427f0a894ba_6c1744916339493fac7cc0e2592b6352.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Apresentação do curso</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_f072c247-0071-48c9-9768-c273f7d125f0_0dc1cccf4ea940cbacedc2c90cfb9631.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 1 - Introdução ao Teste de Software</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_a976e390-f710-4a34-ba59-f39beed13a2c_f86b26eb380147c297067bcc7de76082.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 2 - Fundamentos dos Testes de Software</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_849342a7-72e8-494d-99fa-e38baecd8f73_7605196e9c2f45bb89f2f6dacf3bda00.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 3 - Níveis e Tipos de Teste de Software</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_57df83d6-60f9-45bb-941f-db73393558e0_b0c136c9c4cf44388323fa2f2689e04a.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 4 - Entendendo o Processo de Teste</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_12e6de34-b028-4ff6-be08-3daacca6ead6_5c9377f4f3dc499abfc6c07600944eeb.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 5 - Boas práticas e Ferramentas para escrita...</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_fc6a537f-2b6a-4c32-b844-18d15780df3a_6e839c06a516425196495b529986e779.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 6 - Boas práticas para reportar Bugs</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_0a25153d-b510-41cc-bec0-308a40450597_c587221d8d84416685da2e0f61dc4e1c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 7 - Metodologia de desenvolvimento e atuação do QA</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_473cb070-9dc0-4ecb-8a96-bcf840e3b3ed_65b7c57c4da343848600085913e61c2c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 8 - Introdução aos testes de API</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b968220f-104e-4ba6-9205-cfafe81ef24d_e197d4ab3b8a4571ae343f73a5525810.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 9 - Projetos de testes de front-end na prática</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b68796a3-8891-48b7-8dc1-b05457ad097f_0fe3667677624fadbbff378026bdc36d.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 10 - Projetos de teste de API na prática</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_741e1a6b-ba32-408e-8ea6-b3195cfc6f58_6cdf880686314ad0b56953ba53f9e34c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 11 - Introdução aos testes automatizados</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_7313c33a-e413-4c1c-84c6-a0c04d781381_ac7d60d334384293812c34cd908f8a9d.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 1 - Técnicas de teste</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_9b1abbe7-cac9-4219-ae81-635b08af61bc_d0c83c026e8c4e5fba6ffe46718dcec5.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 2 - Padrões e anti-padrões</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_821c4501-32e4-4c78-93cc-cf38604d66ff_307118fb30fa4c94a72847d8cfb881ae.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 3 - Utilização de IA no dia a dia</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_6e762da4-590b-4294-9a8c-c17d2cd6a1e2_18acbb39af3e494e8b9b0ce5efe797b2.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 1] Dicas para entrevistas</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_de87bb43-4154-4be7-988d-a252c2066785_b17adaea6a174cee88a4146dd5bb5777.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 2] Currículo e LinkedIn</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_3246dd8a-535e-4ccb-9aea-e1bde0da6c36_63aaf08a71914db4b1d3b18ec83035cf.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[Bônus 3] Guias e trilhas de estudo pra carreira</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_62d38c61-67ad-47f3-88e0-f80bf7079944_31898f184aa94a33874c5c48c9d993f3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Exercícios de fixação para treinar</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_0ce2b711-ed53-4377-887f-534e70a2d282_2d7b0b207f0d4222879efcb909e0c07a.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Ao vivo - Turma 1</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Card -->
+          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_52ce4749-8c82-4f45-93f1-95c89ee3a2f3_048c8a77d0694e2d8f589d5f9768574e.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Feedback</h3>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 2 — Fundamentos dos Testes de Software</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Aqui você constrói a base sólida: conceitos fundamentais, princípios de testes e como funciona o processo de qualidade no desenvolvimento de software.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 3 — Níveis e Tipos de Teste</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você aprende a diferenciar e aplicar os principais tipos de teste, entendendo quando usar cada abordagem (manual, automatizado, exploratório, regressão, etc).</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 4 — Entendendo o Processo de Teste</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai dominar o fluxo completo de testes dentro de um projeto real — do planejamento até a entrega final com qualidade.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 5 — Boas práticas e ferramentas para escrita e gerenciamento de casos de teste</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Aprenda a documentar testes de forma profissional, clara e organizada, utilizando boas práticas e padrões usados no mercado.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 6 — Boas práticas para reportar Bugs</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender a identificar, classificar e reportar bugs de forma estratégica, aumentando sua credibilidade como QA.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 7 — Metodologias de desenvolvimento de software e atuação do QA</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Entenda como funcionam os projetos de software e como o QA se posiciona dentro dos times ágeis e tradicionais.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 8 — Introdução aos testes de API</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender os fundamentos para testar APIs, entendendo estrutura de requisições, respostas e principais validações.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 9 — Projetos de testes de front-end na prática</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Aplicação real de testes em interfaces web, focando em comportamento do usuário, usabilidade e qualidade visual.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 10 — Projetos de teste de API na prática</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai aprender a testar APIs na prática, validando requisições, respostas e integrações entre sistemas.</p>
-        </div>
-
-        <div class="module-item">
-          <h3 class="text-sm font-semibold text-gray-900 mb-1">Módulo 11 — Introdução aos testes automatizados</h3>
-          <p class="text-xs text-gray-500 font-light leading-relaxed">Você vai ver como um caso de teste que já testou manualmente vira um teste automático, também vai entender o que vale automatizar, e realizar os primeiros testes de E2E e de API.</p>
-        </div>
-
-        <div class="module-item advanced bg-blue-50 border-blue-200">
-          <h3 class="text-sm font-semibold text-[#1351B4] mb-3">Módulos extras e bônus — você também vai aprender:</h3>
-          <ul class="space-y-1.5">
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 1 — Técnicas de teste de software</li>
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 2 — Padrões e antipadrões para planejamento de testes</li>
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-[#1351B4] font-bold">+</span> Tópicos avançados 3 — Utilização de IA no dia a dia do QA</li>
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 1 — Dicas, perguntas e respostas para Entrevistas</li>
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 2 — Dicas para montar seu LinkedIn e currículo</li>
-            <li class="text-xs text-gray-600 font-light flex items-center gap-2"><span class="text-green-600 font-bold">★</span> Bônus 3 — Guias e trilhas pra carreira</li>
-          </ul>
-        </div>
-
       </div>
-
-      <!-- Garantia -->
+\n      <!-- Garantia -->
       <div class="guarantee-box mt-8 flex items-center gap-4">
         <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1158,36 +1314,91 @@
   </section>
 
 
-  <!-- ===================== 7. VAGAS LIMITADAS ===================== -->
-  <section id="vagas" class="bg-section-dark pt-14 pb-16 sm:pt-16 sm:pb-20 border-t border-white/06">
-    <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-6">
-        Vagas limitadas
-      </h2>
-      <p class="text-base text-gray-400 font-light leading-relaxed mb-4">
-        Para manter a qualidade da mentoria, atendo poucos alunos por vez, inclusive quem está começando agora.
-      </p>
-      <p class="text-base text-gray-400 font-light leading-relaxed mb-10">
-        Se você quer um caminho claro rumo à primeira oportunidade em QA, essa pode ser sua vaga.
-      </p>
-      <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary mx-auto">
-        Garantir minha vaga
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
-        </svg>
-      </a>
-      <p class="text-xs font-mono text-gray-600 mt-4">Vagas limitadas · mentoria com acompanhamento</p>
+    <!-- ===================== 7. VAGAS LIMITADAS / OFERTA ===================== -->
+  <section id="vagas" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-t border-white/5">
+    <!-- background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 relative z-10">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-4">
+          A sua jornada rumo à primeira vaga
+        </h2>
+        <p class="text-base text-gray-400 font-light leading-relaxed">
+          As vagas são limitadas para garantir a qualidade do acompanhamento individual.
+        </p>
+      </div>
+
+      <div class="glass-card !border-blue-500/30 p-1 sm:p-2 rounded-[2rem] reveal reveal-delay-1">
+        <div class="bg-[#0A0D14] rounded-[1.75rem] p-6 sm:p-10 border border-white/5 relative overflow-hidden">
+          
+          <div class="absolute top-0 right-0 bg-[#2563EB] text-white text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">Oferta Especial</div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: features -->
+            <div>
+              <h3 class="text-xl font-bold text-white mb-6">Tudo que você vai receber:</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <span class="text-sm text-gray-300">11 Módulos práticos (+50h de conteúdo)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <span class="text-sm text-gray-300">Acompanhamento direto no Discord</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <span class="text-sm text-gray-300">Certificado de conclusão</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <span class="text-sm text-gray-300">Acesso completo por 1 ano</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg></div>
+                  <span class="text-sm text-blue-200">3 Módulos de Tópicos Avançados</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg></div>
+                  <span class="text-sm text-blue-200">3 Bônus exclusivos (Entrevistas e Curriculo)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: Price -->
+            <div class="text-center md:border-l md:border-white/10 md:pl-8">
+              <p class="text-sm text-gray-400 font-medium mb-2">De <del>R$ 497,00</del> por apenas</p>
+              <div class="flex items-end justify-center gap-1.5 mb-2">
+                <span class="text-lg font-bold text-gray-300 mb-1.5">12x</span>
+                <span class="text-5xl sm:text-6xl font-black text-white tracking-tighter">29,82</span>
+              </div>
+              <p class="text-sm text-gray-400 mb-6">ou R$ 297,00 à vista</p>
+              
+              <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full !h-[60px] text-[1.1rem] btn-glow shadow-blue">
+                Garantir minha vaga
+              </a>
+              
+              <div class="flex items-center justify-center gap-2 mt-5 text-xs text-gray-500 font-medium">
+                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                Pagamento 100% seguro via Kiwify
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
 
   <!-- ===================== 8. DEPOIMENTOS ===================== -->
-  <section id="depoimentos" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200">
+  <section id="depoimentos" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200/50">
 
     <div class="max-w-4xl mx-auto px-5 sm:px-8 relative z-10">
 
       <!-- Header -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
           Histórias de quem <span class="text-[#2563EB]">transformou</span> a carreira
         </h2>
@@ -1287,7 +1498,7 @@
 
 
   <!-- ===================== 4. MENTOR ===================== -->
-  <section id="mentor" class="bg-section-dark py-20 sm:py-28 border-t border-white/06">
+  <section id="mentor" class="bg-section-dark py-20 sm:py-28 border-t border-white/5">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -1366,80 +1577,8 @@
   </section>
 
 
-  <!-- ===================== 5. OFERTA ===================== -->
-  <section id="oferta" class="bg-aurora py-24 sm:py-32 relative overflow-hidden border-t border-white/06">
-
-    <div class="max-w-xl mx-auto px-5 sm:px-8 relative z-10">
-
-      <div class="offer-card px-8 sm:px-14 py-12 sm:py-16 text-center"
-        style="box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 80px rgba(19, 81, 180, 0.10);">
-
-        <div class="label-pill dark mb-8 mx-auto w-fit">
-          <span class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mr-[0.15em] inline-block align-middle">::</span>
-          condição especial
-        </div>
-
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">
-          Leve sua carreira para TI
-        </h2>
-        <p class="text-gray-500 font-light text-sm mb-12">com quem vive a área há 9 anos</p>
-
-        <!-- Price -->
-        <div class="mb-10">
-          <p class="text-xs text-gray-600 font-mono mb-4">De <s class="text-gray-700">R$ 997,00</s> por apenas:</p>
-          <div class="flex items-baseline justify-center gap-2 mb-2">
-            <span class="text-lg text-gray-400 font-light">12x de</span>
-            <span class="text-6xl sm:text-7xl font-black text-white font-mono leading-none tracking-tight">R$ 29<span
-                class="text-4xl sm:text-5xl text-gray-300">,65</span></span>
-          </div>
-          <p class="text-sm text-blue-400 font-mono mt-3">ou <strong class="text-blue-300">R$ 297,00 à vista</strong>
-          </p>
-          <p class="text-xs text-gray-600 font-mono mt-1.5">Pix · Boleto · Cartão</p>
-        </div>
-
-        <!-- CTA -->
-        <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full !h-[58px] !text-base !rounded-2xl flex justify-center mb-10">
-          GARANTIR MINHA VAGA
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
-          </svg>
-        </a>
-
-        <!-- Trust signals -->
-        <div class="border-t border-white/06 pt-8">
-          <div class="flex items-start justify-center gap-8 sm:gap-12 text-xs text-gray-600 font-mono">
-            <span class="flex flex-col items-center gap-2 text-green-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              Pagamento<br>Seguro
-            </span>
-            <span class="flex flex-col items-center gap-2 text-blue-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              Acesso<br>Imediato
-            </span>
-            <span class="flex flex-col items-center gap-2 text-orange-400">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              7 Dias de<br>Garantia
-            </span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
   <!-- ===================== 6. FAQ ===================== -->
-  <section id="faq" class="bg-section-dark pt-14 pb-16 sm:pt-16 sm:pb-20 border-t border-white/06">
+  <section id="faq" class="bg-section-dark pt-14 pb-16 sm:pt-16 sm:pb-20 border-t border-white/5">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center sm:text-left">
 
       <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-8">Perguntas frequentes</h3>
@@ -1554,7 +1693,7 @@
     </div>
 
     <div
-      class="max-w-6xl mx-auto mt-8 pt-8 border-t border-white/06 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 font-mono">
+      class="max-w-6xl mx-auto mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 font-mono">
       <span>© 2026 Gustavo Machado <span class="text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span> QAGES® · Todos os direitos reservados</span>
       <span class="text-gray-600">"QA não é miojo."</span>
     </div>
@@ -1633,6 +1772,39 @@
       if (!header) return;
       header.style.background = window.scrollY > 20 ? 'rgba(8, 10, 16, 0.92)' : 'rgba(8, 10, 16, 0.75)';
     }, { passive: true });
+  </script>
+
+
+  <!-- ===================== STICKY MOBILE CTA ===================== -->
+  <div class="fixed bottom-4 left-4 right-4 z-[100] md:hidden transform translate-y-[150%] transition-transform duration-300 pointer-events-none" id="stickyCta">
+    <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full flex justify-center !h-[56px] btn-glow shadow-blue text-[15px] pointer-events-auto">Garantir Vaga Agora</a>
+  </div>
+
+  <script>
+    // Reveal Animations
+    function reveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 50;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal(); // Trigger on initial load
+
+    // Sticky CTA
+    window.addEventListener('scroll', function() {
+      const sticky = document.getElementById('stickyCta');
+      if(window.scrollY > 400) {
+        sticky.classList.remove('translate-y-[150%]');
+      } else {
+        sticky.classList.add('translate-y-[150%]');
+      }
+    });
   </script>
 
 </body>
