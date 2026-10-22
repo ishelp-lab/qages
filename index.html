@@ -488,7 +488,7 @@
     /* ===================== REFERENCE SECTIONS ===================== */
     .ref-section-dark {
       background: #070910;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .audience-item {
@@ -496,7 +496,7 @@
       align-items: flex-start;
       gap: 12px;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       font-size: 0.9375rem;
       color: #CBD5E1;
       line-height: 1.55;
@@ -522,16 +522,16 @@
     }
 
     .journey-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 22px;
       padding: 1.5rem;
       transition: all 0.3s ease;
     }
 
     .journey-card:hover {
-      background: rgba(19,81,180,0.07);
-      border-color: rgba(19,81,180,0.3);
+      background: rgba(19, 81, 180, 0.07);
+      border-color: rgba(19, 81, 180, 0.3);
       transform: translateY(-3px);
     }
 
@@ -539,27 +539,27 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 2rem;
       font-weight: 700;
-      color: rgba(19,81,180,0.4);
+      color: rgba(19, 81, 180, 0.4);
       line-height: 1;
       margin-bottom: 0.25rem;
     }
 
     .module-item {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 22px;
       padding: 1.25rem 1.5rem;
       transition: all 0.3s ease;
     }
 
     .module-item:hover {
-      background: rgba(19,81,180,0.06);
-      border-color: rgba(19,81,180,0.25);
+      background: rgba(19, 81, 180, 0.06);
+      border-color: rgba(19, 81, 180, 0.25);
     }
 
     .module-item.advanced {
-      background: rgba(19,81,180,0.06);
-      border-color: rgba(19,81,180,0.2);
+      background: rgba(19, 81, 180, 0.06);
+      border-color: rgba(19, 81, 180, 0.2);
     }
 
     .deliverable-item {
@@ -568,8 +568,8 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       font-size: 0.875rem;
       color: #CBD5E1;
     }
@@ -617,25 +617,36 @@
         display: none;
       }
     }
-  
+
     /* ===================== SCROLL REVEAL ===================== */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 150ms; }
-    .reveal-delay-2 { transition-delay: 300ms; }
-    .reveal-delay-3 { transition-delay: 450ms; }
+
+    .reveal-delay-1 {
+      transition-delay: 150ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 300ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 450ms;
+    }
 
     /* ===================== BTN GLOW ===================== */
     .btn-glow {
       position: relative;
     }
+
     .btn-glow::after {
       content: '';
       position: absolute;
@@ -648,15 +659,27 @@
       opacity: 0.6;
       animation: glow-pulse 3s infinite linear;
     }
+
     @keyframes glow-pulse {
-      0% { background-position: 0% 50%; opacity: 0.5; }
-      50% { background-position: 100% 50%; opacity: 0.9; }
-      100% { background-position: 0% 50%; opacity: 0.5; }
-    }
-    .shadow-blue {
-      box-shadow: 0 0 30px rgba(37,99,235,0.4);
+      0% {
+        background-position: 0% 50%;
+        opacity: 0.5;
+      }
+
+      50% {
+        background-position: 100% 50%;
+        opacity: 0.9;
+      }
+
+      100% {
+        background-position: 0% 50%;
+        opacity: 0.5;
+      }
     }
 
+    .shadow-blue {
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+    }
   </style>
 </head>
 
@@ -671,13 +694,10 @@
         <div
           class="font-mono font-bold text-base sm:text-lg text-white tracking-tight flex items-center whitespace-nowrap">
           GUSTAVO
-          <span class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle group-hover:text-[#2563EB] transition-colors duration-300">::</span>
+          <span
+            class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle group-hover:text-[#2563EB] transition-colors duration-300">::</span>
           MACHADO
         </div>
-        <span
-          class="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest text-blue-400 bg-blue-950/50 border border-blue-800/40 rounded-full whitespace-nowrap">
-          QAGES®
-        </span>
       </a>
 
       <!-- Desktop Nav -->
@@ -692,7 +712,8 @@
 
       <!-- CTA + Hamburger -->
       <div class="flex items-center gap-2 flex-shrink-0">
-        <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary !h-[40px] !px-4 !text-sm !rounded-full whitespace-nowrap">
+        <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
+          class="btn-primary !h-[40px] !px-4 !text-sm !rounded-full whitespace-nowrap">
           Garantir Vaga
           <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -710,7 +731,8 @@
     <!-- Mobile Dropdown -->
     <div id="mobileMenu"
       class="hidden md:hidden bg-[#0F1219]/95 backdrop-blur-xl border-t border-white/07 px-6 py-5 space-y-4">
-      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como funciona</a>
+      <a href="#rota" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Como
+        funciona</a>
       <a href="#jornada" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Jornada</a>
       <a href="#modulos" class="block text-gray-300 hover:text-white font-medium py-1 mobile-link text-sm">Módulos</a>
       <a href="#depoimentos"
@@ -750,7 +772,6 @@
                   <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
                   <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
                 </div>
-                <span class="text-[10px] font-mono text-gray-500 tracking-wider">QAGES — Apresentação</span>
                 <span class="text-[10px] font-mono text-blue-400 font-semibold">● EM BREVE</span>
               </div>
               <div class="video-frame-body">
@@ -793,14 +814,16 @@
 
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
-            <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary btn-glow shadow-blue">
+            <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
+              class="btn-primary btn-glow shadow-blue">
               Garantir minha vaga
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </a>
             <a href="#rota" class="btn-ghost !h-[52px]">
-              <span class="text-[#2563EB] font-mono font-bold text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>
+              <span
+                class="text-[#2563EB] font-mono font-bold text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>
               Como funciona
             </a>
           </div>
@@ -826,7 +849,6 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
                 <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
               </div>
-              <span class="text-[11px] font-mono text-gray-500 tracking-wider">QAGES — Apresentação</span>
               <span class="text-[10px] font-mono text-blue-400 font-semibold">● EM BREVE</span>
             </div>
             <div class="video-frame-body">
@@ -859,10 +881,13 @@
   </section>
 
 
-      <!-- ===================== 2. REQUISITOS ===================== -->
-  <section id="rota" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-y border-gray-200/50">
+  <!-- ===================== 2. REQUISITOS ===================== -->
+  <section id="rota"
+    class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-y border-gray-200/50">
     <!-- background glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1351B4]/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1351B4]/10 rounded-full blur-[100px] pointer-events-none">
+    </div>
 
     <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
 
@@ -872,59 +897,87 @@
           Requisitos para entrar em TI através de QA
         </h2>
         <p class="text-base text-gray-600 font-light leading-relaxed">
-          Antes de mandar o currículo, entenda o que os recrutadores realmente avaliam em um QA Júnior. São essas habilidades que separam quem passa de quem não passa.
+          Antes de mandar o currículo, entenda o que os recrutadores realmente avaliam em um QA Júnior. São essas
+          habilidades que separam quem passa de quem não passa.
         </p>
       </div>
 
-      <div class="glass-card !border-blue-500/30 p-1 sm:p-2 rounded-[2rem] reveal reveal-delay-1 shadow-2xl shadow-blue-900/20 bg-gray-900/5 backdrop-blur-sm">
-        <div class="bg-[#0A0D14] rounded-[1.75rem] p-6 sm:p-10 border border-white/5 relative overflow-hidden shadow-inner">
-          
+      <div
+        class="glass-card !border-blue-500/30 p-1 sm:p-2 rounded-[2rem] reveal reveal-delay-1 shadow-2xl shadow-blue-900/20 bg-gray-900/5 backdrop-blur-sm">
+        <div
+          class="bg-[#0A0D14] rounded-[1.75rem] p-6 sm:p-10 border border-white/5 relative overflow-hidden shadow-inner">
+
           <!-- Requirement Cards -->
           <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
 
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
               <div class="mb-4">
-                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
               </div>
               <span class="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">Fundamentos</span>
               <h4 class="text-sm font-semibold text-white mb-2">Mentalidade Analítica</h4>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios técnicos que devs respeitam.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">Ciclo de vida do bug, caixa-preta e relatórios
+                técnicos que devs respeitam.</p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
               <div class="mb-4">
-                <svg class="w-8 h-8 text-[#C5221F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <svg class="w-8 h-8 text-[#C5221F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
               </div>
               <span class="text-[10px] font-mono text-red-400 uppercase tracking-widest block mb-2">Ferramentas</span>
               <h4 class="text-sm font-semibold text-white mb-2">Git, GitHub &amp; APIs</h4>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e versionamento profissional.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">Postman, contratos REST, autenticação JWT e
+                versionamento profissional.</p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
               <div class="mb-4">
-                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
               <span class="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">Automação</span>
               <h4 class="text-sm font-semibold text-white mb-2">Cypress &amp; Robot</h4>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands, intercepts, keywords BDD.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">Robôs que testam sozinhos. Custom commands,
+                intercepts, keywords BDD.</p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-blue-500/40 hover:bg-white/10 transition-colors">
               <div class="mb-4">
-                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                </svg>
               </div>
               <span class="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">Pipelines</span>
               <h4 class="text-sm font-semibold text-white mb-2">CI/CD GitHub Actions</h4>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request. Impressione recrutadores.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">Testes rodando na nuvem a cada Pull Request.
+                Impressione recrutadores.</p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-green-500/40 hover:bg-white/10 transition-colors">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-green-500/40 hover:bg-white/10 transition-colors">
               <div class="mb-4">
-                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
               <span class="text-[10px] font-mono text-green-400 uppercase tracking-widest block mb-2">Mercado</span>
               <h4 class="text-sm font-semibold text-white mb-2">Vaga ou Efetivação</h4>
-              <p class="text-xs text-gray-400 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas técnicas e negociação.</p>
+              <p class="text-xs text-gray-400 leading-relaxed font-light">LinkedIn otimizado, simulação de entrevistas
+                técnicas e negociação.</p>
             </div>
 
           </div>
@@ -933,21 +986,41 @@
           <div class="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <p class="text-[11px] font-mono font-semibold text-blue-400 uppercase tracking-widest mb-1">:: tudo isso, a QAGES cobre</p>
-                <p class="text-sm text-gray-400 font-light">Cada requisito acima tem um módulo dedicado na capacitação.</p>
+                <p class="text-[11px] font-mono font-semibold text-blue-400 uppercase tracking-widest mb-1">:: tudo
+                  isso, a capacitação cobre</p>
+                <p class="text-sm text-gray-400 font-light">Cada requisito acima tem um módulo dedicado na capacitação.
+                </p>
               </div>
-              <a href="#vagas" class="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap">Ver oferta →</a>
+              <a href="#vagas"
+                class="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap">Ver
+                oferta →</a>
             </div>
-            
+
             <div class="flex flex-wrap gap-2.5">
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Fundamentos &amp; Git</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Python para QA</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Robot Framework</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Cypress Moderno E2E</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Testes de API · Postman</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">CI/CD · GitHub Actions</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30">Prep. CTFL / ISTQB</span>
-              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-300 bg-green-500/20 border border-green-500/30">Entrevistas &amp; Mercado</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Fundamentos
+                &amp; Git</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Python
+                para QA</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Robot
+                Framework</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Cypress
+                Moderno E2E</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">Testes
+                de API · Postman</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-gray-300 bg-white/10 border border-white/10">CI/CD
+                · GitHub Actions</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30">Prep.
+                CTFL / ISTQB</span>
+              <span
+                class="px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-green-300 bg-green-500/20 border border-green-500/30">Entrevistas
+                &amp; Mercado</span>
             </div>
           </div>
 
@@ -968,24 +1041,40 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div class="glass-card p-6 reveal reveal-delay-1 hover:border-blue-500/40 transition-colors">
-          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg></div>
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg></div>
           <p class="text-sm text-gray-300">Está na graduação e quer sair da faculdade já com base em QA.</p>
         </div>
         <div class="glass-card p-6 reveal reveal-delay-2 hover:border-blue-500/40 transition-colors">
-          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg></div>
           <p class="text-sm text-gray-300">Quer entrar em testes de software do zero e não sabe por onde começar.</p>
         </div>
         <div class="glass-card p-6 reveal reveal-delay-3 hover:border-blue-500/40 transition-colors">
-          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg></div>
           <p class="text-sm text-gray-300">Já estuda QA, mas trava na hora de conseguir a primeira vaga.</p>
         </div>
         <div class="glass-card p-6 reveal reveal-delay-1 hover:border-blue-500/40 transition-colors">
-          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg></div>
           <p class="text-sm text-gray-300">Se sente perdido(a) sobre o que estudar e como evoluir com direção.</p>
         </div>
-        <div class="glass-card p-6 sm:col-span-2 lg:col-span-1 reveal reveal-delay-2 hover:border-blue-500/40 transition-colors">
-          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-          <p class="text-sm text-gray-300">Prefere um caminho prático, com exercícios e acompanhamento, em vez de conteúdo solto.</p>
+        <div
+          class="glass-card p-6 sm:col-span-2 lg:col-span-1 reveal reveal-delay-2 hover:border-blue-500/40 transition-colors">
+          <div class="text-[#2563EB] mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg></div>
+          <p class="text-sm text-gray-300">Prefere um caminho prático, com exercícios e acompanhamento, em vez de
+            conteúdo solto.</p>
         </div>
       </div>
     </div>
@@ -999,16 +1088,30 @@
         Aprenda o jeito de trabalhar de um QA
       </h2>
       <div class="space-y-5 text-base text-gray-600 leading-relaxed font-light">
-        <p>Muita gente começa achando que <strong class="text-gray-800 font-medium">testar é só abrir o sistema</strong>, clicar e ver se apareceu um erro. Em um projeto de verdade, <strong class="text-gray-800 font-medium">o QA entra antes</strong> disso: <strong class="text-gray-800 font-medium">entende</strong> o que o software precisa fazer, <strong class="text-gray-800 font-medium">planeja</strong> o que vale o tempo, <strong class="text-gray-800 font-medium">escreve casos de testes</strong>, <strong class="text-gray-800 font-medium">executa</strong> com critério e <strong class="text-gray-800 font-medium">reporta o bug</strong> de um jeito que o time consiga corrigir.</p>
-        <p>Esse é um processo bom e real, organizado, com prioridade e evidência. Não é um checklist improvisado na véspera da entrega. É o <strong class="text-gray-800 font-medium">raciocínio que o mercado</strong> espera, inclusive de quem ainda está na <strong class="text-gray-800 font-medium">graduação</strong> ou buscando a <strong class="text-gray-800 font-medium">primeira vaga</strong>.</p>
-        <p>Nesta mentoria você aprende esse fluxo na prática, passo a passo, para chegar na entrevista já <strong class="text-gray-800 font-medium">sabendo como um QA trabalha de verdade</strong>, e não só o nome das ferramentas.</p>
+        <p>Muita gente começa achando que <strong class="text-gray-800 font-medium">testar é só abrir o
+            sistema</strong>, clicar e ver se apareceu um erro. Em um projeto de verdade, <strong
+            class="text-gray-800 font-medium">o QA entra antes</strong> disso: <strong
+            class="text-gray-800 font-medium">entende</strong> o que o software precisa fazer, <strong
+            class="text-gray-800 font-medium">planeja</strong> o que vale o tempo, <strong
+            class="text-gray-800 font-medium">escreve casos de testes</strong>, <strong
+            class="text-gray-800 font-medium">executa</strong> com critério e <strong
+            class="text-gray-800 font-medium">reporta o bug</strong> de um jeito que o time consiga corrigir.</p>
+        <p>Esse é um processo bom e real, organizado, com prioridade e evidência. Não é um checklist improvisado na
+          véspera da entrega. É o <strong class="text-gray-800 font-medium">raciocínio que o mercado</strong> espera,
+          inclusive de quem ainda está na <strong class="text-gray-800 font-medium">graduação</strong> ou buscando a
+          <strong class="text-gray-800 font-medium">primeira vaga</strong>.
+        </p>
+        <p>Nesta mentoria você aprende esse fluxo na prática, passo a passo, para chegar na entrevista já <strong
+            class="text-gray-800 font-medium">sabendo como um QA trabalha de verdade</strong>, e não só o nome das
+          ferramentas.</p>
       </div>
 
       <!-- Testimonial inline -->
       <div class="mt-10 glass-card-light p-8 text-center">
         <div class="flex justify-center text-yellow-400 mb-4 tracking-wide text-base">★★★★★</div>
         <blockquote class="text-base sm:text-lg text-gray-700 font-light italic leading-relaxed mb-5 max-w-xl mx-auto">
-          "Em 2 meses de mentoria eu organizei meus estudos, melhorei meu curriculo e conquistei minha primeira oportunidade em QA."
+          "Em 2 meses de mentoria eu organizei meus estudos, melhorei meu curriculo e conquistei minha primeira
+          oportunidade em QA."
         </blockquote>
         <p class="text-xs font-mono text-gray-500 uppercase tracking-widest">Depoimento de aluno</p>
       </div>
@@ -1031,35 +1134,40 @@
           <p class="journey-number">01</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Fundamentos</p>
           <h3 class="text-sm font-semibold text-white mb-2">Mentalidade de QA</h3>
-          <p class="text-xs text-gray-400 leading-relaxed font-light">Papel do testador, princípios, níveis e tipos de teste. Aprenda a base antes de qualquer ferramenta.</p>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Papel do testador, princípios, níveis e tipos de
+            teste. Aprenda a base antes de qualquer ferramenta.</p>
         </div>
 
         <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">02</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Processo</p>
           <h3 class="text-sm font-semibold text-white mb-2">Como o QA trabalha</h3>
-          <p class="text-xs text-gray-400 leading-relaxed font-light">Planejamento, escrita e execução de casos de teste. Escreva bons bugs para o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Planejamento, escrita e execução de casos de
+            teste. Escreva bons bugs para o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
         </div>
 
         <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">03</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Projetos</p>
           <h3 class="text-sm font-semibold text-white mb-2">Frontend e API na prática</h3>
-          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprender o que testar em tela e API, e como testar na prática com projetos reais.</p>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprender o que testar em tela e API, e como testar
+            na prática com projetos reais.</p>
         </div>
 
         <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">04</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Automação</p>
           <h3 class="text-sm font-semibold text-white mb-2">Do caso ao script</h3>
-          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprenda o que vale automatizar, escreva e execute seus primeiros testes E2E e de API.</p>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Aprenda o que vale automatizar, escreva e execute
+            seus primeiros testes E2E e de API.</p>
         </div>
 
         <div class="journey-card reveal reveal-delay-1">
           <p class="journey-number">05</p>
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Carreira</p>
           <h3 class="text-sm font-semibold text-white mb-2">Primeira oportunidade</h3>
-          <p class="text-xs text-gray-400 leading-relaxed font-light">Dicas e guias para montar seu currículo, ajustar seu LinkedIn, se preparar para as entrevistas e trilhas de estudos para a sua carreira.</p>
+          <p class="text-xs text-gray-400 leading-relaxed font-light">Dicas e guias para montar seu currículo, ajustar
+            seu LinkedIn, se preparar para as entrevistas e trilhas de estudos para a sua carreira.</p>
         </div>
 
       </div>
@@ -1068,7 +1176,8 @@
 
 
   <!-- ===================== 6. MÓDULOS COMPLETOS ===================== -->
-  <section id="modulos" class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200/50 overflow-hidden">
+  <section id="modulos"
+    class="bg-section-light pt-14 pb-16 sm:pt-20 sm:pb-24 border-y border-gray-200/50 overflow-hidden">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-10 reveal">
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
@@ -1077,191 +1186,325 @@
       </div>
 
       <div class="relative w-full">
-        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: -300, behavior: 'smooth'})" class="absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: -300, behavior: 'smooth'})"
+          class="absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
-        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: 300, behavior: 'smooth'})" class="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <button onclick="document.getElementById('modulesCarousel').scrollBy({left: 300, behavior: 'smooth'})"
+          class="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white/90 backdrop-blur shadow-lg border border-gray-200 rounded-full text-gray-800 hover:bg-[#2563EB] hover:text-white transition-all hidden md:flex">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
 
-        <div id="modulesCarousel" class="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 -mx-2 sm:px-4 sm:-mx-4 hide-scrollbar" style="scroll-behavior: smooth;">
+        <div id="modulesCarousel"
+          class="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 -mx-2 sm:px-4 sm:-mx-4 hide-scrollbar"
+          style="scroll-behavior: smooth;">
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_f072c247-0071-48c9-9768-c273f7d125f0_0dc1cccf4ea940cbacedc2c90cfb9631.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_f072c247-0071-48c9-9768-c273f7d125f0_0dc1cccf4ea940cbacedc2c90cfb9631.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 1 - Introdução ao Teste de Software</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 1 - Introdução
+                  ao Teste de Software</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_a976e390-f710-4a34-ba59-f39beed13a2c_f86b26eb380147c297067bcc7de76082.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_a976e390-f710-4a34-ba59-f39beed13a2c_f86b26eb380147c297067bcc7de76082.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 2 - Fundamentos dos Testes de Software</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 2 -
+                  Fundamentos dos Testes de Software</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_849342a7-72e8-494d-99fa-e38baecd8f73_7605196e9c2f45bb89f2f6dacf3bda00.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_849342a7-72e8-494d-99fa-e38baecd8f73_7605196e9c2f45bb89f2f6dacf3bda00.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 3 - Níveis e Tipos de Teste de Software</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 3 - Níveis e
+                  Tipos de Teste de Software</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_57df83d6-60f9-45bb-941f-db73393558e0_b0c136c9c4cf44388323fa2f2689e04a.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_57df83d6-60f9-45bb-941f-db73393558e0_b0c136c9c4cf44388323fa2f2689e04a.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 4 - Entendendo o Processo de Teste</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 4 - Entendendo
+                  o Processo de Teste</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_12e6de34-b028-4ff6-be08-3daacca6ead6_5c9377f4f3dc499abfc6c07600944eeb.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_12e6de34-b028-4ff6-be08-3daacca6ead6_5c9377f4f3dc499abfc6c07600944eeb.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 5 - Boas práticas e Ferramentas para escrita...</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 5 - Boas
+                  práticas e Ferramentas para escrita...</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_fc6a537f-2b6a-4c32-b844-18d15780df3a_6e839c06a516425196495b529986e779.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_fc6a537f-2b6a-4c32-b844-18d15780df3a_6e839c06a516425196495b529986e779.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 6 - Boas práticas para reportar Bugs</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 6 - Boas
+                  práticas para reportar Bugs</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_0a25153d-b510-41cc-bec0-308a40450597_c587221d8d84416685da2e0f61dc4e1c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_0a25153d-b510-41cc-bec0-308a40450597_c587221d8d84416685da2e0f61dc4e1c.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 7 - Metodologia de desenvolvimento e atuação do QA</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 7 -
+                  Metodologia de desenvolvimento e atuação do QA</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_473cb070-9dc0-4ecb-8a96-bcf840e3b3ed_65b7c57c4da343848600085913e61c2c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_473cb070-9dc0-4ecb-8a96-bcf840e3b3ed_65b7c57c4da343848600085913e61c2c.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 8 - Introdução aos testes de API</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 8 - Introdução
+                  aos testes de API</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b968220f-104e-4ba6-9205-cfafe81ef24d_e197d4ab3b8a4571ae343f73a5525810.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b968220f-104e-4ba6-9205-cfafe81ef24d_e197d4ab3b8a4571ae343f73a5525810.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 9 - Projetos de testes de front-end na prática</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 9 - Projetos
+                  de testes de front-end na prática</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b68796a3-8891-48b7-8dc1-b05457ad097f_0fe3667677624fadbbff378026bdc36d.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_b68796a3-8891-48b7-8dc1-b05457ad097f_0fe3667677624fadbbff378026bdc36d.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 10 - Projetos de teste de API na prática</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 10 - Projetos
+                  de teste de API na prática</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_741e1a6b-ba32-408e-8ea6-b3195cfc6f58_6cdf880686314ad0b56953ba53f9e34c.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_741e1a6b-ba32-408e-8ea6-b3195cfc6f58_6cdf880686314ad0b56953ba53f9e34c.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 11 - Introdução aos testes automatizados</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Módulo 11 -
+                  Introdução aos testes automatizados</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_7313c33a-e413-4c1c-84c6-a0c04d781381_ac7d60d334384293812c34cd908f8a9d.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_7313c33a-e413-4c1c-84c6-a0c04d781381_ac7d60d334384293812c34cd908f8a9d.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 1 - Técnicas de teste</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 1 -
+                  Técnicas de teste</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_9b1abbe7-cac9-4219-ae81-635b08af61bc_d0c83c026e8c4e5fba6ffe46718dcec5.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_9b1abbe7-cac9-4219-ae81-635b08af61bc_d0c83c026e8c4e5fba6ffe46718dcec5.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 2 - Padrões e anti-padrões</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 2 -
+                  Padrões e anti-padrões</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_821c4501-32e4-4c78-93cc-cf38604d66ff_307118fb30fa4c94a72847d8cfb881ae.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_821c4501-32e4-4c78-93cc-cf38604d66ff_307118fb30fa4c94a72847d8cfb881ae.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 3 - Utilização de IA no dia a dia</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Tópicos avançados 3 -
+                  Utilização de IA no dia a dia</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_6e762da4-590b-4294-9a8c-c17d2cd6a1e2_18acbb39af3e494e8b9b0ce5efe797b2.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_6e762da4-590b-4294-9a8c-c17d2cd6a1e2_18acbb39af3e494e8b9b0ce5efe797b2.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 1] Dicas para entrevistas</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 1] Dicas para
+                  entrevistas</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_de87bb43-4154-4be7-988d-a252c2066785_b17adaea6a174cee88a4146dd5bb5777.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_de87bb43-4154-4be7-988d-a252c2066785_b17adaea6a174cee88a4146dd5bb5777.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 2] Currículo e LinkedIn</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[BÔNUS 2] Currículo e
+                  LinkedIn</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_3246dd8a-535e-4ccb-9aea-e1bde0da6c36_63aaf08a71914db4b1d3b18ec83035cf.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_3246dd8a-535e-4ccb-9aea-e1bde0da6c36_63aaf08a71914db4b1d3b18ec83035cf.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[Bônus 3] Guias e trilhas de estudo pra carreira</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">[Bônus 3] Guias e
+                  trilhas de estudo pra carreira</h3>
               </div>
             </div>
           </div>
           <!-- Card -->
-          <div class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
-            <div class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
-              <img src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_62d38c61-67ad-47f3-88e0-f80bf7079944_31898f184aa94a33874c5c48c9d993f3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="snap-start shrink-0 cursor-pointer focus:scale-105 hover:-translate-y-1 relative group block z-0 rounded-2xl transform transition-all ease-in-out duration-300 w-[240px] sm:w-[280px]">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl border border-gray-200/60 bg-gray-50 aspect-[2/3]">
+              <img
+                src="https://aws-assets.kiwify.com.br/9cL5V8aG8s9Agwf/course_thumbnails_62d38c61-67ad-47f3-88e0-f80bf7079944_31898f184aa94a33874c5c48c9d993f3.png"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#080A10]/95 via-[#080A10]/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity">
+              </div>
               <div class="absolute inset-x-0 bottom-0 z-10 p-4 sm:p-5">
-                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Exercícios de fixação para treinar</h3>
+                <h3 class="font-bold text-white text-sm sm:text-base leading-tight drop-shadow-md">Exercícios de fixação
+                  para treinar</h3>
               </div>
             </div>
           </div>
@@ -1271,11 +1514,13 @@
       <div class="guarantee-box mt-8 flex items-center gap-4">
         <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
         <p class="text-sm text-green-700 font-light leading-relaxed">
-          <strong class="font-semibold">Garantia de 7 dias:</strong> se o conteúdo não for para você, devolvemos seu investimento dentro do prazo.
+          <strong class="font-semibold">Garantia de 7 dias:</strong> se o conteúdo não for para você, devolvemos seu
+          investimento dentro do prazo.
         </p>
       </div>
 
@@ -1283,10 +1528,13 @@
   </section>
 
 
-    <!-- ===================== 7. VAGAS LIMITADAS / OFERTA ===================== -->
-  <section id="vagas" class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-t border-white/5">
+  <!-- ===================== 7. VAGAS LIMITADAS / OFERTA ===================== -->
+  <section id="vagas"
+    class="bg-section-dark pt-14 pb-16 sm:pt-20 sm:pb-28 relative overflow-hidden border-t border-white/5">
     <!-- background glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none">
+    </div>
 
     <div class="max-w-4xl mx-auto px-5 sm:px-8 relative z-10">
       <div class="text-center mb-10 reveal">
@@ -1300,8 +1548,10 @@
 
       <div class="glass-card !border-blue-500/30 p-1 sm:p-2 rounded-[2rem] reveal reveal-delay-1">
         <div class="bg-[#0A0D14] rounded-[1.75rem] p-6 sm:p-10 border border-white/5 relative overflow-hidden">
-          
-          <div class="absolute top-0 right-0 bg-[#2563EB] text-white text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">Oferta Especial</div>
+
+          <div
+            class="absolute top-0 right-0 bg-[#2563EB] text-white text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">
+            Oferta Especial</div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <!-- Left: features -->
@@ -1309,27 +1559,47 @@
               <h3 class="text-xl font-bold text-white mb-6">Tudo que você vai receber:</h3>
               <ul class="space-y-4">
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg></div>
                   <span class="text-sm text-gray-300">11 Módulos práticos (+50h de conteúdo)</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg></div>
                   <span class="text-sm text-gray-300">Acompanhamento direto no Discord</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg></div>
                   <span class="text-sm text-gray-300">Certificado de conclusão</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
+                  <div class="mt-1 bg-green-500/20 p-1 rounded-full text-green-400"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg></div>
                   <span class="text-sm text-gray-300">Acesso completo por 1 ano</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg></div>
+                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg></div>
                   <span class="text-sm text-blue-200">3 Módulos de Tópicos Avançados</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg></div>
+                  <div class="mt-1 bg-[#2563EB]/20 p-1 rounded-full text-[#2563EB]"><svg class="w-3 h-3" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg></div>
                   <span class="text-sm text-blue-200">3 Bônus exclusivos (Entrevistas e Curriculo)</span>
                 </li>
               </ul>
@@ -1343,13 +1613,17 @@
                 <span class="text-5xl sm:text-6xl font-black text-white tracking-tighter">29,82</span>
               </div>
               <p class="text-sm text-gray-400 mb-6">ou R$ 297,00 à vista</p>
-              
-              <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full !h-[60px] text-[1.1rem] btn-glow shadow-blue">
+
+              <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
+                class="btn-primary w-full !h-[60px] text-[1.1rem] btn-glow shadow-blue">
                 Garantir minha vaga
               </a>
-              
+
               <div class="flex items-center justify-center gap-2 mt-5 text-xs text-gray-500 font-medium">
-                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
                 Pagamento 100% seguro via Kiwify
               </div>
             </div>
@@ -1392,7 +1666,7 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Pedro Henrique</div>
-                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno QAGES</div>
+                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno do Gustavo Machado</div>
                 </div>
               </div>
             </div>
@@ -1413,7 +1687,8 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">José Lima</div>
-                  <div class="text-xs font-mono text-green-600 uppercase tracking-wider">Recolocado no Mercado · QA Engineer</div>
+                  <div class="text-xs font-mono text-green-600 uppercase tracking-wider">Recolocado no Mercado · QA
+                    Engineer</div>
                 </div>
               </div>
             </div>
@@ -1434,7 +1709,8 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Larissa Miranda</div>
-                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna QAGES · Analista em Qualidade de Software</div>
+                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna do Gustavo Machado · Analista em
+                    Qualidade de Software</div>
                 </div>
               </div>
             </div>
@@ -1483,9 +1759,7 @@
           </h2>
           <p class="text-base text-gray-400 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
             Sou <strong class="text-gray-200 font-medium">Gustavo Machado</strong>, profissional com mais de <strong
-              class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Criei a QAGES
-            para que estudantes e estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados
-            de verdade.
+              class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Há mais de 3 anos produzo conteúdo gratuito, cursos e mentorias direcionadas ao mercado de trabalho para que estudantes e estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados de verdade.
           </p>
 
           <!-- Mentor badges redesenhados -->
@@ -1516,7 +1790,8 @@
             </div>
           </div>
 
-          <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary flex mx-auto lg:mx-0 w-fit">
+          <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
+            class="btn-primary flex mx-auto lg:mx-0 w-fit">
             Garantir minha vaga
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -1525,14 +1800,15 @@
         </div>
 
         <!-- Right: Photo -->
-        <div class="lg:col-span-5">
-          <div class="relative mx-auto max-w-xs lg:max-w-none">
-            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[420px]">
+            <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative aspect-square"
               style="box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
-              <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" class="w-full h-auto object-cover" />
+              <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" width="1080" height="1080" class="w-full h-full object-cover object-top" />
               <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div class="font-mono text-sm font-bold text-white flex items-center gap-1">
-                  GUSTAVO<span class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>MACHADO
+                  GUSTAVO<span
+                    class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>MACHADO
                 </div>
                 <p class="text-xs text-gray-400 mt-0.5 font-light">9 anos em QA · Automação &amp; Qualidade de Software
                 </p>
@@ -1624,7 +1900,7 @@
           </div>
           <div>
             <p class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Ficou alguma dúvida?</p>
-            <p class="text-sm font-medium text-gray-200">suporte@qages.com.br</p>
+            <a href="mailto:qagesmachado-suporte-cursos@outlook.com" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">qagesmachado-suporte-cursos@outlook.com</a>
           </div>
         </div>
 
@@ -1641,10 +1917,11 @@
 
       <div class="flex flex-col items-center sm:items-start">
         <div class="font-mono font-bold text-base text-white flex items-center mb-2">
-          GUSTAVO<span class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>MACHADO
+          GUSTAVO<span
+            class="text-[#C5221F] text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span>MACHADO
         </div>
         <p class="text-xs text-gray-500 font-light max-w-xs">
-          QAGES® · Quality Assurance Engineering Systems.<br>Capacitação prática em QA &amp; Automação.
+          Gustavo Machado · Quality Assurance Engineering Systems.<br>Capacitação prática em QA &amp; Automação.
         </p>
       </div>
 
@@ -1663,7 +1940,7 @@
 
     <div
       class="max-w-6xl mx-auto mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600 font-mono">
-      <span>© 2026 Gustavo Machado <span class="text-[0.8em] tracking-[-0.15em] mx-1 inline-block align-middle">::</span> QAGES® · Todos os direitos reservados</span>
+      <span>© 2026 Gustavo Machado · Todos os direitos reservados</span>
       <span class="text-gray-600">"QA não é miojo."</span>
     </div>
   </footer>
@@ -1745,8 +2022,12 @@
 
 
   <!-- ===================== STICKY MOBILE CTA ===================== -->
-  <div class="fixed bottom-4 left-4 right-4 z-[100] md:hidden transform translate-y-[150%] transition-transform duration-300 pointer-events-none" id="stickyCta">
-    <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener" class="btn-primary w-full flex justify-center !h-[56px] btn-glow shadow-blue text-[15px] pointer-events-auto">Garantir Vaga Agora</a>
+  <div
+    class="fixed bottom-4 left-4 right-4 z-[100] md:hidden transform translate-y-[150%] transition-transform duration-300 pointer-events-none"
+    id="stickyCta">
+    <a href="https://pay.kiwify.com.br/E0g5Rjk" target="_blank" rel="noopener"
+      class="btn-primary w-full flex justify-center !h-[56px] btn-glow shadow-blue text-[15px] pointer-events-auto">Garantir
+      Vaga Agora</a>
   </div>
 
   <script>
@@ -1766,9 +2047,9 @@
     reveal(); // Trigger on initial load
 
     // Sticky CTA
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const sticky = document.getElementById('stickyCta');
-      if(window.scrollY > 400) {
+      if (window.scrollY > 400) {
         sticky.classList.remove('translate-y-[150%]');
       } else {
         sticky.classList.add('translate-y-[150%]');
