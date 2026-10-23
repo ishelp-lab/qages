@@ -51,6 +51,12 @@
     /* ===================== BASE ===================== */
     * {
       -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     body {
@@ -445,35 +451,52 @@
     .video-frame {
       position: relative;
       width: 100%;
+      max-width: 100%;
       border-radius: 1.5rem;
       overflow: hidden;
       background: #0d1020;
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.07);
-      aspect-ratio: 16/9;
       display: flex;
       flex-direction: column;
     }
 
     .video-frame-titlebar {
       height: 40px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
       background: rgba(255, 255, 255, 0.03);
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding: 0 14px;
       flex-shrink: 0;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .video-frame-body {
-      flex: 1;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      aspect-ratio: 16/9;
+      background: #080a10;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 24px;
+      overflow: hidden;
+    }
+
+    .video-frame-body video {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      min-width: 0;
+      object-fit: cover;
+      display: block;
     }
 
     /* ===================== OFFER ===================== */
@@ -751,7 +774,7 @@
   <section class="bg-aurora relative pt-14 pb-20 sm:pt-24 sm:pb-28 overflow-hidden">
 
     <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center lg:items-start">
 
         <!-- Left: Content -->
         <div class="lg:col-span-6 text-center lg:text-left">
@@ -764,25 +787,24 @@
           </h1>
 
           <!-- VIDEO — APENAS MOBILE (logo após o H1) -->
-          <div class="hero-video-mobile mb-7">
+          <div class="block lg:hidden hero-video-mobile mb-7 w-full max-w-full overflow-hidden">
             <div class="video-frame">
               <div class="video-frame-titlebar">
-                <div class="flex items-center gap-1.5">
+                <div class="flex items-center gap-1.5 flex-shrink-0">
                   <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
                   <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
                   <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
                 </div>
-                <span class="text-[10px] font-mono text-blue-400 font-semibold">● EM BREVE</span>
+                <span class="text-[10px] font-mono text-gray-400 font-medium flex items-center gap-1.5 min-w-0 truncate ml-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0"></span><span class="truncate">Veja como funciona na prática</span>
+                </span>
               </div>
               <div class="video-frame-body">
-                <div
-                  class="w-14 h-14 rounded-full bg-blue-900/40 border border-blue-700/40 flex items-center justify-center mb-3">
-                  <svg class="w-6 h-6 text-blue-400 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p class="text-sm font-mono text-gray-400">Vídeo de apresentação</p>
-                <p class="text-xs text-gray-600 mt-1">em breve</p>
+                <video controls playsinline preload="metadata">
+                  <source src="assets/video-site-compressed.mp4" type="video/mp4">
+                  <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
               </div>
             </div>
           </div>
@@ -840,37 +862,31 @@
         </div>
 
         <!-- Right: Video Frame — APENAS DESKTOP -->
-        <div class="lg:col-span-6 relative hero-video-desktop">
+        <div class="hidden lg:block lg:col-span-6 relative hero-video-desktop lg:pt-1">
 
           <div class="video-frame">
             <div class="video-frame-titlebar">
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
                 <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
                 <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
                 <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
               </div>
-              <span class="text-[10px] font-mono text-blue-400 font-semibold">● EM BREVE</span>
+              <span class="text-[10px] font-mono text-gray-400 font-medium flex items-center gap-1.5 min-w-0 truncate ml-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0"></span><span class="truncate">Veja como funciona na prática</span>
+              </span>
             </div>
             <div class="video-frame-body">
-              <div
-                class="w-20 h-20 rounded-full bg-blue-900/40 border border-blue-700/40 flex items-center justify-center mb-5">
-                <svg class="w-9 h-9 text-blue-400 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <p class="text-sm font-mono text-gray-400">Vídeo de apresentação</p>
-              <p class="text-xs text-gray-600 mt-1">em breve</p>
+              <video controls playsinline preload="metadata">
+                <source src="assets/video-site-compressed.mp4" type="video/mp4">
+                <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+              </video>
             </div>
           </div>
 
-          <!-- Floating badges -->
+          <!-- Floating badge -->
           <div
-            class="absolute -top-5 -right-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            <span class="text-xs font-mono text-gray-200 font-medium">Estagiário → R$ 1.5k–2.5k</span>
-          </div>
-          <div
-            class="absolute -bottom-5 -left-3 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden sm:flex items-center gap-2.5">
+            class="absolute -bottom-5 right-0 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden lg:flex items-center gap-2.5">
             <span class="text-[#C5221F] font-bold font-mono text-sm">::</span>
             <span class="text-xs font-mono text-gray-200 font-medium">9 anos de experiência em QA</span>
           </div>
