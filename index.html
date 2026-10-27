@@ -447,56 +447,217 @@
       margin-top: 1px;
     }
 
-    /* ===================== VIDEO FRAME ===================== */
-    .video-frame {
+    /* ===================== MINIMALIST VIDEO PLAYER ===================== */
+    .minimal-player {
       position: relative;
       width: 100%;
       max-width: 100%;
-      border-radius: 1.5rem;
+      border-radius: 1.25rem;
       overflow: hidden;
-      background: #0d1020;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.07);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .video-frame-titlebar {
-      height: 40px;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 14px;
-      flex-shrink: 0;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .video-frame-body {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
+      background: #080A10;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -10px rgba(37, 99, 235, 0.15);
       aspect-ratio: 16/9;
-      background: #080a10;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .video-frame-body video {
+    @media (min-width: 640px) {
+      .minimal-player {
+        border-radius: 1.75rem;
+      }
+    }
+
+    .minimal-player:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.9), 0 0 50px -10px rgba(37, 99, 235, 0.25);
+    }
+
+    .minimal-player video {
       width: 100%;
-      max-width: 100%;
       height: 100%;
-      min-width: 0;
       object-fit: cover;
       display: block;
+      cursor: pointer;
+    }
+
+    .player-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(8, 10, 16, 0.15) 0%, rgba(8, 10, 16, 0.5) 100%);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .minimal-player.is-playing .player-play-overlay {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+
+    .player-play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.9);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @media (min-width: 640px) {
+      .player-play-btn {
+        width: 74px;
+        height: 74px;
+      }
+    }
+
+    .player-play-overlay:hover .player-play-btn {
+      transform: scale(1.1);
+      background: #2563EB;
+      box-shadow: 0 0 45px rgba(37, 99, 235, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .player-play-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+      margin-left: 3px;
+    }
+
+    @media (min-width: 640px) {
+      .player-play-btn svg {
+        width: 32px;
+        height: 32px;
+        margin-left: 4px;
+      }
+    }
+
+    .player-badge-top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(8, 10, 16, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #D1D5DB;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    @media (min-width: 640px) {
+      .player-badge-top {
+        top: 16px;
+        left: 16px;
+      }
+    }
+
+    .minimal-player.is-playing .player-badge-top {
+      opacity: 0;
+    }
+
+    .minimal-player.is-playing:hover .player-badge-top {
+      opacity: 0.8;
+    }
+
+    .player-controls-bar {
+      position: absolute;
+      inset-x: 0;
+      bottom: 0;
+      z-index: 15;
+      padding: 24px 12px 10px;
+      background: linear-gradient(to top, rgba(6, 8, 13, 0.95) 0%, rgba(6, 8, 13, 0.6) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+
+    @media (min-width: 640px) {
+      .player-controls-bar {
+        padding: 30px 16px 12px;
+        gap: 8px;
+      }
+    }
+
+    .minimal-player:hover .player-controls-bar,
+    .minimal-player.show-controls .player-controls-bar,
+    .minimal-player:not(.is-playing) .player-controls-bar {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .player-progress-track {
+      position: relative;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: height 0.15s ease;
+    }
+
+    .player-progress-track:hover {
+      height: 6px;
+    }
+
+    .player-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      background: #2563EB;
+      border-radius: 9999px;
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.7);
+      pointer-events: none;
+    }
+
+    .player-btn-icon {
+      background: transparent;
+      border: none;
+      color: #E5E7EB;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+
+    .player-btn-icon:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .player-btn-icon:active {
+      transform: scale(0.92);
     }
 
     /* ===================== OFFER ===================== */
@@ -788,31 +949,60 @@
 
           <!-- VIDEO — APENAS MOBILE (logo após o H1) -->
           <div class="block lg:hidden hero-video-mobile mb-7 w-full max-w-full overflow-hidden">
-            <div class="video-frame">
-              <div class="video-frame-titlebar">
-                <div class="flex items-center gap-1.5 flex-shrink-0">
-                  <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
-                </div>
-                <span class="text-[10px] font-mono text-gray-400 font-medium flex items-center gap-1.5 min-w-0 truncate ml-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0"></span><span class="truncate">Veja como funciona na prática</span>
-                </span>
+            <div class="minimal-player group" data-player>
+              <video playsinline preload="metadata">
+                <source src="assets/video-site-compressed.mp4" type="video/mp4">
+                <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+              </video>
+
+              <!-- Top minimal badge -->
+              <div class="player-badge-top">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                <span>Veja na prática</span>
               </div>
-              <div class="video-frame-body">
-                <video controls playsinline preload="metadata">
-                  <source src="assets/video-site-compressed.mp4" type="video/mp4">
-                  <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
-                  Seu navegador não suporta a tag de vídeo.
-                </video>
+
+              <!-- Big centered play button -->
+              <div class="player-play-overlay">
+                <div class="player-play-btn" aria-label="Reproduzir vídeo">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+
+              <!-- Sleek minimal controls bar -->
+              <div class="player-controls-bar">
+                <div class="player-progress-track">
+                  <div class="player-progress-fill"></div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <button class="player-btn-icon play-toggle" title="Play/Pause" aria-label="Play ou Pause">
+                      <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                      <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <span class="player-time font-mono text-[11px] text-gray-300">
+                      <span class="time-current">0:00</span> / <span class="time-duration">0:00</span>
+                    </span>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <button class="player-btn-icon mute-toggle" title="Mudo" aria-label="Alternar áudio">
+                      <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                      <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                    </button>
+                    <button class="player-btn-icon fullscreen-toggle" title="Tela cheia" aria-label="Tela cheia">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Subhead -->
           <p class="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0">
-            Capacitação prática com <strong class="text-gray-200 font-medium">Cypress, Robot Framework, Postman e
-              Python</strong> — do zero até a contratação como QA Júnior.
+            Capacitação prática, aprenda como um QA trabalha de verdade: fundamentos, escreva casos de teste, reporte bugs e projetos e2e e API — do zero até a primeira oportunidade.
           </p>
 
           <!-- Social proof -->
@@ -852,41 +1042,70 @@
 
           <!-- Feature info tags — claramente info, não botões -->
           <div class="flex flex-wrap justify-center lg:justify-start gap-x-5 gap-y-2.5 mt-7">
-            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>8 módulos práticos</span>
-            <span class="info-tag"><span class="info-tag-dot bg-[#C5221F]"></span>Cypress &amp; Robot FW</span>
-            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>CI/CD &amp; GitHub Actions</span>
-            <span class="info-tag"><span class="info-tag-dot bg-[#C5221F]"></span>Prep. CTFL/ISTQB</span>
-            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>Guia de Entrevistas</span>
+            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>11 módulos gravados</span>
+            <span class="info-tag"><span class="info-tag-dot bg-[#C5221F]"></span>Casos de teste e bugs</span>
+            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>Projetos E2E e API</span>
+            <span class="info-tag"><span class="info-tag-dot bg-[#C5221F]"></span>Guias e trilhas de estudo</span>
+            <span class="info-tag"><span class="info-tag-dot bg-[#2563EB]"></span>Guia de entrevistas</span>
           </div>
 
         </div>
 
         <!-- Right: Video Frame — APENAS DESKTOP -->
         <div class="hidden lg:block lg:col-span-6 relative hero-video-desktop lg:pt-1">
+          <div class="minimal-player group" data-player>
+            <video playsinline preload="metadata">
+              <source src="assets/video-site-compressed.mp4" type="video/mp4">
+              <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
+              Seu navegador não suporta a tag de vídeo.
+            </video>
 
-          <div class="video-frame">
-            <div class="video-frame-titlebar">
-              <div class="flex items-center gap-1.5 flex-shrink-0">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
-              </div>
-              <span class="text-[10px] font-mono text-gray-400 font-medium flex items-center gap-1.5 min-w-0 truncate ml-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse flex-shrink-0"></span><span class="truncate">Veja como funciona na prática</span>
-              </span>
+            <!-- Top minimal badge -->
+            <div class="player-badge-top">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+              <span>Veja como funciona na prática</span>
             </div>
-            <div class="video-frame-body">
-              <video controls playsinline preload="metadata">
-                <source src="assets/video-site-compressed.mp4" type="video/mp4">
-                <source src="assets/Vídeo - SITE compressed.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-              </video>
+
+            <!-- Big centered play button -->
+            <div class="player-play-overlay">
+              <div class="player-play-btn" aria-label="Reproduzir vídeo">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+
+            <!-- Sleek minimal controls bar -->
+            <div class="player-controls-bar">
+              <div class="player-progress-track">
+                <div class="player-progress-fill"></div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <button class="player-btn-icon play-toggle" title="Play/Pause" aria-label="Play ou Pause">
+                    <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                  </button>
+                  <span class="player-time font-mono text-[11px] text-gray-300">
+                    <span class="time-current">0:00</span> / <span class="time-duration">0:00</span>
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-1.5">
+                  <button class="player-btn-icon mute-toggle" title="Mudo" aria-label="Alternar áudio">
+                    <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                  </button>
+                  <button class="player-btn-icon fullscreen-toggle" title="Tela cheia" aria-label="Tela cheia">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Floating badge -->
           <div
-            class="absolute -bottom-5 right-0 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden lg:flex items-center gap-2.5">
+            class="absolute -bottom-4 right-2 glass-card !rounded-2xl px-4 py-2.5 shadow-xl hidden lg:flex items-center gap-2.5 z-20 border border-white/10">
             <span class="text-[#C5221F] font-bold font-mono text-sm">::</span>
             <span class="text-xs font-mono text-gray-200 font-medium">9 anos de experiência em QA</span>
           </div>
@@ -1853,44 +2072,40 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Sim! A capacitação foi planejada exatamente para suprir a falta de prática das faculdades.
-              Você aprende desde fundamentos até automação completa, passo a passo.</div>
+            <div class="pb-4">Sim. A trilha foi feita pensada em pessoas iniciante ou que ainda está na graduação. Você começa nos fundamentos e segue o trabalho de um QA: planejar o que testar, escrever casos, executar, reportar o bug e testar com projetos para praticar.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn-q" aria-expanded="false">
-            <span>Estou estagiando. Como isso me ajuda a ser efetivado?</span>
+            <span>Sou Júnior ou estagiário, como isso me ajuda?</span>
             <div class="faq-icon">+</div>
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Quando você automatiza fluxos e cria pipelines no GitHub Actions do time, seus líderes
-              percebem que você já entrega valor de Júnior/Pleno — acelerando a efetivação.</div>
+            <div class="pb-4">Com uma base sólida e direcionamento correto você passa a entregar o que o time espera de um QA: atua desde o início, escreve casos de teste claros e melhores bugs para serem corrigidos. Isso facilita sua efetivação e/ou promoção.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn-q" aria-expanded="false">
-            <span>Preciso saber programar para começar?</span>
+            <span>O que eu vou saber fazer na prática?</span>
             <div class="faq-icon">+</div>
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Não! O curso inclui um módulo de lógica com Python focado no que você usará para criar
-              scripts de QA. Didática direta, sem sofrimento.</div>
+            <div class="pb-4">Escrever e organizar casos de teste, reportar bugs com evidência, testar front-end e API em projetos reais. Ainda aprenderá a introdução à técnicas de testes, padrões e anti-padrões para planejamento de teste. E por fim, aprenderá como ajustar seu currículo e como se preparar para entrevistas.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-btn-q" aria-expanded="false">
-            <span>Prepara para a certificação CTFL/ISTQB?</span>
+            <span>Isso me prepara para a entrevista de QA júnior?</span>
             <div class="faq-icon">+</div>
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Sim! Módulo preparatório completo alinhado ao Syllabus oficial BSTQB/ISTQB com 200+
-              simulados comentados.</div>
+            <div class="pb-4">Sim. Um bônus percorre as perguntas típicas da vaga júnior, com o que responder e o que evitar. Outro cobre currículo e LinkedIn. A capacitação também fornece uma base técnica para te preparar para entrevistas.</div>
           </div>
         </div>
 
@@ -1901,8 +2116,7 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">1 ano de acesso a todas as aulas, repositórios e comunidade. E 7 dias de garantia
-              incondicional — não gostou, devolvo 100%.</div>
+            <div class="pb-4">1 ano de acesso às aulas, aos materiais e à comunidade. São 7 dias de garantia: se não for para você, devolvemos o investimento.</div>
           </div>
         </div>
 
@@ -2034,6 +2248,179 @@
       if (!header) return;
       header.style.background = window.scrollY > 20 ? 'rgba(8, 10, 16, 0.92)' : 'rgba(8, 10, 16, 0.75)';
     }, { passive: true });
+
+    // ===================== MINIMALIST VIDEO PLAYER =====================
+    document.querySelectorAll('[data-player]').forEach(container => {
+      const video = container.querySelector('video');
+      const playOverlay = container.querySelector('.player-play-overlay');
+      const playToggle = container.querySelector('.play-toggle');
+      const playIcon = container.querySelector('.play-icon');
+      const pauseIcon = container.querySelector('.pause-icon');
+      const muteToggle = container.querySelector('.mute-toggle');
+      const volumeHigh = container.querySelector('.volume-high');
+      const volumeMuted = container.querySelector('.volume-muted');
+      const fullscreenToggle = container.querySelector('.fullscreen-toggle');
+      const progressTrack = container.querySelector('.player-progress-track');
+      const progressFill = container.querySelector('.player-progress-fill');
+      const timeCurrent = container.querySelector('.time-current');
+      const timeDuration = container.querySelector('.time-duration');
+
+      if (!video) return;
+
+      const formatTime = (seconds) => {
+        if (!seconds || isNaN(seconds)) return '0:00';
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60);
+        return `${m}:${s < 10 ? '0' : ''}${s}`;
+      };
+
+      let hideControlsTimeout = null;
+      const resetHideTimeout = () => {
+        container.classList.add('show-controls');
+        clearTimeout(hideControlsTimeout);
+        if (!video.paused) {
+          hideControlsTimeout = setTimeout(() => {
+            container.classList.remove('show-controls');
+          }, 2400);
+        }
+      };
+
+      const togglePlay = () => {
+        document.querySelectorAll('video').forEach(v => {
+          if (v !== video && !v.paused) v.pause();
+        });
+
+        if (video.paused) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      };
+
+      if (playOverlay) playOverlay.addEventListener('click', togglePlay);
+      if (playToggle) {
+        playToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          togglePlay();
+        });
+      }
+      video.addEventListener('click', togglePlay);
+
+      video.addEventListener('play', () => {
+        container.classList.add('is-playing');
+        if (playIcon) playIcon.classList.add('hidden');
+        if (pauseIcon) pauseIcon.classList.remove('hidden');
+        resetHideTimeout();
+      });
+
+      video.addEventListener('pause', () => {
+        container.classList.remove('is-playing');
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+        container.classList.add('show-controls');
+        clearTimeout(hideControlsTimeout);
+      });
+
+      video.addEventListener('ended', () => {
+        container.classList.remove('is-playing');
+        if (playIcon) playIcon.classList.remove('hidden');
+        if (pauseIcon) pauseIcon.classList.add('hidden');
+        container.classList.add('show-controls');
+      });
+
+      video.addEventListener('timeupdate', () => {
+        if (video.duration) {
+          const percent = (video.currentTime / video.duration) * 100;
+          if (progressFill) progressFill.style.width = `${percent}%`;
+          if (timeCurrent) timeCurrent.textContent = formatTime(video.currentTime);
+        }
+      });
+
+      const setDuration = () => {
+        if (video.duration && timeDuration) {
+          timeDuration.textContent = formatTime(video.duration);
+        }
+      };
+
+      video.addEventListener('loadedmetadata', setDuration);
+      video.addEventListener('durationchange', setDuration);
+      if (video.readyState >= 1) setDuration();
+
+      if (progressTrack) {
+        let isSeeking = false;
+        const seek = (e) => {
+          const rect = progressTrack.getBoundingClientRect();
+          const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+          if (progressFill) progressFill.style.width = `${pos * 100}%`;
+          if (video.duration) video.currentTime = pos * video.duration;
+        };
+
+        progressTrack.addEventListener('click', (e) => {
+          e.stopPropagation();
+          seek(e);
+        });
+
+        progressTrack.addEventListener('mousedown', (e) => {
+          isSeeking = true;
+          seek(e);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (isSeeking) seek(e);
+        });
+
+        window.addEventListener('mouseup', () => {
+          isSeeking = false;
+        });
+
+        progressTrack.addEventListener('touchstart', (e) => {
+          const touch = e.touches[0];
+          const rect = progressTrack.getBoundingClientRect();
+          const pos = Math.max(0, Math.min(1, (touch.clientX - rect.left) / rect.width));
+          if (progressFill) progressFill.style.width = `${pos * 100}%`;
+          if (video.duration) video.currentTime = pos * video.duration;
+        }, { passive: true });
+      }
+
+      if (muteToggle) {
+        muteToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          video.muted = !video.muted;
+          if (video.muted) {
+            if (volumeHigh) volumeHigh.classList.add('hidden');
+            if (volumeMuted) volumeMuted.classList.remove('hidden');
+          } else {
+            if (volumeHigh) volumeHigh.classList.remove('hidden');
+            if (volumeMuted) volumeMuted.classList.add('hidden');
+          }
+        });
+      }
+
+      if (fullscreenToggle) {
+        fullscreenToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (!document.fullscreenElement) {
+            if (container.requestFullscreen) {
+              container.requestFullscreen();
+            } else if (video.webkitEnterFullscreen) {
+              video.webkitEnterFullscreen();
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+          }
+        });
+      }
+
+      container.addEventListener('mousemove', resetHideTimeout);
+      container.addEventListener('touchstart', resetHideTimeout, { passive: true });
+      container.addEventListener('mouseleave', () => {
+        if (!video.paused) {
+          container.classList.remove('show-controls');
+        }
+      });
+    });
   </script>
 
 

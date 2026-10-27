@@ -2,12 +2,12 @@
 [X] Tirar as menções "qages" como nome de empresa (dar ctrl+f to find)
 [X] change the email to the one he sent via zap
 [X] Colocar o vídeo no site (conferir se é o vídeo mais recente)
-[ ] replace "Criei a QAGES" to "Criador de curso e mentorias para..."
+[X] replace "Criei a QAGES" to "Criador de curso e mentorias para..."
+[X] replace "capacitação prática..."  to "Capacitação prática, aprend..." texto no wpp
+[X] replace "• 8 módulos..., • cypress..., • CI/CD..." por • 11 módulos..., • casos...
+[X] replace the text in Gustavo's biografy with text he sent zap
+[X] remove and adequate the doubt texts to the he sents via zap
+[X] address and resolve questions regarding the texts he sent via WhatsApp.
+[X] Add new questions he sent via WhatsApp.
 [ ] Checar quais são as fotos que precisam ser trocadas na kiwifi e anotar
 [ ] Trocar as fotos que tiverem sido concluídas e checar novamente
-[ ] replace "capacitação prática..."  to "Capacitação prática, aprend..." texto no wpp
-[ ] replace "• 8 módulos..., • cypress..., • CI/CD..." por • 11 módulos..., • casos...
-[ ] replace the text in Gustavo's biografy with text he sent zap
-[ ] remove and adequate the doubt texts to the he sents via zap
-[ ] address and resolve questions regarding the texts he sent via WhatsApp.
-[ ] Add new questions he sent via WhatsApp.
