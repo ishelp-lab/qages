@@ -54,7 +54,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       overflow-x: hidden;
       max-width: 100%;
     }
@@ -1010,7 +1011,9 @@
               <!-- Big centered play button -->
               <div class="player-play-overlay">
                 <div class="player-play-btn" aria-label="Reproduzir vídeo">
-                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
               </div>
 
@@ -1023,8 +1026,12 @@
                 <div class="player-controls-row flex items-center justify-between w-full">
                   <div class="flex items-center gap-3">
                     <button class="player-btn-icon play-toggle" title="Play/Pause" aria-label="Play ou Pause">
-                      <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                      <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                      <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                      </svg>
                     </button>
                     <span class="player-time font-mono text-[11px] text-gray-300">
                       <span class="time-current">0:00</span> / <span class="time-duration">0:00</span>
@@ -1033,11 +1040,19 @@
 
                   <div class="flex items-center gap-1.5">
                     <button class="player-btn-icon mute-toggle" title="Mudo" aria-label="Alternar áudio">
-                      <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                      <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                      <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                          d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                      </svg>
+                      <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24">
+                        <path
+                          d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                      </svg>
                     </button>
                     <button class="player-btn-icon fullscreen-toggle" title="Tela cheia" aria-label="Tela cheia">
-                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -1047,7 +1062,8 @@
 
           <!-- Subhead -->
           <p class="text-base sm:text-lg text-gray-400 font-light leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0">
-            Capacitação prática, aprenda como um QA trabalha de verdade: fundamentos, escreva casos de teste, reporte bugs e projetos e2e e API — do zero até a primeira oportunidade.
+            Capacitação prática, <strong class="font-semibold text-white">aprenda como um QA trabalha de verdade</strong>: fundamentos, escreva casos de teste, reporte
+            bugs e projetos E2E e API — do zero até a primeira oportunidade.
           </p>
 
           <!-- Social proof -->
@@ -1114,7 +1130,9 @@
             <!-- Big centered play button -->
             <div class="player-play-overlay">
               <div class="player-play-btn" aria-label="Reproduzir vídeo">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </div>
             </div>
 
@@ -1127,8 +1145,12 @@
               <div class="player-controls-row flex items-center justify-between w-full">
                 <div class="flex items-center gap-3">
                   <button class="player-btn-icon play-toggle" title="Play/Pause" aria-label="Play ou Pause">
-                    <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    <svg class="play-icon w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon w-4 h-4 fill-current hidden" viewBox="0 0 24 24">
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
                   </button>
                   <span class="player-time font-mono text-[11px] text-gray-300">
                     <span class="time-current">0:00</span> / <span class="time-duration">0:00</span>
@@ -1137,11 +1159,19 @@
 
                 <div class="flex items-center gap-1.5">
                   <button class="player-btn-icon mute-toggle" title="Mudo" aria-label="Alternar áudio">
-                    <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                    <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                    <svg class="volume-high w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path
+                        d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                    </svg>
+                    <svg class="volume-muted w-4 h-4 fill-current hidden" viewBox="0 0 24 24">
+                      <path
+                        d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                    </svg>
                   </button>
                   <button class="player-btn-icon fullscreen-toggle" title="Tela cheia" aria-label="Tela cheia">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -1423,7 +1453,7 @@
           <p class="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-2">Processo</p>
           <h3 class="text-sm font-semibold text-white mb-2">Como o QA trabalha</h3>
           <p class="text-xs text-gray-400 leading-relaxed font-light">Planejamento, escrita e execução de casos de
-            teste. Escreva bons bugs para o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
+            teste. Escreva bons bugs para que o time consiga corrigir, aprenda como o QA se posiciona no projeto.</p>
         </div>
 
         <div class="journey-card reveal reveal-delay-1">
@@ -1946,7 +1976,8 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Pedro Henrique</div>
-                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno do Gustavo Machado</div>
+                  <div class="text-xs font-mono text-brand-blue uppercase tracking-wider">Ciência da Computação · Aluno
+                    do Gustavo Machado</div>
                 </div>
               </div>
             </div>
@@ -1989,7 +2020,8 @@
                   class="w-11 h-11 rounded-full object-cover border-2 border-gray-100" />
                 <div class="text-left">
                   <div class="text-sm font-semibold text-gray-900">Larissa Miranda</div>
-                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna do Gustavo Machado · Analista em
+                  <div class="text-xs font-mono text-pink-600 uppercase tracking-wider">Aluna do Gustavo Machado ·
+                    Analista em
                     Qualidade de Software</div>
                 </div>
               </div>
@@ -2039,7 +2071,9 @@
           </h2>
           <p class="text-base text-gray-400 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
             Sou <strong class="text-gray-200 font-medium">Gustavo Machado</strong>, profissional com mais de <strong
-              class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Há mais de 3 anos produzo conteúdo gratuito, cursos e mentorias direcionadas ao mercado de trabalho para que estudantes e estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados de verdade.
+              class="text-gray-200 font-medium">9 anos de experiência</strong> em Qualidade de Software. Há mais de 3
+            anos produzo conteúdo gratuito, cursos e mentorias direcionadas ao mercado de trabalho para que estudantes e
+            estagiários não percam tempo com conteúdos genéricos e cheguem ao mercado preparados de verdade.
           </p>
 
           <!-- Mentor badges redesenhados -->
@@ -2084,7 +2118,8 @@
           <div class="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[420px]">
             <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative aspect-square"
               style="box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
-              <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" width="1080" height="1080" class="w-full h-full object-cover object-top" />
+              <img src="assets/gustavo.jpg" alt="Gustavo Machado Mentor" width="1080" height="1080"
+                class="w-full h-full object-cover object-top" />
               <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div class="font-mono text-sm font-bold text-white flex items-center gap-1">
                   GUSTAVO<span
@@ -2117,7 +2152,9 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Sim. A trilha foi feita pensada em pessoas iniciante ou que ainda está na graduação. Você começa nos fundamentos e segue o trabalho de um QA: planejar o que testar, escrever casos, executar, reportar o bug e testar com projetos para praticar.</div>
+            <div class="pb-4">Sim. A trilha foi feita pensada em pessoas iniciante ou que ainda está na graduação. Você
+              começa nos fundamentos e segue o trabalho de um QA: planejar o que testar, escrever casos, executar,
+              reportar o bug e testar com projetos para praticar.</div>
           </div>
         </div>
 
@@ -2128,7 +2165,9 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Com uma base sólida e direcionamento correto você passa a entregar o que o time espera de um QA: atua desde o início, escreve casos de teste claros e melhores bugs para serem corrigidos. Isso facilita sua efetivação e/ou promoção.</div>
+            <div class="pb-4">Com uma base sólida e direcionamento correto você passa a entregar o que o time espera de
+              um QA: atua desde o início, escreve casos de teste claros e melhores bugs para serem corrigidos. Isso
+              facilita sua efetivação e/ou promoção.</div>
           </div>
         </div>
 
@@ -2139,7 +2178,10 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Escrever e organizar casos de teste, reportar bugs com evidência, testar front-end e API em projetos reais. Ainda aprenderá a introdução à técnicas de testes, padrões e anti-padrões para planejamento de teste. E por fim, aprenderá como ajustar seu currículo e como se preparar para entrevistas.</div>
+            <div class="pb-4">Escrever e organizar casos de teste, reportar bugs com evidência, testar front-end e API
+              em projetos reais. Ainda aprenderá a introdução à técnicas de testes, padrões e anti-padrões para
+              planejamento de teste. E por fim, aprenderá como ajustar seu currículo e como se preparar para
+              entrevistas.</div>
           </div>
         </div>
 
@@ -2150,7 +2192,9 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">Sim. Um bônus percorre as perguntas típicas da vaga júnior, com o que responder e o que evitar. Outro cobre currículo e LinkedIn. A capacitação também fornece uma base técnica para te preparar para entrevistas.</div>
+            <div class="pb-4">Sim. Um bônus percorre as perguntas típicas da vaga júnior, com o que responder e o que
+              evitar. Outro cobre currículo e LinkedIn. A capacitação também fornece uma base técnica para te preparar
+              para entrevistas.</div>
           </div>
         </div>
 
@@ -2161,7 +2205,8 @@
           </button>
           <div
             class="faq-content max-h-0 overflow-hidden transition-all duration-300 text-sm text-gray-400 font-light leading-relaxed">
-            <div class="pb-4">1 ano de acesso às aulas, aos materiais e à comunidade. São 7 dias de garantia: se não for para você, devolvemos o investimento.</div>
+            <div class="pb-4">1 ano de acesso às aulas, aos materiais e à comunidade. São 7 dias de garantia: se não for
+              para você, devolvemos o investimento.</div>
           </div>
         </div>
 
@@ -2175,7 +2220,8 @@
           </div>
           <div>
             <p class="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Ficou alguma dúvida?</p>
-            <a href="mailto:qagesmachado-suporte-cursos@outlook.com" class="text-sm font-medium text-gray-200 hover:text-white transition-colors">qagesmachado-suporte-cursos@outlook.com</a>
+            <a href="mailto:qagesmachado-suporte-cursos@outlook.com"
+              class="text-sm font-medium text-gray-200 hover:text-white transition-colors">qagesmachado-suporte-cursos@outlook.com</a>
           </div>
         </div>
 
@@ -2336,7 +2382,7 @@
         });
 
         if (video.paused) {
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
         }
